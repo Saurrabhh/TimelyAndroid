@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "275053957243",
+    "project_id": "timely-524da",
+    "storage_bucket": "timely-524da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275053957243:android:2469c41fd06ec05daa12de",
+        "android_client_info": {
+          "package_name": "com.example.timely"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275053957243-2ovravtn0ca5tq5gadqelv98a0dp2mp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPd1BTHO1x15eC-SGd34Jlc1pao4j6bzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275053957243-2ovravtn0ca5tq5gadqelv98a0dp2mp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

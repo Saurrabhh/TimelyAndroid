@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+    <TextView
+        android:id="@+id/Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:gravity="start"
+        android:paddingStart="20sp"
+        android:paddingEnd="20sp"
+        android:text="@string/username"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/InputUser"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Username"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:textSize="20sp"
+
+        android:autofillHints="hi" />
+
+    <TextView
+        android:id="@+id/Password"
+        android:layout_below="@+id/InputUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="20dp"
+        android:paddingStart="20sp"
+        android:paddingEnd="20sp"
+        android:text="@string/password"
+        android:textSize="35sp"
+        android:textColor="#FF000000"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/InputPass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Password"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:autofillHints="hio" />
+
+
+
+    <Button
+        android:id="@+id/SignUpBtn"
+        style="@style/LogBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/InputPass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="@string/sign_up"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+</RelativeLayout>
