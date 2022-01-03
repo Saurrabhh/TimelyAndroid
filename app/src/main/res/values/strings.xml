@@ -1,9 +1,33 @@
 <resources>
     <string name="app_name">Timely</string>
     <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="password">Password: </string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="log_in">Log in</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_out">Log Out</string>
+    <string name="time_table">Time Table</string>
+    <string name="email">Email :</string>
+    <string name="confirm_password">Confirm Password: </string>
+    <string name="next">Next</string>
+    <string name="page_1_of_2">Page 1 of 2</string>
+    <string name="name">Name</string>
+    <string name="input_name">INPUT NAME</string>
+    <string name="enter_username">Enter Username:</string>
+    <string name="input_username">INPUT USERNAME</string>
+    <string name="university_roll_no">University Roll No.</string>
+    <string name="eg_3001">Eg. 3001**********</string>
+    <string name="semester">Semester:</string>
+    <string name="eg_3">Eg. 3</string>
+    <string name="section">Section:</string>
+    <string name="eg_e">Eg. E</string>
+    <string name="class_roll">Class Roll:</string>
+    <string name="eg_13">Eg. 13</string>
+    <string name="submit">Submit</string>
+    <string name="page_2_of_2">Page 2 of 2</string>
+    <string name="new_here_sign_up_now">NEW HERE ? SIGN UP NOW!</string>
+    <string name="welcome_nto">Welcome\nto</string>
+    <string name="timely">Timely</string>
+    <string name="personal_info">Personal Info</string>
+
 </resources>

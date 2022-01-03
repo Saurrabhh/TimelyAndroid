@@ -7,5 +7,6 @@
     <item name="Forgot" type="id" />
     <item name="SignUpBtn" type="id" />
     <item name="LogInBtn" type="id" />
+    <item name="InputPasslayout" type="id" />
 
 </resources>

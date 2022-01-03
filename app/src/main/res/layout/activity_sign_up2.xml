@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".SignUp2Activity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Personal"
+        android:text="@string/personal_info"
+        android:layout_centerHorizontal="true"
+        android:textSize="35sp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:layout_below="@+id/Personal"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+
+
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        app:endIconMode="clear_text"
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/InputName1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/input_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/enter_username"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/TextInputLout1"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UserName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+
+
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        app:endIconMode="clear_text"
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/InputUsername1"
+            android:inputType="text"
+            android:hint="@string/input_username"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/UniRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/university_roll_no"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/TextInputLout2"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UniRoll"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+
+
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        app:endIconMode="clear_text"
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/InputURN1"
+            android:layout_width="match_parent"
+            android:hint="@string/eg_3001"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:maxLength="12"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/Semester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:paddingTop="8dp"
+        android:text="@string/semester"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout3"
+        android:layout_toEndOf="@+id/Semester"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+
+        android:layout_marginEnd="10dp"
+
+
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/eg_3"
+            android:id="@+id/InputSem1"
+            android:inputType="number"
+            android:maxLength="1"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/Section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout4"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:paddingTop="3dp"
+        android:text="@string/section"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout5"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout4"
+        android:layout_toEndOf="@+id/Section"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+
+
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/InputSection1"
+            android:hint="@string/eg_e"
+            android:inputType="text"
+            android:maxLength="1"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/Class_Roll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Section"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:paddingTop="5dp"
+        android:text="@string/class_roll"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout6"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout5"
+        android:layout_toEndOf="@+id/Class_Roll"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+
+        android:inputType="number"
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/InputRollNO1"
+            android:hint="@string/eg_13"
+            android:inputType="number"
+            android:maxLength="2"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/SubmitBtn1"
+        style="@style/LogBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Class_Roll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/submit"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SubmitBtn1"
+        android:text="@string/page_2_of_2"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"/>
+
+
+
+
+</RelativeLayout>

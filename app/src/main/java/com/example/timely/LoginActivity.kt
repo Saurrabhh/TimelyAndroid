@@ -7,60 +7,62 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.timely.databinding.ActivityLoginBinding
+import com.example.timely.databinding.ActivityTtactivityBinding
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityLoginBinding
 
-    private lateinit var email: EditText
-    private lateinit var password: EditText
-
-    private lateinit var loginbtn: Button
-    private lateinit var signupbtn: Button
-    private lateinit var forgotbtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        email = findViewById(R.id.InputUser)
-        password = findViewById(R.id.InputPass
-        )
-        loginbtn= findViewById(R.id.LogInBtn)
-        signupbtn = findViewById(R.id.SignUpBtn)
-        forgotbtn = findViewById(R.id.Forgot)
 
         auth = FirebaseAuth.getInstance()
 
-        loginbtn.setOnClickListener{
-            val inpemail: String = email.text.toString()
-            val inppass: String = password.text.toString()
+        if(auth.currentUser != null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
 
-            if(TextUtils.isEmpty(inpemail) || TextUtils.isEmpty(inppass)) {
+        }
+
+
+        binding.LogInBtn.setOnClickListener{
+            val email: String = binding.InputEmail.text.toString()
+            val password: String = binding.InputPass.text.toString()
+
+            if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_LONG).show()
             } else{
-                auth.signInWithEmailAndPassword(inpemail, inppass).addOnCompleteListener(this, OnCompleteListener{ task ->
-                    if(task.isSuccessful){
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this
+                ) { task ->
+                    if (task.isSuccessful) {
                         Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG).show()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
-                    }else {
+                    } else {
                         Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show()
                     }
-                })
+                }
             }
         }
 
-        signupbtn.setOnClickListener{
+        binding.SignUpBtn.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
 
         }
 
-        forgotbtn.setOnClickListener{
+        binding.ForgotBtn.setOnClickListener{
             val intent = Intent(this, ForgotActivity::class.java )
             startActivity(intent)
         }

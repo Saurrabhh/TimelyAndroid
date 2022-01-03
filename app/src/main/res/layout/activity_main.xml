@@ -14,16 +14,22 @@
         android:textSize="70sp"
         android:id="@+id/hello"
         />
+
     <Button
+        android:id="@+id/LogoutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/hello"
-        android:text="@string/log_out"
-        android:id="@+id/logout"
-        />
+        android:layout_centerHorizontal="true"
+        android:text="@string/log_out" />
 
-
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/LogoutBtn"
+    android:text="@string/time_table"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/TTBtn"/>
 
 
 </RelativeLayout>
