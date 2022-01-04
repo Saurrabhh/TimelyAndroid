@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient"
+    >
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:text="@string/my_profile"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!---name-->
+    <androidx.cardview.widget.CardView
+        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/heading"
+        android:id="@+id/NameCard"
+        app:cardBackgroundColor="@color/Blue4"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+
+        app:cardCornerRadius="15dp"
+
+        android:layout_marginBottom="30dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:id="@+id/txtName"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MainName"
+                android:layout_toEndOf="@+id/txtName"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                />
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!---username-->
+    <androidx.cardview.widget.CardView
+        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@+id/NameCard"
+        android:id="@+id/UsernameCard"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        app:cardBackgroundColor="@color/Blue4"
+        app:cardCornerRadius="15dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:id="@+id/txtUserName"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MainUserName"
+                android:layout_toEndOf="@+id/txtUserName"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+    <!---urn-->
+    <androidx.cardview.widget.CardView
+        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/UsernameCard"
+        android:id="@+id/UrnCard"
+        app:cardBackgroundColor="@color/Blue4"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/university_roll_no"
+
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:id="@+id/txtUrn"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MainURN"
+                android:layout_toEndOf="@+id/txtUrn"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+
+                />
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+    <!---Class-->
+    <androidx.cardview.widget.CardView
+        android:layout_height="45dp"
+        app:cardBackgroundColor="@color/Blue4"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/UrnCard"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/ClassCard"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/class_roll"
+
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:id="@+id/txtClass"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MainClass"
+                android:layout_toEndOf="@+id/txtClass"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+
+                />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <!---Section-->
+    <androidx.cardview.widget.CardView
+        android:layout_height="45dp"
+        app:cardBackgroundColor="@color/Blue4"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/ClassCard"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/SectionCard"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/section"
+
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:id="@+id/txtSection"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MainSection"
+                android:layout_toEndOf="@+id/txtSection"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+
+                />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <!---Semester-->
+    <androidx.cardview.widget.CardView
+        android:layout_height="45dp"
+        app:cardBackgroundColor="@color/Blue4"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/SectionCard"
+        android:id="@+id/SemesterCard"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/semester"
+
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:id="@+id/txtSemester"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MainSemester"
+                android:layout_toEndOf="@+id/txtSemester"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+
+                />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <!---Email-->
+    <androidx.cardview.widget.CardView
+        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/SemesterCard"
+        android:id="@+id/EmailCard"
+        app:cardBackgroundColor="@color/Blue4"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="15dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_mail"
+
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:id="@+id/txtEmail"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MainEmail"
+                android:layout_toEndOf="@+id/txtEmail"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+
+                />
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EmailCard"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:text="@string/home"
+        android:textStyle="bold"
+
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+
+        />
+
+
+
+
+
+</RelativeLayout>
+

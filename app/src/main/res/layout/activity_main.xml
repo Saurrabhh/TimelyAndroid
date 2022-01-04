@@ -1,35 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/drawerLayout"
+    android:background="@drawable/gradient"
 
-    <TextView
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Blue4">
+
+
+        <TextView
+            android:id="@+id/TimeLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+
+            android:text="@string/time_left"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Nextperiod"
+            android:layout_below="@+id/TimeLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_period_is"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/button_border"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="30sp"
+            />
+
+        <TextView
+            android:id="@+id/TodayTT"
+            android:layout_below="@+id/Nextperiod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/today_s_time_table"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:padding="10dp"
+            android:textSize="30sp"
+            />
+
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/TodayTT"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/MainHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="@color/Blue1"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+
+                        <TextView
+                            android:id="@+id/MainPeriod"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:text="@string/period"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/MainTime"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/MainPeriod"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:text="@string/time"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/MainSubject"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/white"
+                            android:layout_toEndOf="@+id/MainTime"
+                            android:gravity="center"
+                            android:text="@string/subject"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/MainTeacher"
+                            android:layout_width="300dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:textColor="@color/white"
+                            android:layout_toEndOf="@+id/MainSubject"
+                            android:gravity="center"
+                            android:text="@string/teacher"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/MainHeading"
+
+                    tools:itemCount="5"
+                    tools:listitem="@layout/card_view_design" />
+
+
+            </RelativeLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_marginTop="200dp"
-        android:textSize="70sp"
-        android:id="@+id/hello"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+
+        app:headerLayout="@layout/main_drawer_header"
+        app:menu="@menu/main_drawer_menu"
         />
 
-    <Button
-        android:id="@+id/LogoutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/hello"
-        android:layout_centerHorizontal="true"
-        android:text="@string/log_out" />
 
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/LogoutBtn"
-    android:text="@string/time_table"
-    android:layout_centerHorizontal="true"
-    android:id="@+id/TTBtn"/>
-
-
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
