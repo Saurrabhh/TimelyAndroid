@@ -65,7 +65,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:hint="@string/email"
             android:inputType="text"
 
@@ -110,7 +110,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/InputPass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:hint="@string/password"
             android:inputType="textPassword"
             />

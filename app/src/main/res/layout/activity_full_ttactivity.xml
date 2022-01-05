@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/full_time_table"
+        android:id="@+id/ftt"
+        android:textSize="40sp"
+        android:textColor="@color/Blue2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        />
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ftt"
+        android:layout_marginTop="30dp"
+        >
+
+        <RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/Blue1"
+        android:id="@+id/Header"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="15dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/Day"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/day"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Period1"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/Day"
+                android:text="@string/_1"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Period2"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/_2"
+                android:layout_toEndOf="@+id/Period1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+            <TextView
+                android:id="@+id/Period3"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/_3"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_toEndOf="@+id/Period2"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/Period4"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/_4"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_toEndOf="@+id/Period3"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/Period5"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/_5"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_toEndOf="@+id/Period4"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/Period6"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/_6"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_toEndOf="@+id/Period5"
+                android:textStyle="bold" />
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/full_TT_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="5"
+                android:layout_below="@+id/Header"
+                tools:listitem="@layout/full_tt_view_design" />
+</RelativeLayout>
+
+    </HorizontalScrollView>
+
+
+</RelativeLayout>

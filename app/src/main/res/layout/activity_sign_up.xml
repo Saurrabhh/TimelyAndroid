@@ -63,7 +63,7 @@
         >
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:hint="@string/email"
         android:inputType="text"
         android:id="@+id/InputEmail"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextInputLayout1"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_border"
         android:gravity="start"
         android:padding="7dp"
@@ -112,7 +112,7 @@
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:id="@+id/InputPass"
             android:inputType="textPassword"
             android:hint="@string/password"
@@ -126,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextInputLayout2"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_border"
         android:gravity="start"
         android:padding="7dp"
@@ -162,7 +162,7 @@
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:id="@+id/InputConfirmPass"

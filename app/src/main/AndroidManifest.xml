@@ -14,14 +14,9 @@
         android:testOnly="false"
         android:theme="@style/Theme.Timely">
         <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SignUp2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomeActivity"
+            android:name=".SplshActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,11 +24,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NavDrawerActivity"
+            android:name=".ContactActivity"
             android:exported="false" />
         <activity
-            android:name=".TTActivity"
+            android:name=".FullTTActivity"
             android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".ForgotActivity"
             android:exported="false" />
@@ -45,7 +51,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false" />
     </application>
 
 </manifest>

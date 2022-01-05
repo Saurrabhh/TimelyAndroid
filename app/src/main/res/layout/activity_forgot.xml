@@ -51,13 +51,12 @@
 
         android:id="@+id/InputEmail"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/Email"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="@string/email"
-        android:inputType="text"
+
         android:textSize="20sp"
         android:fontFamily="serif-monospace"
 
@@ -73,14 +72,16 @@
         <com.google.android.material.textfield.TextInputEditText
 
             android:id="@+id/InputEmail1"
+            android:hint="@string/email"
+            android:inputType="text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/EmailBtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/ResetBtn"
+        android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/InputEmail"
         android:layout_centerInParent="true"
@@ -90,6 +91,6 @@
         android:padding="10dp"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
-        android:text="@string/get_email"
+        android:text="@string/reset_password"
         android:textSize="25sp" />
 </RelativeLayout>

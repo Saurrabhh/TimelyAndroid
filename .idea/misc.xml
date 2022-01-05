@@ -7,7 +7,9 @@
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/drawable-v24/gradient.xml" value="0.26615384615384613" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/drawable-v24/ic_baseline_menu_24.xml" value="0.1671875" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_contact.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_forgot.xml" value="0.15520833333333334" />
+        <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_full_ttactivity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_login (1).xml" value="0.15625" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_login (2).xml" value="0.15625" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_login.xml" value="0.2324074074074074" />
@@ -17,18 +19,20 @@
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_profile.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_sign_up.xml" value="0.15625" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_sign_up1.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_sign_up2.xml" value="0.264" />
+        <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_sign_up2.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_ttactivity.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_welcome.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/card_view_design.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/content_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/full_tt_view_design.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/main_drawer_header.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/main_drawer_menu.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/rehre.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/signup.xml" value="0.264" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/menu/main_drawer_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/xml/activity_signup.xml" value="0.25416666666666665" />
       </map>
     </option>

@@ -16,18 +16,18 @@
     <string name="enter_username">Enter Username:</string>
     <string name="input_username">INPUT USERNAME</string>
     <string name="university_roll_no">University Roll No:</string>
-    <string name="eg_3001">Eg. 3001**********</string>
+    <string name="eg_3001">3001**********</string>
     <string name="semester">Semester:</string>
-    <string name="eg_3">Eg. 3</string>
+    <string name="eg_3">Eg:3</string>
     <string name="section">Section:</string>
-    <string name="eg_e">Eg. E</string>
+    <string name="eg_e">Eg:E</string>
     <string name="class_roll">Class Roll:</string>
-    <string name="eg_13">Eg. 13</string>
+    <string name="eg_13">Eg:13</string>
     <string name="submit">Submit</string>
     <string name="page_2_of_2">Page 2 of 2</string>
     <string name="new_here_sign_up_now">NEW HERE ? SIGN UP NOW!</string>
     <string name="welcome_nto">Welcome\nto</string>
-    <string name="timely">Timely</string>
+    <string name="timely">TIMELY</string>
     <string name="personal_info">Personal Info</string>
     <string name="general">General</string>
     <string name="profile">Profile</string>
@@ -57,6 +57,41 @@
     <string name="home">Home</string>
     <string name="no_problem_enter_your_email_or_username_below_and_we_will_send_you_an_email_with_instruction_to_reset_your_password">No Problem! Enter your email or username below and we will send you an email with instruction to reset your password.</string>
     <string name="get_email">Get Email</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="_5">5</string>
+    <string name="recess">RECESS</string>
+    <string name="_4">4</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="day">DAY</string>
+    <string name="deld">DELD</string>
+    <string name="pyd">PYD</string>
+    <string name="am3">AM3</string>
+    <string name="dsa">DSA</string>
+    <string name="lab">LAB</string>
+    <string name="full_time_table">Full Time Table</string>
+    <string name="period_6">Period 6</string>
+    <string name="period_5">Period 5</string>
+    <string name="period_4">Period 4</string>
+    <string name="period_3">Period 3</string>
+    <string name="period_2">Period 2</string>
+    <string name="period_1">Period 1</string>
+    <string name="_6">6</string>
+    <string name="no_class">No Class</string>
+    <string name="contact_our_team">Contact our Team</string>
+    <string name="saurabh_yadav">Saurabh Yadav</string>
+    <string name="e_47">E 47</string>
+
+    <string name="shubhankar_tiwary">Shubhankar Tiwary</string>
+    <string name="e_54">E 54</string>
+
+    <string name="chaitanya_rao">Chaitanya Rao</string>
+    <string name="e_13">E 13</string>
+
+    <string name="krish_chopra">Krish Chopra</string>
+    <string name="e_25">E 25</string>
+    <string name="cse">CSE</string>
 
 
 </resources>

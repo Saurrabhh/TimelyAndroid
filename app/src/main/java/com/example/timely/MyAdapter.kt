@@ -1,15 +1,12 @@
+package com.example.timely
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-import com.example.timely.Periods
-import com.example.timely.R
-import com.example.timely.Users
-
-class MyAdapter(val PeriodList: ArrayList<Periods>): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private val PeriodList: ArrayList<Periods>): RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
