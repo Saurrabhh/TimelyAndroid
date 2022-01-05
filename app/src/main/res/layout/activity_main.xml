@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:id="@+id/drawerLayout"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,64 +29,119 @@
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-        <TextView
-            android:id="@+id/TimeLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-
-            android:text="@string/time_left"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/timeleftbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_toEndOf="@+id/TimeLeft"
-            android:text="@string/no_class"
-            android:textSize="20sp"
-            />
-
-
-        <TextView
-            android:id="@+id/Nextperiod"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TimeLeft"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/button_border"
-            android:padding="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="@string/next_period_is"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/nextclassbox"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/TimeLeftCard"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
-            android:layout_below="@+id/TimeLeft"
-            android:layout_toEndOf="@+id/Nextperiod"
-            android:text="@string/no_class"
-            android:textSize="30sp"
-            android:padding="5dp"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            />
+            android:layout_marginTop="10dp"
+
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/Blue2"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Time_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/time_left"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Main_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/Time_left"
+                    android:text="@string/no_class"
+                    android:textSize="25sp"
+
+
+                    />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/nextperiodcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TimeLeftCard"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/Blue2"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/NextPeriod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/next_period"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Main_NextPeriod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/NextPeriod"
+                    android:textSize="25sp"
+                    android:text="@string/no_class"
+
+
+                     />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/TodayTT"
-            android:layout_below="@+id/Nextperiod"
+            android:layout_below="@+id/nextperiodcard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/today_s_time_table"
-            android:layout_marginTop="40dp"
+
             android:layout_marginStart="20dp"
             android:padding="10dp"
             android:textSize="30sp"

@@ -94,6 +94,7 @@
     <string name="cse">CSE</string>
     <string name="period_7">Period 7</string>
     <string name="_7">7</string>
+    <string name="next_period">Next Period: </string>
 
 
 </resources>

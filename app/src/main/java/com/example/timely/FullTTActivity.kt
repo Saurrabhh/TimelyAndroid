@@ -1,6 +1,7 @@
 package com.example.timely
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,10 @@ class FullTTActivity : AppCompatActivity() {
 
 
 
+        refreshapp()
+
+
+
         // getting the recyclerview by its id
         recyclerview = binding.fullTTRecycler
 
@@ -44,7 +49,6 @@ class FullTTActivity : AppCompatActivity() {
     private fun displayfulltt() {
 
         val user = loaddata()
-
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
@@ -97,6 +101,19 @@ class FullTTActivity : AppCompatActivity() {
             recyclerview.adapter = TTAdapter(DayList)
         }.addOnFailureListener{
             Toast.makeText(this, "Failed to display", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+    private fun refreshapp() {
+
+        binding.refresh.setOnRefreshListener {
+            Toast.makeText(this, "Refreshed", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, FullTTActivity::class.java)
+
+            startActivity(intent)
+            binding.refresh.isRefreshing = false
+            finish()
         }
     }
 
@@ -160,7 +177,7 @@ class FullTTActivity : AppCompatActivity() {
 
 
     private fun loaddata(): Users {
-        val sharedPreferences = getSharedPreferences("sharedprefs", MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
         val name = sharedPreferences.getString("name", null)
         val username = sharedPreferences.getString("username", null)
         val urn = sharedPreferences.getString("urn", null)
@@ -173,6 +190,7 @@ class FullTTActivity : AppCompatActivity() {
 
         return user
 
+//        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
     }
 
 

@@ -1,8 +1,15 @@
 package com.example.timely
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -24,7 +31,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
     private lateinit var day: String
-
+    lateinit var notificationManager: NotificationManager
+    lateinit var notificationChannel: NotificationChannel
+    lateinit var builder: Notification.Builder
+    private val channelId = "i.apps.notifications"
+    private val description = "Test notification"
     private lateinit var database: DatabaseReference
     private lateinit var recyclerview: RecyclerView
     private lateinit var PeriodList: ArrayList<Periods>
@@ -49,8 +60,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-       displayNavbar()
+        displayNavbar()
         refreshapp()
+        createNotification()
 
         recyclerview = binding.recyclerview
 
@@ -159,8 +171,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun displayprofile() {
-        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        database
         val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
     }
@@ -191,7 +201,7 @@ class MainActivity : AppCompatActivity() {
 
                 if(currtime in st..et) {
                     val timeleft = et - currtime
-                    binding.timeleftbox.text = timeleft.toString()
+                    binding.MainTime.text = timeleft.toString()
                 }
 
                 time = timetoampm(time)
@@ -328,6 +338,60 @@ class MainActivity : AppCompatActivity() {
 
 
         return "$newstarttime-$newendtime"
+
+    }
+
+
+
+    private fun createNotification(){
+        setContentView(R.layout.activity_main)
+
+        val nextPeriod: String = getcurrenttime()
+        val timeLeft: String = getcurrenttime()
+
+
+        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        //After Clicking notification come to this activity
+        val intent = Intent(this, MainActivity::class.java)
+
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notificationChannel = NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
+            notificationChannel.enableLights(true)
+            notificationChannel.lightColor = Color.GREEN
+            notificationChannel.enableVibration(false)
+            notificationManager.createNotificationChannel(notificationChannel)
+
+            builder = Notification.Builder(this, channelId)
+                //.setContent(contentView)
+                .setContentTitle("Next Period: $nextPeriod")
+                .setContentText("Time Left: $timeLeft")
+
+                .setSmallIcon(R.drawable.ic_logo)
+                .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.notification_logo))
+                .setStyle(Notification.InboxStyle()
+                    .addLine("Time left: $timeLeft")
+                    .addLine("Click to see Full Time Table")
+                )
+                .setContentIntent(pendingIntent)
+        }
+        else {
+            builder = Notification.Builder(this)
+                //.setContent(contentView)
+                .setContentTitle("Next Period: $nextPeriod")
+                .setContentText("Time Left: $timeLeft")
+                .setSmallIcon(R.drawable.ic_logo)
+                .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.notification_logo))
+                .setStyle(Notification.InboxStyle()
+                    .addLine("Time left: $timeLeft")
+                    .addLine("Click to see Full Time Table")
+                )
+                .setContentIntent(pendingIntent)
+        }
+        notificationManager.notify(1234, builder.build())
 
     }
 
