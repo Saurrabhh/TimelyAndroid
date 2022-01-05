@@ -24,7 +24,7 @@
         android:id="@+id/Card1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="100dp"
         app:cardBackgroundColor="@color/Blue1"
         app:cardCornerRadius="15dp"
@@ -272,7 +272,7 @@
         android:id="@+id/Card3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/Blue1"
         app:cardCornerRadius="15dp"
@@ -296,17 +296,16 @@
 
             <TextView
                 android:id="@+id/name3"
-                android:layout_below="@+id/avatar3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/avatar3"
+                android:layout_marginStart="20dp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="3dp"
-                android:layout_marginStart="20dp"
                 android:text="@string/chaitanya_rao"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/roll3"

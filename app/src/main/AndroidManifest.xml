@@ -35,11 +35,8 @@
         <activity
             android:name=".SignUp2Activity"
             android:exported="false" />
-        <activity
-            android:name=".WelcomeActivity"
-            android:exported="false">
 
-        </activity>
+
         <activity
             android:name=".ForgotActivity"
             android:exported="false" />

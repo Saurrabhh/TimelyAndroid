@@ -17,7 +17,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         if(auth.currentUser == null){
-            val intent = Intent(this, WelcomeActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
 
@@ -149,39 +148,77 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayPeriodData() {
+
+
+//        val d = getcurrentuserdata()
+
+//        Toast.makeText(this, d.toString(), Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("CSE").child("Sem 3").child("E").get().addOnSuccessListener {
-        val data = getcurrentday()
 
-        val periods = it.child(data[1]).child(data[0]).children
-
-        for (period in periods){
-            val periodno = period.child("0").value.toString()
-            var time = period.child("1").value.toString()
+            val data = getcurrentday()
 
 
-            val array = time.split("-")
-            val st = convertTomili(array[0])
-            val et = convertTomili(array[1])
-            val currtime = convertTomili(getcurrenttime())
+            val periods = it.child(data[1]).child(data[0]).children
 
-            if(currtime in st..et) {
-                val timeleft = et - currtime
-                binding.timeleftbox.text = timeleft.toString()
+            for (period in periods){
+                val periodno = period.child("0").value.toString()
+                var time = period.child("1").value.toString()
+
+
+                val array = time.split("-")
+                val st = convertTomili(array[0])
+                val et = convertTomili(array[1])
+                val currtime = convertTomili(getcurrenttime())
+
+                if(currtime in st..et) {
+                    val timeleft = et - currtime
+                    binding.timeleftbox.text = timeleft.toString()
+                }
+
+                time = timetoampm(time)
+
+                val subject = period.child("2").child("Subject").value.toString()
+                val teacher = period.child("2").child("Teacher").value.toString()
+
+                val periodobject = Periods(periodno, time, subject, teacher)
+
+                PeriodList.add(periodobject)
+
+                }
+
+                recyclerview.adapter = MyAdapter(PeriodList)
+
             }
 
-            time = timetoampm(time)
+    }
 
-            val subject = period.child("2").child("Subject").value.toString()
-            val teacher = period.child("2").child("Teacher").value.toString()
+    private fun getcurrentuserdata(){
 
-            val periodobject = Periods(periodno, time, subject, teacher)
+        val currentemail = auth.currentUser?.email.toString()
 
-            PeriodList.add(periodobject)
+        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+        database.get().addOnSuccessListener {
+
+            val users = it.children
+            for (user in users) {
+                if (user.child("email").value.toString() == currentemail) {
+
+                    val name = user.child("name").value.toString()
+                    val username = user.child("username").value.toString()
+                    val urn = user.child("urn").value.toString()
+                    val rollno = user.child("rollno").value.toString()
+                    val section = user.child("section").value.toString()
+                    val semester = user.child("semester").value.toString()
+                    val email = user.child("email").value.toString()
+
+                    val user = Users(name, username, urn, semester, rollno, section, email)
+
+                    break
+
+                }
 
             }
-
-            recyclerview.adapter = MyAdapter(PeriodList)
 
         }
 
@@ -194,7 +231,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun logoutfun() {
         auth.signOut()
-        val intent = Intent(this, WelcomeActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
     }

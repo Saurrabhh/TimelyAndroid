@@ -1,5 +1,6 @@
 package com.example.timely
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.timely.databinding.ActivityProfileBinding
@@ -27,7 +28,7 @@ class ProfileActivity : AppCompatActivity() {
 
             val users = it.children
             for (user in users){
-                if (user.child("email").value.toString() == currentemail){
+                if ( user.child("email").value.toString() == currentemail ){
 
                     binding.MainName.text = user.child("name").value.toString()
                     binding.MainUserName.text = user.child("username").value.toString()
@@ -39,6 +40,13 @@ class ProfileActivity : AppCompatActivity() {
                     break
                 }
             }
+        }
+
+
+        binding.Home.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
 

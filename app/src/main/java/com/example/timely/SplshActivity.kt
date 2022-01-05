@@ -9,6 +9,7 @@ import java.lang.Exception
 import android.content.Intent
 import android.os.Build
 import android.view.WindowInsets
+import com.airbnb.lottie.LottieAnimationView
 
 
 class SplshActivity : AppCompatActivity() {
@@ -28,15 +29,20 @@ class SplshActivity : AppCompatActivity() {
         }
 
         val textView = findViewById<TextView>(R.id.textSplash)
+        val ani = findViewById<LottieAnimationView>(R.id.lottieAnimationView)
+
+
         textView.animate().translationX(1000f).setDuration(1000).startDelay = 2500
+        ani.animate().translationX(-1000f).setDuration(1000).startDelay = 2500
+
         val thread: Thread = object : Thread() {
             override fun run() {
                 try {
-                    sleep(4000)
+                    sleep(3500)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 } finally {
-                    val intent = Intent(this@SplshActivity, WelcomeActivity::class.java)
+                    val intent = Intent(this@SplshActivity, LoginActivity::class.java)
                     startActivity(intent)
                     finish()
                 }
