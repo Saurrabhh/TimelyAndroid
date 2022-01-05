@@ -45,7 +45,6 @@ class FullTTActivity : AppCompatActivity() {
 
         val user = loaddata()
 
-        Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
@@ -82,6 +81,8 @@ class FullTTActivity : AppCompatActivity() {
                 val period7 = day.child(list[i]).child("6").child("2").child("Subject").value.toString()
 
                 i += 1
+
+
 
 
 
@@ -159,7 +160,7 @@ class FullTTActivity : AppCompatActivity() {
 
 
     private fun loaddata(): Users {
-        val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("sharedprefs", MODE_PRIVATE)
         val name = sharedPreferences.getString("name", null)
         val username = sharedPreferences.getString("username", null)
         val urn = sharedPreferences.getString("urn", null)
@@ -172,7 +173,6 @@ class FullTTActivity : AppCompatActivity() {
 
         return user
 
-//        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
     }
 
 

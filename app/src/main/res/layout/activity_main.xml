@@ -7,14 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:id="@+id/drawerLayout"
-    android:background="@drawable/gradient"
-
-    >
+    android:background="@drawable/gradient">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Blue4">
+        android:background="@drawable/gradient">
 
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -202,6 +200,8 @@
 
         app:headerLayout="@layout/main_drawer_header"
         app:menu="@menu/main_drawer_menu"
+
+        android:background="@color/Blue4"
         />
 
 
