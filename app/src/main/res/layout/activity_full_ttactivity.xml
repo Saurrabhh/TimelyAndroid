@@ -118,16 +118,29 @@
                 android:textSize="20sp"
                 android:layout_toEndOf="@+id/Period4"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/Period6"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:textColor="@color/white"
+                android:layout_toEndOf="@+id/Period5"
                 android:text="@string/_6"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                android:layout_toEndOf="@+id/Period5"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Period7"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/Period6"
+                android:text="@string/_7"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 

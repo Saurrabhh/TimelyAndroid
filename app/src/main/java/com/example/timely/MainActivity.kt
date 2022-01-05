@@ -1,5 +1,6 @@
 package com.example.timely
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -61,10 +62,27 @@ class MainActivity : AppCompatActivity() {
         PeriodList = arrayListOf()
 
         displayPeriodData()
-
-
+        getcurrentuserdata()
 
     }
+
+    private fun loaddata(): Users {
+        val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
+        val name = sharedPreferences.getString("name", null)
+        val username = sharedPreferences.getString("username", null)
+        val urn = sharedPreferences.getString("urn", null)
+        val rollno = sharedPreferences.getString("rollno", null)
+        val section = sharedPreferences.getString("section", null)
+        val semester = sharedPreferences.getString("semester", null)
+        val email = sharedPreferences.getString("email", null)
+
+        val user = Users(name, username, urn, semester, rollno, section, email)
+
+        return user
+
+//        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
+    }
+
 
     private fun getcurrentday(): Array<String> {
         val dayint = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
@@ -150,11 +168,11 @@ class MainActivity : AppCompatActivity() {
     private fun displayPeriodData() {
 
 
-//        val d = getcurrentuserdata()
+        val user = loaddata()
 
 //        Toast.makeText(this, d.toString(), Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
-        database.child("CSE").child("Sem 3").child("E").get().addOnSuccessListener {
+        database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
             val data = getcurrentday()
 
@@ -204,6 +222,8 @@ class MainActivity : AppCompatActivity() {
             for (user in users) {
                 if (user.child("email").value.toString() == currentemail) {
 
+                    val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
+
                     val name = user.child("name").value.toString()
                     val username = user.child("username").value.toString()
                     val urn = user.child("urn").value.toString()
@@ -212,7 +232,17 @@ class MainActivity : AppCompatActivity() {
                     val semester = user.child("semester").value.toString()
                     val email = user.child("email").value.toString()
 
-                    val user = Users(name, username, urn, semester, rollno, section, email)
+
+                    val editor = sharedPreferences.edit()
+                    editor.apply{
+                        putString("name", name)
+                        putString("username", username)
+                        putString("urn", urn)
+                        putString("rollno", rollno)
+                        putString("section", section)
+                        putString("semester", semester)
+                        putString("email", email)
+                    }.apply()
 
                     break
 

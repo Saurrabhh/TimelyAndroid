@@ -20,19 +20,60 @@ class TTAdapter (private val DayList: ArrayList<DayPeriod>) : RecyclerView.Adapt
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
+
         val currentItem = DayList[position]
 
-        // sets the image to the imageview from our itemHolder class
+        holder.period2.text = currentItem.period2
+        holder.period3.text = currentItem.period3
+        holder.period4.text = currentItem.period4
+        holder.period5.text = currentItem.period5
+        holder.period6.text = currentItem.period6
+
+        if (currentItem.currday!="null")                        //
+            holder.day.text = currentItem.currday
+        else
+            holder.day.text = ""
+
+        if (currentItem.period1!="null")
+            holder.period1.text = currentItem.period1
+        else
+            holder.period1.text = ""
 
 
-        // sets the text to the textview from our itemHolder class
-       holder.day.text = currentItem.currday
-       holder.period1.text = currentItem.period1
-       holder.period2.text = currentItem.period2
-       holder.period3.text = currentItem.period3
-       holder.period4.text = currentItem.period4
-       holder.period5.text = currentItem.period5
-       holder.period6.text = currentItem.period6
+        if (currentItem.period2!="null")
+            holder.period2.text = currentItem.period2
+        else
+            holder.period2.text = ""
+
+
+        if (currentItem.period3!="null")
+            holder.period3.text = currentItem.period3
+        else
+            holder.period3.text = ""
+
+
+        if (currentItem.period4!="null")
+            holder.period4.text = currentItem.period4
+        else
+            holder.period4.text = ""
+
+
+        if (currentItem.period5!="null")
+            holder.period5.text = currentItem.period5
+        else
+            holder.period5.text = ""
+
+
+        if (currentItem.period6!="null")
+            holder.period6.text = currentItem.period6
+        else
+            holder.period6.text = ""
+        if (currentItem.period7!="null")
+            holder.period7.text = currentItem.period7
+        else
+            holder.period7.text = ""
+
+
 
 
 
@@ -53,6 +94,7 @@ class TTAdapter (private val DayList: ArrayList<DayPeriod>) : RecyclerView.Adapt
         val period4: TextView = itemView.findViewById(R.id.Main_period4)
         val period5: TextView = itemView.findViewById(R.id.Main_period5)
         val period6: TextView = itemView.findViewById(R.id.Main_period6)
+        val period7: TextView = itemView.findViewById(R.id.Main_period7)
 
 
     }

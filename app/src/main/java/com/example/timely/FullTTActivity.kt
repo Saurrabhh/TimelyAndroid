@@ -1,6 +1,8 @@
 package com.example.timely
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,8 +42,12 @@ class FullTTActivity : AppCompatActivity() {
     }
 
     private fun displayfulltt() {
+
+        val user = loaddata()
+
+        Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
-        database.child("CSE").child("Sem 3").child("E").get().addOnSuccessListener {
+        database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
             val days = it.children
             val list = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
@@ -58,12 +64,9 @@ class FullTTActivity : AppCompatActivity() {
             val period5time = timetoampm(times.child("4").child("1").value.toString())
             val period6time = timetoampm(times.child("5").child("1").value.toString())
 
+
             val timeob = DayPeriod(temp, period1time, period2time, period3time, period4time, period5time, period6time)
             DayList.add(timeob)
-
-
-//            val a = timetoampm(period6time)
-//            Toast.makeText(this, a, Toast.LENGTH_SHORT).show()
 
 
             for (day in days){
@@ -76,11 +79,13 @@ class FullTTActivity : AppCompatActivity() {
                 val period4 = day.child(list[i]).child("3").child("2").child("Subject").value.toString()
                 val period5 = day.child(list[i]).child("4").child("2").child("Subject").value.toString()
                 val period6 = day.child(list[i]).child("5").child("2").child("Subject").value.toString()
+                val period7 = day.child(list[i]).child("6").child("2").child("Subject").value.toString()
+
                 i += 1
 
 
 
-                val dayperiodob = DayPeriod(currday, period1, period2, period3, period4, period5, period6)
+                val dayperiodob = DayPeriod(currday, period1, period2, period3, period4, period5, period6, period7)
 
                 DayList.add(dayperiodob)
 
@@ -89,6 +94,8 @@ class FullTTActivity : AppCompatActivity() {
             }
 
             recyclerview.adapter = TTAdapter(DayList)
+        }.addOnFailureListener{
+            Toast.makeText(this, "Failed to display", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -148,6 +155,24 @@ class FullTTActivity : AppCompatActivity() {
 
         return "$newstarttime-$newendtime"
 
+    }
+
+
+    private fun loaddata(): Users {
+        val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
+        val name = sharedPreferences.getString("name", null)
+        val username = sharedPreferences.getString("username", null)
+        val urn = sharedPreferences.getString("urn", null)
+        val rollno = sharedPreferences.getString("rollno", null)
+        val section = sharedPreferences.getString("section", null)
+        val semester = sharedPreferences.getString("semester", null)
+        val email = sharedPreferences.getString("email", null)
+
+        val user = Users(name, username, urn, semester, rollno, section, email)
+
+        return user
+
+//        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
     }
 
 

@@ -91,6 +91,17 @@
             android:textColor="@color/Blue1"
             android:layout_toEndOf="@+id/Main_period5"
             />
+        <TextView
+            android:id="@+id/Main_period7"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/period_7"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@color/Blue1"
+            android:layout_toEndOf="@+id/Main_period6"
+            />
 
     </RelativeLayout>
 
