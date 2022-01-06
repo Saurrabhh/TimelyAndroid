@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity() {
 
         displayNavbar()
         refreshapp()
-        createNotification()
 
         recyclerview = binding.recyclerview
 
@@ -75,6 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         displayPeriodData()
         getcurrentuserdata()
+        createNotification()
 
     }
 
@@ -179,6 +179,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val user = loaddata()
+        var nextclassflag = 0
 
 //        Toast.makeText(this, d.toString(), Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
@@ -192,6 +193,7 @@ class MainActivity : AppCompatActivity() {
             for (period in periods){
                 val periodno = period.child("0").value.toString()
                 var time = period.child("1").value.toString()
+                val subject = period.child("2").child("Subject").value.toString()
 
 
                 val array = time.split("-")
@@ -199,14 +201,20 @@ class MainActivity : AppCompatActivity() {
                 val et = convertTomili(array[1])
                 val currtime = convertTomili(getcurrenttime())
 
+                if (nextclassflag==1){
+                    binding.MainNextPeriod.text = subject
+                    nextclassflag = 0
+                }
+
                 if(currtime in st..et) {
-                    val timeleft = et - currtime
-                    binding.MainTime.text = timeleft.toString()
+                    var timeleft = ((et - currtime)- 40).toString()
+                    timeleft = "$timeleft mins"
+                    binding.MainTime.text = timeleft
+                    nextclassflag = 1
                 }
 
                 time = timetoampm(time)
 
-                val subject = period.child("2").child("Subject").value.toString()
                 val teacher = period.child("2").child("Teacher").value.toString()
 
                 val periodobject = Periods(periodno, time, subject, teacher)
@@ -344,7 +352,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun createNotification(){
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
 
         val nextPeriod: String = getcurrenttime()
         val timeLeft: String = getcurrenttime()

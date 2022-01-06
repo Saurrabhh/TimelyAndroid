@@ -22,6 +22,8 @@ class SignUpActivity : AppCompatActivity() {
 
         binding.NextBtn.setOnClickListener{
 
+
+
             val email: String = binding.InputEmail.text.toString()
             val password: String = binding.InputPass.text.toString()
             val confpassword: String = binding.InputConfirmPass.text.toString()
@@ -33,10 +35,12 @@ class SignUpActivity : AppCompatActivity() {
             else if (!TextUtils.equals(password, confpassword)){
                 Toast.makeText(this, "Enter same password", Toast.LENGTH_SHORT).show()
             }else{
-                    val intent = Intent(this, SignUp2Activity::class.java)
-                    intent.putExtra("email", email)
-                    intent.putExtra("password", password)
-                    startActivity(intent)
+
+
+                val intent = Intent(this, SignUp2Activity::class.java)
+                intent.putExtra("email", email)
+                intent.putExtra("password", password)
+                startActivity(intent)
 
             }
 

@@ -80,7 +80,6 @@ class SignUp2Activity : AppCompatActivity() {
                 task ->
                     if (task.isSuccessful) {
 
-
                         val user = Users(name, username, urn, semester, rollno, section, email)
                         database =
                             FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/")
