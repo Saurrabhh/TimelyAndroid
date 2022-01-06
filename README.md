@@ -11,7 +11,7 @@ This is a responsive application and keeps on updating with time
 
 
 
-## Developed By: <br>
+## Developed By : <br>
 Saurabh Yadav <br>
 Shubhankar Tiwary <br>
 Chaitanya Rao <br>
