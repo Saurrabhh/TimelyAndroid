@@ -20,6 +20,7 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivitySettingsBinding
     private lateinit var notifSwitch : SwitchCompat
+    private lateinit var miliSwitch : SwitchCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +31,27 @@ class SettingsActivity : AppCompatActivity() {
         displayNavbar()
 
         notifSwitch = binding.notificationSwitch as SwitchCompat
+        miliSwitch = binding.militaryswitch as SwitchCompat
         notifSwitch.setOnClickListener {
             if (notifSwitch.isChecked) {
-                Toast.makeText(this@SettingsActivity, "Notification turned ON", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SettingsActivity, "Notification turned OFF", Toast.LENGTH_SHORT).show()
+
             }
             else{
                 Toast.makeText(this@SettingsActivity, "Notification turned OFF", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        miliSwitch.setOnClickListener{
+            if (miliSwitch.isChecked) {
+                Toast.makeText(this@SettingsActivity, "On", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("gomili", "yes")
+                startActivity(intent)
+                finish()
+            }
+            else{
+                Toast.makeText(this@SettingsActivity, "OFF", Toast.LENGTH_SHORT).show()
             }
         }
     }

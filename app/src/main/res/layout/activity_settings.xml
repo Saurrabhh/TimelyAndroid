@@ -9,20 +9,51 @@
     android:id="@+id/drawerLayout"
     android:background="@drawable/gradient"
     >
-    <LinearLayout android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/notificationSwitch"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/notification"
-            android:textSize="28sp"
-            android:textColor="@color/black"
-            android:background="@color/browser_actions_bg_grey"/>
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/notif">
 
-    </LinearLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/notificationSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/notification"
+                android:textSize="28sp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notif">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/militaryswitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/convert_to_military_time"
+                android:textSize="28sp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

@@ -205,7 +205,7 @@ open class MainActivity : AppCompatActivity() {
 
 
             val periods = it.child(data[1]).child(data[0]).children
-            var newtimeleft = 11
+            var newtimeleft = 0
 
             for (period in periods){
                 val periodno = period.child("0").value.toString()
@@ -220,15 +220,17 @@ open class MainActivity : AppCompatActivity() {
 
                 if (nextclassflag==1){
                     binding.MainNextPeriod.text = subject
-                    if (newtimeleft <= 10){
                         createNotification(subject, newtimeleft.toString())
-
-                    }
                     nextclassflag = 0
                 }
 
                 if(currtime in st..et) {
-                    var timeleft = ((et - currtime)- 40).toString()
+                    var timeleft = (et - currtime).toString()
+
+                    if (timeleft.toInt()>=60){
+                        timeleft = (timeleft.toInt() - 40).toString()
+                    }
+
                     newtimeleft = timeleft.toInt()
                     timeleft = "$timeleft mins"
 
@@ -237,7 +239,14 @@ open class MainActivity : AppCompatActivity() {
                     nextclassflag = 1
                 }
 
-                time = timetoampm(time)
+                val mili = intent.getStringExtra("gomili").toString()
+//                Toast.makeText(this, time.toString(), Toast.LENGTH_SHORT).show()
+                if (mili != "yes"){
+                    time = timetoampm(time)
+                }
+
+
+//                Toast.makeText(this, mili, Toast.LENGTH_SHORT).show()
 
                 val teacher = period.child("2").child("Teacher").value.toString()
 

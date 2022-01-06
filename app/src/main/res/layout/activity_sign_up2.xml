@@ -16,6 +16,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/arima_madurai_bold"
         android:text="@string/personal_info"
+        android:textColor="@color/Blue3"
         android:textSize="35sp"
         android:textStyle="bold" />
 
