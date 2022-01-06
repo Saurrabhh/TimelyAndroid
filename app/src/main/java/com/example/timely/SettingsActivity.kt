@@ -34,7 +34,7 @@ class SettingsActivity : AppCompatActivity() {
         miliSwitch = binding.militaryswitch as SwitchCompat
         notifSwitch.setOnClickListener {
             if (notifSwitch.isChecked) {
-                Toast.makeText(this@SettingsActivity, "Notification turned OFF", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SettingsActivity, "Notification turned ON", Toast.LENGTH_SHORT).show()
 
             }
             else{
@@ -44,7 +44,7 @@ class SettingsActivity : AppCompatActivity() {
 
         miliSwitch.setOnClickListener{
             if (miliSwitch.isChecked) {
-                Toast.makeText(this@SettingsActivity, "On", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@SettingsActivity, "Done", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("gomili", "yes")
                 startActivity(intent)

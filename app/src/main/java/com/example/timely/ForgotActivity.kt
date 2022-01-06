@@ -14,8 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class ForgotActivity : AppCompatActivity() {
 
-    private lateinit var toggle : ActionBarDrawerToggle
-
     private lateinit var binding: ActivityForgotBinding
     private lateinit var auth: FirebaseAuth
 
@@ -27,9 +25,6 @@ class ForgotActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
-
-        displayNavbar()
-
 
 
         binding.ResetBtn.setOnClickListener{
@@ -48,65 +43,4 @@ class ForgotActivity : AppCompatActivity() {
             }
         }
     }
-
-
-
-    private fun displayNavbar() {
-        val drawerLayout : DrawerLayout = binding.drawerLayout
-        val navView : NavigationView = binding.navView
-
-        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.menu_drawer_open, R.string.menu_drawer_close)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-        navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.nav_profile -> displayprofile()
-                R.id.nav_timetable -> displayfullTT()
-                R.id.nav_settings -> opensettings()
-                R.id.nav_contact -> opencontacts()
-                R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
-                R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
-                R.id.nav_logout -> logoutfun()
-            }
-            true
-        } }
-
-    private fun opensettings() {
-        val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    private fun displayfullTT() {
-        val intent = Intent(this, FullTTActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    private fun opencontacts() {
-        startActivity(Intent(this, ContactActivity::class.java))
-        finish()
-
-    }
-
-    private fun openwebsite(link: String) {
-        val url = Intent(Intent.ACTION_VIEW)
-        url.data = Uri.parse(link)
-        startActivity(url)
-    }
-
-    private fun logoutfun() {
-        auth.signOut()
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    private fun displayprofile() {
-        val intent = Intent(this, ProfileActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
 }

@@ -42,7 +42,7 @@
 
     <string name="menu_drawer_open"> Open </string>
     <string name="menu_drawer_close"> Close </string>
-    <string name="time_left">Time Left:</string>
+    <string name="time_left">Time Left :</string>
     <string name="next_period_is">Next Period is:</string>
     <string name="today_s_time_table">Today\'s Time Table:</string>
     <string name="monday">MONDAY</string>
@@ -97,11 +97,12 @@
     <string name="cse">CSE</string>
     <string name="period_7">Period 7</string>
     <string name="_7">7</string>
-    <string name="next_period">Next Period: </string>
-    <string name="current_class">Current Class</string>
+    <string name="next_period">Next Period : </string>
+    <string name="current_class">Current Period :</string>
     <string name="notification">Notification</string>
     <string name="convert_to_military_time">Convert to Military Time</string>
     <string name="developed_by">Developed by:</string>
+    <string name="notime">- -</string>
 
 
 </resources>

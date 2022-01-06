@@ -1,125 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".ForgotActivity"
-android:id="@+id/drawerLayout"
-android:background="@drawable/gradient"
-    >
-    <RelativeLayout
 
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:background="@drawable/gradient">
-
-        <TextView
-            android:id="@+id/Forgot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="100dp"
-            android:fontFamily="@font/arima_madurai_bold"
-            android:text="@string/forgot_password"
-
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/ForgotText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Forgot"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="20dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/cambo"
-            android:text="@string/no_problem_enter_your_email_or_username_below_and_we_will_send_you_an_email_with_instruction_to_reset_your_password"
-            android:textSize="25sp" />
-
-
-        <TextView
-            android:id="@+id/Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ForgotText"
-            android:layout_marginTop="60dp"
-
-            android:fontFamily="@font/arima_madurai_bold"
-            android:gravity="start"
-            android:paddingStart="20sp"
-
-            android:paddingEnd="20sp"
-            android:text="@string/email"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:id="@+id/InputEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/Email"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-
-            android:textSize="20sp"
-            android:fontFamily="serif-monospace"
-
-            android:background="@android:color/transparent"
-
-
-            app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
-            app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-            app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-            app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-
-            >
-            <com.google.android.material.textfield.TextInputEditText
-
-                android:id="@+id/InputEmail1"
-                android:hint="@string/email"
-                android:inputType="text"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/ResetBtn"
-            android:layout_width="245dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/InputEmail"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/Blue2"
-            android:gravity="center"
-            android:padding="10dp"
-            android:fontFamily="@font/arima_madurai_bold"
-            android:paddingStart="40dp"
-            android:paddingEnd="40dp"
-            android:text="@string/reset_password"
-            android:textSize="25sp" />
-    </RelativeLayout>
-    <com.google.android.material.navigation.NavigationView
-    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:layout_gravity="start"
-    android:id="@+id/nav_view"
+    tools:context=".ForgotActivity"
+    android:background="@drawable/gradient">
 
-    app:headerLayout="@layout/main_drawer_header"
-    app:menu="@menu/main_drawer_menu"
+    <TextView
+        android:id="@+id/Forgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="@string/forgot_password"
 
-    android:background="@color/Blue4"
-    >
-</com.google.android.material.navigation.NavigationView>
-</androidx.drawerlayout.widget.DrawerLayout>
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ForgotText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Forgot"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/cambo"
+        android:text="@string/no_problem_enter_your_email_or_username_below_and_we_will_send_you_an_email_with_instruction_to_reset_your_password"
+        android:textSize="25sp" />
+
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ForgotText"
+        android:layout_marginTop="60dp"
+
+        android:fontFamily="@font/arima_madurai_bold"
+        android:gravity="start"
+        android:paddingStart="20sp"
+
+        android:paddingEnd="20sp"
+        android:text="@string/email"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/InputEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Email"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+
+        android:background="@android:color/transparent"
+
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/InputEmail1"
+            android:hint="@string/email"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/ResetBtn"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/InputEmail"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/Blue2"
+        android:gravity="center"
+        android:padding="10dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="@string/reset_password"
+        android:textSize="25sp" />
+</RelativeLayout>
