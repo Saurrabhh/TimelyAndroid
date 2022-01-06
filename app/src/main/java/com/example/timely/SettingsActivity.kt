@@ -2,12 +2,10 @@ package com.example.timely
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.timely.databinding.ActivitySettingsBinding
@@ -30,8 +28,8 @@ class SettingsActivity : AppCompatActivity() {
 
         displayNavbar()
 
-        notifSwitch = binding.notificationSwitch as SwitchCompat
-        miliSwitch = binding.militaryswitch as SwitchCompat
+        notifSwitch = binding.notificationSwitch
+        miliSwitch = binding.militaryswitch
         notifSwitch.setOnClickListener {
             if (notifSwitch.isChecked) {
                 Toast.makeText(this@SettingsActivity, "Notification turned ON", Toast.LENGTH_SHORT).show()
