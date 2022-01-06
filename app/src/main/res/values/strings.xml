@@ -101,6 +101,7 @@
     <string name="current_class">Current Class</string>
     <string name="notification">Notification</string>
     <string name="convert_to_military_time">Convert to Military Time</string>
+    <string name="developed_by">Developed by:</string>
 
 
 </resources>

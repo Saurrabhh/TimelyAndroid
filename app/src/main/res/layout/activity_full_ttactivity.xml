@@ -35,13 +35,13 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_centerHorizontal="true"
+             android:layout_marginTop="20dp"
+             android:background="@color/Blue3"
+             android:fontFamily="@font/arima_madurai_bold"
              android:paddingStart="15dp"
              android:paddingEnd="15dp"
-             android:background="@color/Blue3"
-             android:textColor="@color/Blue1"
-             android:layout_marginTop="20dp"
-             android:fontFamily="@font/arima_madurai_bold"
              android:text="@string/full_time_table"
+             android:textColor="@color/Blue1"
              android:textSize="40sp"
 
              />

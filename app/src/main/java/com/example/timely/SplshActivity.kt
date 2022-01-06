@@ -31,9 +31,25 @@ class SplshActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.textSplash)
         val ani = findViewById<LottieAnimationView>(R.id.lottieAnimationView)
 
+        val info = findViewById<TextView>(R.id.info)
+        val name1 = findViewById<TextView>(R.id.name1)
+        val name2 = findViewById<TextView>(R.id.name2)
+        val name3 = findViewById<TextView>(R.id.name3)
+        val name4 = findViewById<TextView>(R.id.name4)
+
+
 
         textView.animate().translationX(1000f).setDuration(1000).startDelay = 2500
         ani.animate().translationX(-1000f).setDuration(1000).startDelay = 2500
+
+        info.animate().translationY(1000f).setDuration(1000).startDelay = 2500
+
+        name1.animate().translationX(-1000f).setDuration(1000).startDelay = 2500
+        name3.animate().translationX(-1000f).setDuration(1000).startDelay = 2500
+
+        name2.animate().translationX(1000f).setDuration(1000).startDelay = 2500
+        name4.animate().translationX(1000f).setDuration(1000).startDelay = 2500
+
 
         val thread: Thread = object : Thread() {
             override fun run() {

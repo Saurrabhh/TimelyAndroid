@@ -286,8 +286,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:fontFamily="@font/arima_madurai_bold"
                     android:layout_marginStart="10dp"
+                    android:fontFamily="@font/arima_madurai_bold"
                     android:text="@string/semester"
                     android:textSize="20sp" />
 
@@ -295,13 +295,13 @@
                     android:id="@+id/MainSemester"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/txtSemester"
-                    android:textSize="20sp"
                     android:fontFamily="@font/cambo"
+                    android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_centerVertical="true"
 
                     />
 
@@ -313,7 +313,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/EmailCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_below="@+id/SemesterCard"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
@@ -332,8 +332,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:fontFamily="@font/arima_madurai_bold"
                     android:layout_marginStart="10dp"
+                    android:fontFamily="@font/arima_madurai_bold"
                     android:text="@string/e_mail"
                     android:textSize="20sp" />
 
@@ -341,11 +341,11 @@
                     android:id="@+id/MainEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginStart="10dp"
-                    android:fontFamily="@font/cambo"
                     android:layout_toEndOf="@+id/txtEmail"
-                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/cambo"
 
                     android:textSize="20sp"
                     android:textStyle="bold"
