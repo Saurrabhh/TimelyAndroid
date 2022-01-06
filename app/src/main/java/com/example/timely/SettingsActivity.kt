@@ -19,7 +19,7 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivitySettingsBinding
-    internal lateinit var notifSwitch : SwitchCompat
+    private lateinit var notifSwitch : SwitchCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
