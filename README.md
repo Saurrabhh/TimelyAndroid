@@ -8,7 +8,10 @@ Notification is used for reminding (alerting) the students about the next period
 
 This is a responsive application and keeps on updating with time
 
-
+This project was developed under
+###Android Study Jams
+organised by Google Developers Student Club, BIT Durg. <br>
+Thankyou!
 
 
 ## Developed By : <br>
