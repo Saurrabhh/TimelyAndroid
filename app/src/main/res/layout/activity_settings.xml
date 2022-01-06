@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity"
+    android:id="@+id/drawerLayout"
+    android:background="@drawable/gradient"
+    >
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/notificationSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/notification"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:background="@color/browser_actions_bg_grey"/>
+
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start"
+        android:id="@+id/nav_view"
+
+        app:headerLayout="@layout/main_drawer_header"
+        app:menu="@menu/main_drawer_menu"
+
+        android:background="@color/Blue4"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>

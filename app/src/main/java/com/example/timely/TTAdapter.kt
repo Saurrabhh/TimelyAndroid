@@ -29,7 +29,8 @@ class TTAdapter (private val DayList: ArrayList<DayPeriod>) : RecyclerView.Adapt
         holder.period5.text = currentItem.period5
         holder.period6.text = currentItem.period6
 
-        if (currentItem.currday!="null")                        //
+
+        if (currentItem.currday!="null")
             holder.day.text = currentItem.currday
         else
             holder.day.text = ""
@@ -68,6 +69,7 @@ class TTAdapter (private val DayList: ArrayList<DayPeriod>) : RecyclerView.Adapt
             holder.period6.text = currentItem.period6
         else
             holder.period6.text = ""
+
         if (currentItem.period7!="null")
             holder.period7.text = currentItem.period7
         else

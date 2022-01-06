@@ -25,6 +25,7 @@ class FullTTActivity : AppCompatActivity() {
     private lateinit var recyclerview: RecyclerView
     private lateinit var toggle1 : ActionBarDrawerToggle
     private lateinit var auth : FirebaseAuth
+    private lateinit var toggle : ActionBarDrawerToggle
 
 
 
@@ -80,9 +81,10 @@ class FullTTActivity : AppCompatActivity() {
             val period4time = timetoampm(times.child("3").child("1").value.toString())
             val period5time = timetoampm(times.child("4").child("1").value.toString())
             val period6time = timetoampm(times.child("5").child("1").value.toString())
+            val period7time = timetoampm(times.child("6").child("1").value.toString())
 
 
-            val timeob = DayPeriod(temp, period1time, period2time, period3time, period4time, period5time, period6time)
+            val timeob = DayPeriod(temp, period1time, period2time, period3time, period4time, period5time, period6time, period7time)
             DayList.add(timeob)
 
 
@@ -208,10 +210,43 @@ class FullTTActivity : AppCompatActivity() {
     }
 
 
+    private fun displayNavbar() {
+        val drawerLayout : DrawerLayout = binding.drawerLayout
+        val navView : NavigationView = binding.navView
+
+        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.menu_drawer_open, R.string.menu_drawer_close)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_profile -> displayprofile()
+                R.id.nav_timetable -> displayfullTT()
+                R.id.nav_settings -> opensettings()
+                R.id.nav_contact -> opencontacts()
+                R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
+                R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
+                R.id.nav_logout -> logoutfun()
+            }
+            true
+        } }
+
+    private fun opensettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     private fun displayfullTT() {
         val intent = Intent(this, FullTTActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun opencontacts() {
+        startActivity(Intent(this, ContactActivity::class.java))
+        finish()
+
     }
 
     private fun openwebsite(link: String) {
@@ -233,31 +268,6 @@ class FullTTActivity : AppCompatActivity() {
         finish()
     }
 
-
-    private fun displayNavbar() {
-        val drawerLayout : DrawerLayout = findViewById(R.id.drawerLayout)
-        val navView : NavigationView = findViewById(R.id.nav_view)
-
-        toggle1 = ActionBarDrawerToggle(this, drawerLayout, R.string.menu_drawer_open, R.string.menu_drawer_close)
-
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        drawerLayout.addDrawerListener(toggle1)
-        toggle1.syncState()
-        navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.nav_profile -> displayprofile()
-                R.id.nav_timetable -> displayfullTT()
-                R.id.nav_settings -> Toast.makeText(applicationContext,"Clicked settings", Toast.LENGTH_SHORT).show()
-                R.id.nav_contact -> startActivity(Intent(this, ContactActivity::class.java))
-                R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
-                R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
-                R.id.nav_logout -> logoutfun()
-            }
-            true
-        }
-    }
 
 
 }

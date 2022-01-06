@@ -14,9 +14,11 @@
         android:testOnly="false"
         android:theme="@style/Theme.Timely">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplshActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,8 +37,6 @@
         <activity
             android:name=".SignUp2Activity"
             android:exported="false" />
-
-
         <activity
             android:name=".ForgotActivity"
             android:exported="false" />

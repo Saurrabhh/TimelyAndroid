@@ -99,6 +99,7 @@
     <string name="_7">7</string>
     <string name="next_period">Next Period: </string>
     <string name="current_class">Current Class</string>
+    <string name="notification">Notification</string>
 
 
 </resources>

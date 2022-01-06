@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+open class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun displayNavbar() {
+    open fun displayNavbar() {
         val drawerLayout : DrawerLayout = binding.drawerLayout
         val navView : NavigationView = binding.navView
 
@@ -144,8 +144,8 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.nav_profile -> displayprofile()
                 R.id.nav_timetable -> displayfullTT()
-                R.id.nav_settings -> Toast.makeText(applicationContext,"Clicked settings", Toast.LENGTH_SHORT).show()
-                R.id.nav_contact -> startActivity(Intent(this, ContactActivity::class.java))
+                R.id.nav_settings -> opensettings()
+                R.id.nav_contact -> opencontacts()
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
                 R.id.nav_logout -> logoutfun()
@@ -153,12 +153,25 @@ class MainActivity : AppCompatActivity() {
             true
         } }
 
-    private fun displayfullTT() {
-        val intent = Intent(this, FullTTActivity::class.java)
+    private fun opensettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
+//        startActivity(Intent(this, MainActivity::class.java))
     }
 
-    private fun openwebsite(link: String) {
+    private fun opencontacts() {
+        startActivity(Intent(this, ContactActivity::class.java))
+//        startActivity(Intent(this, MainActivity::class.java))
+
+    }
+
+    open fun displayfullTT() {
+        val intent = Intent(this, FullTTActivity::class.java)
+        startActivity(intent)
+//        startActivity(Intent(this, MainActivity::class.java))
+    }
+
+    open fun openwebsite(link: String) {
         val url = Intent(Intent.ACTION_VIEW)
         url.data = Uri.parse(link)
         startActivity(url)
@@ -166,7 +179,14 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun displayprofile() {
+    open fun logoutfun() {
+        auth.signOut()
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    open fun displayprofile() {
         val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
     }
@@ -233,6 +253,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     private fun getcurrentuserdata(){
 
         val currentemail = auth.currentUser?.email.toString()
@@ -276,18 +298,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     private fun convertTomili(time: String): Int {
         val arr = time.split(":")
         return (arr[0] + arr[1]).toInt()
-    }
-
-    private fun logoutfun() {
-        auth.signOut()
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

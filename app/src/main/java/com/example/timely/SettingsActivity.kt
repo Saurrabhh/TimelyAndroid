@@ -2,64 +2,43 @@ package com.example.timely
 
 import android.content.Intent
 import android.net.Uri
-import android.os.Bundle
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.Switch
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.SwitchCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.timely.databinding.ActivityProfileBinding
+import com.example.timely.databinding.ActivitySettingsBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
-class ProfileActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityProfileBinding
     private lateinit var toggle: ActionBarDrawerToggle
-    private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var binding: ActivitySettingsBinding
+    internal lateinit var notifSwitch : SwitchCompat
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityProfileBinding.inflate(layoutInflater)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        auth = FirebaseAuth.getInstance()
 
         displayNavbar()
 
-        auth = FirebaseAuth.getInstance()
-        val currentemail = auth.currentUser?.email.toString()
-
-        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        database.get().addOnSuccessListener {
-
-            val users = it.children
-            for (user in users){
-                if ( user.child("email").value.toString() == currentemail ){
-
-                    binding.MainName.text = user.child("name").value.toString()
-                    binding.MainUserName.text = user.child("username").value.toString()
-                    binding.MainURN.text = user.child("urn").value.toString()
-                    binding.MainClass.text = user.child("rollno").value.toString()
-                    binding.MainSection.text = user.child("section").value.toString()
-                    binding.MainSemester.text = user.child("semester").value.toString()
-                    binding.MainEmail.text = user.child("email").value.toString()
-                    break
-                }
+        notifSwitch = binding.notificationSwitch as SwitchCompat
+        notifSwitch.setOnClickListener {
+            if (notifSwitch.isChecked) {
+                Toast.makeText(this@SettingsActivity, "Notification turned ON", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this@SettingsActivity, "Notification turned OFF", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-        binding.Home.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-
-
     }
-
 
     private fun displayNavbar() {
         val drawerLayout : DrawerLayout = binding.drawerLayout
