@@ -18,5 +18,5 @@ Thankyou!
 Saurabh Yadav 🐵<br>
 Shubhankar Tiwary 🐙<br>
 Chaitanya Rao 🐴<br>
-Krish Chopra 🐶<br>
+[Krish Chopra](https://twitter.com/krishchopra22) 🦁<br>
 
