@@ -13,10 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/arima_madurai_bold"
         android:layout_marginBottom="30dp"
-        android:textColor="@color/white"
         android:gravity="center_horizontal"
         android:text="@string/my_profile"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -45,8 +46,8 @@
                 android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:text="@string/name"
                 android:textSize="20sp" />
 
@@ -56,6 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/cambo"
+                android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/txtName"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -86,6 +89,7 @@
                 android:id="@+id/txtUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/arima_madurai_bold"
 
                 android:layout_marginStart="10dp"
                 android:text="@string/username"
@@ -97,6 +101,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/cambo"
+                android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/txtUserName"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -129,6 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/arima_madurai_bold"
                 android:layout_marginStart="10dp"
                 android:text="@string/university_roll_no"
                 android:textSize="20sp" />
@@ -139,6 +146,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/cambo"
+                android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/txtUrn"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -173,6 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/arima_madurai_bold"
                 android:layout_marginStart="10dp"
                 android:text="@string/class_roll"
                 android:textSize="20sp" />
@@ -183,6 +193,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/cambo"
+                android:layout_centerVertical="true"
                 android:layout_toEndOf="@+id/txtClass"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -217,6 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/arima_madurai_bold"
                 android:layout_marginStart="10dp"
                 android:text="@string/section"
                 android:textSize="20sp" />
@@ -230,6 +243,8 @@
                 android:layout_toEndOf="@+id/txtSection"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:fontFamily="@font/cambo"
+                android:layout_centerVertical="true"
 
                 />
 
@@ -260,6 +275,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/arima_madurai_bold"
                 android:layout_marginStart="10dp"
                 android:text="@string/semester"
                 android:textSize="20sp" />
@@ -272,7 +288,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/txtSemester"
                 android:textSize="20sp"
+                android:fontFamily="@font/cambo"
                 android:textStyle="bold"
+                android:layout_centerVertical="true"
 
                 />
 
@@ -303,6 +321,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:fontFamily="@font/arima_madurai_bold"
                 android:layout_marginStart="10dp"
                 android:text="@string/e_mail"
                 android:textSize="20sp" />
@@ -313,7 +332,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/cambo"
                 android:layout_toEndOf="@+id/txtEmail"
+                android:layout_centerVertical="true"
 
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -328,15 +349,17 @@
 
 
     <Button
+        android:id="@+id/Home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Home"
         android:layout_below="@id/EmailCard"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+
+        android:fontFamily="@font/arima_madurai_bold"
         android:gravity="center_horizontal"
         android:text="@string/home"
-
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
 

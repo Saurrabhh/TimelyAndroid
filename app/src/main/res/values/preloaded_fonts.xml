@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/arima_madurai_bold</item>
         <item>@font/berkshire_swash</item>
+        <item>@font/cambo</item>
     </array>
 </resources>

@@ -13,39 +13,43 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="100dp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/arima_madurai_bold"
         android:text="@string/forgot_password"
 
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/ForgotText"
-        android:layout_below="@+id/Forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/Forgot"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="30dp"
-        android:fontFamily="serif-monospace"
-        android:text="@string/no_problem_enter_your_email_or_username_below_and_we_will_send_you_an_email_with_instruction_to_reset_your_password"  android:textSize="20sp" />
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/cambo"
+        android:text="@string/no_problem_enter_your_email_or_username_below_and_we_will_send_you_an_email_with_instruction_to_reset_your_password"
+        android:textSize="25sp" />
 
 
     <TextView
         android:id="@+id/Email"
-        android:layout_below="@+id/ForgotText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ForgotText"
+        android:layout_marginTop="60dp"
+
+        android:fontFamily="@font/arima_madurai_bold"
+        android:gravity="start"
         android:paddingStart="20sp"
+
         android:paddingEnd="20sp"
         android:text="@string/email"
         android:textColor="@color/black"
-
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:fontFamily="serif"
-        android:layout_marginTop="60dp"
-        android:gravity="start"/>
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
 
@@ -89,6 +93,7 @@
         android:backgroundTint="@color/Blue2"
         android:gravity="center"
         android:padding="10dp"
+        android:fontFamily="@font/arima_madurai_bold"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
         android:text="@string/reset_password"

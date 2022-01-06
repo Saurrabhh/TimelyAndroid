@@ -16,6 +16,8 @@
         android:background="@drawable/gradient">
 
 
+
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,21 +30,72 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CurrentClassCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
 
+            android:layout_marginEnd="10dp"
+            app:cardBackgroundColor="@color/Blue3"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/currclass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:text="@string/current_class"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Main_CurrentClass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/currclass"
+                    android:fontFamily="@font/cambo"
+
+                    android:text="@string/no_class"
+                    android:textSize="25sp" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/TimeLeftCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/CurrentClassCard"
             android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="@color/Blue2"
+            app:cardBackgroundColor="@color/Blue3"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true">
+            >
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -57,6 +110,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/arima_madurai_bold"
                     android:text="@string/time_left"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -68,9 +122,9 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cambo"
                     android:layout_marginBottom="10dp"
                     android:layout_toEndOf="@id/Time_left"
-                    android:fontFamily="@font/arima_madurai_bold"
                     android:text="@string/no_class"
                     android:textSize="25sp" />
 
@@ -88,12 +142,13 @@
             android:layout_below="@id/TimeLeftCard"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="@color/Blue2"
+            android:layout_marginTop="25dp"
+            app:cardBackgroundColor="@color/Blue3"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true">
+            >
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -105,29 +160,31 @@
                     android:id="@+id/NextPeriod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_centerVertical="true"
                     android:layout_marginBottom="10dp"
                     android:text="@string/next_period"
                     android:textSize="25sp"
+                    android:fontFamily="@font/arima_madurai_bold"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/Main_NextPeriod"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/cambo"
                     android:layout_toEndOf="@id/NextPeriod"
-                    android:textSize="25sp"
                     android:text="@string/no_class"
+                    android:textSize="25sp"
 
 
-                     />
+                    />
 
 
             </RelativeLayout>
@@ -137,15 +194,14 @@
 
         <TextView
             android:id="@+id/TodayTT"
-            android:layout_below="@+id/nextperiodcard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/today_s_time_table"
-
+            android:layout_below="@+id/nextperiodcard"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/arima_madurai_bold"
             android:padding="10dp"
-            android:textSize="30sp"
-            />
+            android:text="@string/today_s_time_table"
+            android:textSize="30sp" />
 
 
         <HorizontalScrollView
@@ -179,6 +235,7 @@
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
+                            android:fontFamily="@font/arima_madurai_bold"
                             android:gravity="center"
                             android:text="@string/period"
                             android:textColor="@color/white"
@@ -191,6 +248,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_toEndOf="@+id/MainPeriod"
+                            android:fontFamily="@font/arima_madurai_bold"
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:text="@string/time"
@@ -203,6 +261,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:textColor="@color/white"
+                            android:fontFamily="@font/arima_madurai_bold"
                             android:layout_toEndOf="@+id/MainTime"
                             android:gravity="center"
                             android:text="@string/subject"
@@ -214,10 +273,11 @@
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:textColor="@color/white"
                             android:layout_toEndOf="@+id/MainSubject"
+                            android:fontFamily="@font/arima_madurai_bold"
                             android:gravity="center"
                             android:text="@string/teacher"
+                            android:textColor="@color/white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -246,7 +306,6 @@
 
 
 
-
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -258,7 +317,9 @@
         app:menu="@menu/main_drawer_menu"
 
         android:background="@color/Blue4"
-        />
+        >
+
+    </com.google.android.material.navigation.NavigationView>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -29,8 +29,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="300dp"
-        android:fontFamily="serif"
+        android:fontFamily="@font/arima_madurai_bold"
         android:gravity="start"
+
         android:paddingStart="20sp"
 
         android:paddingEnd="20sp"
@@ -74,18 +75,18 @@
 
     <TextView
         android:id="@+id/Password"
-        android:layout_below="@+id/InputUserLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="start"
+        android:layout_below="@+id/InputUserLayout"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:gravity="start"
         android:paddingStart="20sp"
         android:paddingEnd="20sp"
         android:text="@string/password"
-        android:textSize="30sp"
-        android:fontFamily="serif"
         android:textColor="#FF000000"
-        android:textStyle="bold"/>
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/InputPassLayout"
@@ -124,6 +125,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/arima_madurai_bold"
         android:background="@android:color/transparent"
         android:gravity="end"
         android:paddingStart="20sp"
@@ -143,6 +145,7 @@
         android:backgroundTint="@color/Blue2"
         android:gravity="center"
         android:padding="10dp"
+        android:fontFamily="@font/arima_madurai_bold"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
         android:text="@string/log_in"
@@ -156,7 +159,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="6dp"
         android:background="@android:color/transparent"
-        android:padding="0dp"
+        android:fontFamily="@font/arima_madurai_bold"
         android:text="@string/new_here_sign_up_now"
         android:textColor="@color/white"
         android:textSize="15sp" />

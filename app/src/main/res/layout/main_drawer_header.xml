@@ -17,7 +17,10 @@
         android:text="@string/timely"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:textSize="20sp"
+        android:textSize="32sp"
+        android:letterSpacing="0.1"
+
+        android:fontFamily="@font/collinas"
         android:textStyle="bold" />
 
 </LinearLayout>

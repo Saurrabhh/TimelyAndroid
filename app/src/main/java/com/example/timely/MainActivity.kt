@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var day: String
     lateinit var notificationManager: NotificationManager
-    lateinit var notificationChannel: NotificationChannel
-    lateinit var builder: Notification.Builder
+    private lateinit var notificationChannel: NotificationChannel
+    private lateinit var builder: Notification.Builder
     private val channelId = "i.apps.notifications"
     private val description = "Test notification"
     private lateinit var database: DatabaseReference
@@ -74,12 +74,12 @@ class MainActivity : AppCompatActivity() {
 
         displayPeriodData()
         getcurrentuserdata()
-        createNotification()
+
 
     }
 
     private fun loaddata(): Users {
-        val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("sharedprefs", MODE_PRIVATE)
         val name = sharedPreferences.getString("name", null)
         val username = sharedPreferences.getString("username", null)
         val urn = sharedPreferences.getString("urn", null)
@@ -88,9 +88,7 @@ class MainActivity : AppCompatActivity() {
         val semester = sharedPreferences.getString("semester", null)
         val email = sharedPreferences.getString("email", null)
 
-        val user = Users(name, username, urn, semester, rollno, section, email)
-
-        return user
+        return Users(name, username, urn, semester, rollno, section, email)
 
 //        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
     }
@@ -139,10 +137,9 @@ class MainActivity : AppCompatActivity() {
         val navView : NavigationView = binding.navView
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.menu_drawer_open, R.string.menu_drawer_close)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.nav_profile -> displayprofile()
@@ -154,8 +151,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_logout -> logoutfun()
             }
             true
-        }
-    }
+        } }
 
     private fun displayfullTT() {
         val intent = Intent(this, FullTTActivity::class.java)
@@ -189,6 +185,7 @@ class MainActivity : AppCompatActivity() {
 
 
             val periods = it.child(data[1]).child(data[0]).children
+            var newtimeleft = 11
 
             for (period in periods){
                 val periodno = period.child("0").value.toString()
@@ -203,13 +200,20 @@ class MainActivity : AppCompatActivity() {
 
                 if (nextclassflag==1){
                     binding.MainNextPeriod.text = subject
+                    if (newtimeleft <= 10){
+                        createNotification(subject, newtimeleft.toString())
+
+                    }
                     nextclassflag = 0
                 }
 
                 if(currtime in st..et) {
                     var timeleft = ((et - currtime)- 40).toString()
+                    newtimeleft = timeleft.toInt()
                     timeleft = "$timeleft mins"
+
                     binding.MainTime.text = timeleft
+                    binding.MainCurrentClass.text = subject
                     nextclassflag = 1
                 }
 
@@ -240,7 +244,7 @@ class MainActivity : AppCompatActivity() {
             for (user in users) {
                 if (user.child("email").value.toString() == currentemail) {
 
-                    val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
+                    val sharedPreferences = getSharedPreferences("sharedprefs", MODE_PRIVATE)
 
                     val name = user.child("name").value.toString()
                     val username = user.child("username").value.toString()
@@ -271,6 +275,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
     private fun convertTomili(time: String): Int {
         val arr = time.split(":")
@@ -351,14 +357,14 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun createNotification(){
-//        setContentView(R.layout.activity_main)
-
-        val nextPeriod: String = getcurrenttime()
-        val timeLeft: String = getcurrenttime()
+    private fun createNotification(nextPeriod: String, timeLeft: String){
 
 
-        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+//        val nextPeriod: String = getcurrenttime()
+//        val timeLeft: String = getcurrenttime()
+
+
+        notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
         //After Clicking notification come to this activity
         val intent = Intent(this, MainActivity::class.java)
@@ -376,12 +382,12 @@ class MainActivity : AppCompatActivity() {
             builder = Notification.Builder(this, channelId)
                 //.setContent(contentView)
                 .setContentTitle("Next Period: $nextPeriod")
-                .setContentText("Time Left: $timeLeft")
+                .setContentText("Time Left: $timeLeft mins")
 
                 .setSmallIcon(R.drawable.ic_logo)
                 .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.notification_logo))
                 .setStyle(Notification.InboxStyle()
-                    .addLine("Time left: $timeLeft")
+                    .addLine("Time left: $timeLeft mins")
                     .addLine("Click to see Full Time Table")
                 )
                 .setContentIntent(pendingIntent)
@@ -390,11 +396,11 @@ class MainActivity : AppCompatActivity() {
             builder = Notification.Builder(this)
                 //.setContent(contentView)
                 .setContentTitle("Next Period: $nextPeriod")
-                .setContentText("Time Left: $timeLeft")
+                .setContentText("Time Left: $timeLeft mins")
                 .setSmallIcon(R.drawable.ic_logo)
                 .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.notification_logo))
                 .setStyle(Notification.InboxStyle()
-                    .addLine("Time left: $timeLeft")
+                    .addLine("Time left: $timeLeft mins")
                     .addLine("Click to see Full Time Table")
                 )
                 .setContentIntent(pendingIntent)

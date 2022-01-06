@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="serif-monospace"
+        android:fontFamily="@font/arima_madurai_bold"
         android:text="@string/contact_our_team"
         android:textColor="@color/black"
         android:textSize="40sp"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         app:cardBackgroundColor="@color/Blue1"
         app:cardCornerRadius="15dp"
         app:cardElevation="6dp">
@@ -55,7 +55,9 @@
                 android:paddingBottom="3dp"
                 android:text="@string/saurabh_yadav"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:fontFamily="@font/arima_madurai_bold"
+                />
 
             <TextView
                 android:id="@+id/roll1"
@@ -70,6 +72,20 @@
                 />
 
             <TextView
+                android:id="@+id/sem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name1"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/roll1"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="3rd Sem"
+                android:textColor="@color/white"
+                android:textSize="11sp" android:fontFamily="@font/arima_madurai_bold"
+                />
+            <TextView
+                android:fontFamily="@font/cambo"
                 android:id="@+id/branch1"
                 android:layout_below="@+id/name1"
                 android:layout_toEndOf="@+id/roll1"
@@ -149,7 +165,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         app:cardBackgroundColor="@color/Blue1"
         app:cardCornerRadius="15dp"
         app:cardElevation="6dp"
@@ -179,8 +195,22 @@
                 android:paddingBottom="3dp"
                 android:text="@string/shubhankar_tiwary"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:fontFamily="@font/arima_madurai_bold"/>
 
+            <TextView
+                android:id="@+id/sem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name2"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/roll2"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="3rd Sem"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
             <TextView
                 android:id="@+id/roll2"
                 android:layout_width="wrap_content"
@@ -300,6 +330,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/avatar3"
                 android:layout_marginStart="20dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:paddingBottom="3dp"
@@ -318,6 +349,19 @@
                 android:textColor="@color/white"
                 android:textSize="11sp" />
 
+            <TextView
+                android:id="@+id/sem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name3"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/roll3"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="3rd Sem"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
             <TextView
                 android:id="@+id/branch3"
                 android:layout_below="@+id/name3"
@@ -432,6 +476,7 @@
                 android:text="@string/krish_chopra"
                 android:textColor="@color/white"
                 android:textSize="15sp"
+                android:fontFamily="@font/arima_madurai_bold"
                 />
 
             <TextView
@@ -446,6 +491,20 @@
                 android:textSize="11sp"
                 />
 
+            <TextView
+                android:id="@+id/sem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name4"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/roll4"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="3rd Sem"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:fontFamily="@font/arima_madurai_bold"
+                />
             <TextView
                 android:id="@+id/branch4"
                 android:layout_below="@+id/name4"

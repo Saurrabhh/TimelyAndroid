@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Timely</string>
     <string name="username">Username:</string>
     <string name="password">Password: </string>
@@ -26,8 +27,10 @@
     <string name="submit">Submit</string>
     <string name="page_2_of_2">Page 2 of 2</string>
     <string name="new_here_sign_up_now">NEW HERE ? SIGN UP NOW!</string>
+
     <string name="welcome_nto">Welcome\nto</string>
-    <string name="timely">TIMELY</string>
+
+    <string name="timely">Timely</string>
     <string name="personal_info">Personal Info</string>
     <string name="general">General</string>
     <string name="profile">Profile</string>
@@ -95,6 +98,7 @@
     <string name="period_7">Period 7</string>
     <string name="_7">7</string>
     <string name="next_period">Next Period: </string>
+    <string name="current_class">Current Class</string>
 
 
 </resources>

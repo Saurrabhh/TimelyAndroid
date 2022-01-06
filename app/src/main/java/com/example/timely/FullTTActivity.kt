@@ -2,12 +2,17 @@ package com.example.timely
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.timely.databinding.ActivityFullTtactivityBinding
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -18,6 +23,9 @@ class FullTTActivity : AppCompatActivity() {
     private lateinit var DayList: ArrayList<DayPeriod>
     private lateinit var database: DatabaseReference
     private lateinit var recyclerview: RecyclerView
+    private lateinit var toggle1 : ActionBarDrawerToggle
+    private lateinit var auth : FirebaseAuth
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +34,12 @@ class FullTTActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
+
+
+        auth = FirebaseAuth.getInstance()
+
+        displayNavbar()
 
         refreshapp()
 
@@ -177,7 +191,7 @@ class FullTTActivity : AppCompatActivity() {
 
 
     private fun loaddata(): Users {
-        val sharedPreferences = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("sharedprefs", MODE_PRIVATE)
         val name = sharedPreferences.getString("name", null)
         val username = sharedPreferences.getString("username", null)
         val urn = sharedPreferences.getString("urn", null)
@@ -191,6 +205,58 @@ class FullTTActivity : AppCompatActivity() {
         return user
 
 //        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun displayfullTT() {
+        val intent = Intent(this, FullTTActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun openwebsite(link: String) {
+        val url = Intent(Intent.ACTION_VIEW)
+        url.data = Uri.parse(link)
+        startActivity(url)
+    }
+
+    private fun logoutfun() {
+        auth.signOut()
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun displayprofile() {
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+
+    private fun displayNavbar() {
+        val drawerLayout : DrawerLayout = findViewById(R.id.drawerLayout)
+        val navView : NavigationView = findViewById(R.id.nav_view)
+
+        toggle1 = ActionBarDrawerToggle(this, drawerLayout, R.string.menu_drawer_open, R.string.menu_drawer_close)
+
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        drawerLayout.addDrawerListener(toggle1)
+        toggle1.syncState()
+        navView.setNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_profile -> displayprofile()
+                R.id.nav_timetable -> displayfullTT()
+                R.id.nav_settings -> Toast.makeText(applicationContext,"Clicked settings", Toast.LENGTH_SHORT).show()
+                R.id.nav_contact -> startActivity(Intent(this, ContactActivity::class.java))
+                R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
+                R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
+                R.id.nav_logout -> logoutfun()
+            }
+            true
+        }
     }
 
 

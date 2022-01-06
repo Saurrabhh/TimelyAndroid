@@ -30,17 +30,18 @@
          </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/full_time_table"
-        android:id="@+id/ftt"
-        android:textSize="40sp"
-        android:textColor="@color/Blue2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+         <TextView
+             android:id="@+id/ftt"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:layout_marginTop="20dp"
+             android:text="@string/full_time_table"
+             android:fontFamily="@font/arima_madurai_bold"
+             android:textColor="@color/Blue2"
+             android:textSize="40sp"
 
-        />
+             />
 
     <HorizontalScrollView
         android:layout_width="wrap_content"
@@ -77,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="@string/day"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -89,8 +91,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_toEndOf="@+id/Day"
                 android:text="@string/_1"
-                android:textColor="@color/white"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -99,18 +102,20 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="@string/_2"
-                android:textColor="@color/white"
                 android:layout_toEndOf="@+id/Period1"
+                android:text="@string/_2"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:textAlignment="center"/>
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/Period3"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/_3"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="20sp"
@@ -122,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="@string/_4"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="20sp"
@@ -134,6 +140,7 @@
                 android:layout_marginStart="20dp"
                 android:textColor="@color/white"
                 android:text="@string/_5"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:layout_toEndOf="@+id/Period4"
@@ -146,6 +153,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_toEndOf="@+id/Period5"
                 android:text="@string/_6"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -158,6 +166,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_toEndOf="@+id/Period6"
                 android:text="@string/_7"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20sp"
