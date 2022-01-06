@@ -1,4 +1,4 @@
-# Timely Android
+# TimelyAndroid
 
 
 
@@ -13,10 +13,10 @@ This project was developed under
 organised by Google Developers Student Club, BIT Durg. <br>
 Thankyou!
 
-
+🙈🙉🙊
 ## Developed By : <br>
-Saurabh Yadav <br>
-Shubhankar Tiwary <br>
-Chaitanya Rao <br>
-Krish Chopra <br>
+Saurabh Yadav 🐵<br>
+Shubhankar Tiwary 🐙<br>
+Chaitanya Rao 🐴<br>
+Krish Chopra 🐶<br>
 
