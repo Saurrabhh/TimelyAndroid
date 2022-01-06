@@ -15,8 +15,8 @@ Thankyou!
 
 🙈🙉🙊
 ## Developed By : <br>
-Saurabh Yadav 🐵<br>
-Shubhankar Tiwary 🐙<br>
-Chaitanya Rao 🐴<br>
-[Krish Chopra](https://twitter.com/krishchopra22) 🦁<br>
+[Saurabh Yadav](https://www.linkedin.com/in/saurabh-yadav-73616b137/) 🐵<br>
+[Shubhankar Tiwary](https://www.linkedin.com/in/shubhankar10) 🐙<br>
+[Chaitanya Rao](https://www.linkedin.com/in/chaitanya-rao-375b30207) 🐴<br>
+[Krish Chopra](https://www.linkedin.com/in/krishchopra22) 🦁<br>
 
