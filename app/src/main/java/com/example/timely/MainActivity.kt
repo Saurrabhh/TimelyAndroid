@@ -258,7 +258,9 @@ open class MainActivity : AppCompatActivity() {
 
                 recyclerview.adapter = MyAdapter(PeriodList)
 
-            }
+            }.addOnFailureListener{
+            Toast.makeText(this, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
+        }
 
     }
 
@@ -303,6 +305,8 @@ open class MainActivity : AppCompatActivity() {
 
             }
 
+        }.addOnFailureListener{
+            Toast.makeText(this, "An Error occurred", Toast.LENGTH_SHORT).show()
         }
 
     }

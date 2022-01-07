@@ -39,6 +39,8 @@ class ForgotActivity : AppCompatActivity() {
                     } else {
                         Toast.makeText(this, "Failed to send Mail", Toast.LENGTH_SHORT).show()
                     }
+                }.addOnFailureListener{
+                    Toast.makeText(this, "Failed to send Mail", Toast.LENGTH_SHORT).show()
                 }
             }
         }

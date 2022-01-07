@@ -116,7 +116,7 @@ class FullTTActivity : AppCompatActivity() {
 
             recyclerview.adapter = TTAdapter(DayList)
         }.addOnFailureListener{
-            Toast.makeText(this, "Failed to display", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
         }
     }
 
