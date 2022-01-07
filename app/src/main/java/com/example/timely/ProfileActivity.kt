@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.timely.data.UserViewMOdel
 import com.example.timely.databinding.ActivityProfileBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -19,6 +20,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
+    lateinit var viewModel: UserViewMOdel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +31,12 @@ class ProfileActivity : AppCompatActivity() {
         displayNavbar()
 
         auth = FirebaseAuth.getInstance()
+
+
         val currentemail = auth.currentUser?.email.toString()
+
+
+
 
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
         database.get().addOnSuccessListener {

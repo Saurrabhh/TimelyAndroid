@@ -13,11 +13,14 @@ import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.timely.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -39,6 +42,8 @@ open class MainActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private lateinit var recyclerview: RecyclerView
     private lateinit var PeriodList: ArrayList<Periods>
+
+
 
 
     private lateinit var toggle : ActionBarDrawerToggle
@@ -74,6 +79,20 @@ open class MainActivity : AppCompatActivity() {
 
         displayPeriodData()
         getcurrentuserdata()
+
+
+//        viewModel.adduser(a)
+//        val x = viewModel.readalldata.observe(this, { user ->
+//            var aa = user.get(0)
+//            Toast.makeText(this, aa.toString(), Toast.LENGTH_SHORT).show()
+//        })
+
+
+//        Toast.makeText(this, x.toString(), Toast.LENGTH_SHORT).show()
+
+
+
+
 
 
     }
@@ -149,9 +168,15 @@ open class MainActivity : AppCompatActivity() {
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
                 R.id.nav_logout -> logoutfun()
+                R.id.notes -> opennotes()
             }
             true
         } }
+
+    private fun opennotes() {
+        val intent = Intent(this, NotesActivity::class.java)
+        startActivity(intent)
+    }
 
     private fun opensettings() {
         val intent = Intent(this, SettingsActivity::class.java)

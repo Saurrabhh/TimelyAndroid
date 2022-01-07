@@ -14,6 +14,9 @@
         android:testOnly="false"
         android:theme="@style/Theme.Timely">
         <activity
+            android:name=".NotesActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity

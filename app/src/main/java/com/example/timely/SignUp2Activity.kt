@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.timely.data.UserViewMOdel
 import com.example.timely.databinding.ActivitySignUp2Binding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -16,6 +17,7 @@ class SignUp2Activity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUp2Binding
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
+    lateinit var viewModel: UserViewMOdel
 
 
 
@@ -80,7 +82,9 @@ class SignUp2Activity : AppCompatActivity() {
                 task ->
                     if (task.isSuccessful) {
 
+
                         val user = Users(name, username, urn, semester, rollno, section, email)
+
                         database =
                             FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/")
                                 .getReference("Users")

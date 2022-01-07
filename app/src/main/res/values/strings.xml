@@ -103,6 +103,11 @@
     <string name="convert_to_military_time">Convert to Military Time</string>
     <string name="developed_by">Developed by:</string>
     <string name="notime">- -</string>
+    <string name="add_short_notes">Add Short Notes</string>
+    <string name="notes">Notes</string>
+    <string name="add_note">Add Note.</string>
+    <string name="add">ADD</string>
+    <string name="last_updated">Last updated :</string>
 
 
 </resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotesActivity"
+    android:background="@color/Blue4"
+    >
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:background="@color/Blue3"
+        android:fontFamily="@font/cambo"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/notes"
+        android:textColor="@color/Blue1"
+        android:textSize="40sp"
+        />
+
+    <EditText
+        android:id="@+id/AddNote"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/heading"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/add_note"
+        android:inputType="text"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/AddNote"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/Blue1"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="@string/add"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:padding="6dp"
+        tools:listitem="@layout/note_item"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_below="@id/add_button" />
+
+</RelativeLayout>
