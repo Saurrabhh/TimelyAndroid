@@ -18,7 +18,6 @@
             android:layout_height="match_parent">
 
 
-
             <TextView
                 android:id="@+id/Personal"
                 android:layout_width="wrap_content"
@@ -38,12 +37,13 @@
                 android:layout_below="@+id/Personal"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:gravity="start"
                 android:text="@string/name"
-                android:fontFamily="@font/arima_madurai_bold"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 android:id="@+id/TextInputLout1"
@@ -55,23 +55,22 @@
                 android:layout_marginEnd="10dp"
 
 
-                android:textSize="20sp"
-                android:fontFamily="serif-monospace"
-                app:endIconMode="clear_text"
                 android:background="@android:color/transparent"
-
+                android:fontFamily="serif-monospace"
+                android:textSize="20sp"
                 app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+
                 app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                >
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/InputName1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:hint="@string/input_name" />
+                    android:hint="@string/input_name"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -81,12 +80,13 @@
                 android:layout_below="@+id/TextInputLout1"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:gravity="start"
                 android:text="@string/enter_username"
                 android:textColor="@color/black"
-                android:fontFamily="@font/arima_madurai_bold"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 android:id="@+id/TextInputLout2"
@@ -98,23 +98,22 @@
                 android:layout_marginEnd="10dp"
 
 
-                android:textSize="20sp"
-                android:fontFamily="serif-monospace"
-                app:endIconMode="clear_text"
                 android:background="@android:color/transparent"
-
+                android:fontFamily="serif-monospace"
+                android:textSize="20sp"
                 app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+
                 app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                >
+                app:endIconMode="clear_text">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/InputUsername1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/InputUsername1"
-                    android:inputType="text"
                     android:hint="@string/input_username"
-                    />
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -124,12 +123,13 @@
                 android:layout_below="@+id/TextInputLout2"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:gravity="start"
                 android:text="@string/university_roll_no"
-                android:fontFamily="@font/arima_madurai_bold"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 android:id="@+id/TextInputLout3"
@@ -141,25 +141,23 @@
                 android:layout_marginEnd="10dp"
 
 
-                android:textSize="20sp"
-                android:fontFamily="serif-monospace"
-                app:endIconMode="clear_text"
                 android:background="@android:color/transparent"
-
+                android:fontFamily="serif-monospace"
+                android:textSize="20sp"
                 app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+
                 app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                >
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/InputURN1"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="@string/eg_3001"
                     android:inputType="number"
-                    android:layout_height="wrap_content"
-                    android:maxLength="12"
-                    />
+                    android:maxLength="12" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -170,46 +168,44 @@
                 android:layout_below="@+id/TextInputLout3"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:gravity="start"
                 android:paddingTop="8dp"
-                android:fontFamily="@font/arima_madurai_bold"
                 android:text="@string/semester"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 android:id="@+id/TextInputLout4"
-                android:layout_width="100dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/TextInputLout3"
-                android:layout_toEndOf="@+id/Semester"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
-
                 android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@+id/Semester"
 
 
-                android:textSize="20sp"
                 android:fontFamily="serif-monospace"
                 android:gravity="center_horizontal"
+                android:textSize="20sp"
 
-                android:background="@android:color/transparent"
 
                 app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
                 app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/eg_3"
+                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size">
+                <AutoCompleteTextView
                     android:id="@+id/InputSem1"
-                    android:inputType="number"
-                    android:maxLength="1"
-
-                    />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Semester"
+                    android:paddingTop="10dp"
+                    android:inputType="none"
+                    android:paddingBottom="10dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -219,44 +215,45 @@
                 android:layout_below="@+id/TextInputLout4"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:gravity="start"
                 android:paddingTop="3dp"
                 android:text="@string/section"
-                android:fontFamily="@font/arima_madurai_bold"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 android:id="@+id/TextInputLout5"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/TextInputLout4"
-                android:layout_toEndOf="@+id/Section"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@+id/Section"
 
-
-                android:textSize="20sp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                android:background="@android:color/transparent"
                 android:fontFamily="serif-monospace"
                 android:gravity="center_horizontal"
 
-                android:background="@android:color/transparent"
+                android:textSize="20sp"
 
                 app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
                 app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                >
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size">
+
+                <AutoCompleteTextView
                     android:id="@+id/InputSection1"
-                    android:hint="@string/eg_e"
-                    android:inputType="text"
-                    android:maxLength="1"
-                    />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Section"
+                    android:paddingTop="10dp"
+                    android:inputType="none"
+                    android:paddingBottom="10dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -267,44 +264,44 @@
                 android:layout_below="@+id/Section"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:gravity="start"
                 android:paddingTop="5dp"
                 android:text="@string/class_roll"
-                android:fontFamily="@font/arima_madurai_bold"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
             <com.google.android.material.textfield.TextInputLayout
 
                 android:id="@+id/TextInputLout6"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/TextInputLout5"
-                android:layout_toEndOf="@+id/Class_Roll"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="10dp"
-
-                android:inputType="number"
-                android:textSize="20sp"
-                android:fontFamily="serif-monospace"
-                android:gravity="center_horizontal"
+                android:layout_toEndOf="@+id/Class_Roll"
 
                 android:background="@android:color/transparent"
+                android:fontFamily="serif-monospace"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+
+                android:textSize="20sp"
 
                 app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
                 app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
                 app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                >
+                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/InputRollNO1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/InputRollNO1"
                     android:hint="@string/eg_13"
                     android:inputType="number"
-                    android:maxLength="2"
-                    />
+                    android:maxLength="2" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -316,8 +313,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_border"
-                android:text="@string/submit"
                 android:fontFamily="@font/arima_madurai_bold"
+                android:text="@string/submit"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
@@ -329,9 +326,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/SubmitBtn1"
+                android:layout_marginStart="20dp"
                 android:text="@string/page_2_of_2"
-                android:textSize="15sp"
-                android:layout_marginStart="20dp"/>
+                android:textSize="15sp" />
 
         </RelativeLayout>
 

@@ -3,9 +3,11 @@ package com.example.timely
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-
 import com.example.timely.databinding.ActivitySignUp2Binding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -17,6 +19,7 @@ class SignUp2Activity : AppCompatActivity() {
     private lateinit var binding: ActivitySignUp2Binding
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
+    private lateinit var arrayAdapter: ArrayAdapter<String>
 
 
 
@@ -28,6 +31,24 @@ class SignUp2Activity : AppCompatActivity() {
 
         binding.SubmitBtn1.setOnClickListener {
             createnewuser()
+        }
+
+        val semesters = resources.getStringArray(R.array.semesters)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdowntext, semesters)
+
+        binding.InputSem1.setAdapter(arrayAdapter)
+
+
+        binding.InputSection1.setOnClickListener{
+            val sem = binding.InputSem1.text.toString()
+            var sections: Array<String> = arrayOf()
+            when(sem){
+                "3" -> sections = arrayOf("E","F")
+                "5" -> sections = arrayOf("A","B")
+                "7" -> sections = arrayOf("A","B")
+            }
+            val arrayAdapter = ArrayAdapter(this, R.layout.dropdowntext, sections)
+            binding.InputSection1.setAdapter(arrayAdapter)
         }
 
     }
@@ -103,6 +124,8 @@ class SignUp2Activity : AppCompatActivity() {
         }
     }
 }
+
+
 
 
 
