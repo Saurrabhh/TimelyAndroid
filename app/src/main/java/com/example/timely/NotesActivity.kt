@@ -27,6 +27,7 @@ class NotesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this)[NotesViewModel::class.java]
+        auth = FirebaseAuth.getInstance()
         displayNavbar()
 
 //        val a = NoteEntity(1,"nwauc")
