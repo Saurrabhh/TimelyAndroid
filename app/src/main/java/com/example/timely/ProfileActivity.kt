@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.timely.data.UserViewMOdel
+
 import com.example.timely.databinding.ActivityProfileBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -20,7 +20,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
-    lateinit var viewModel: UserViewMOdel
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,10 +88,16 @@ class ProfileActivity : AppCompatActivity() {
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
                 R.id.nav_logout -> logoutfun()
+                R.id.notes -> opennotes()
+
             }
             true
         } }
-
+    private fun opennotes() {
+        val intent = Intent(this, NotesActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
     private fun opensettings() {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)

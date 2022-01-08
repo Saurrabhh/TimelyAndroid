@@ -1,13 +1,11 @@
 package com.example.timely
 
-
 import android.content.Context
 import androidx.room.Room
 
 import androidx.room.RoomDatabase
 
 import androidx.room.Database
-import com.example.timely.NoteDao
 
 // Annotates class to be a Room Database with a table (entity) of the Word class
 @Database(entities = [NoteEntity::class], version = 1, exportSchema = false)

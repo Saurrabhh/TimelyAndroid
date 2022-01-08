@@ -227,10 +227,15 @@ class FullTTActivity : AppCompatActivity() {
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
                 R.id.nav_logout -> logoutfun()
+                R.id.notes -> opennotes()
             }
             true
         } }
-
+    private fun opennotes() {
+        val intent = Intent(this, NotesActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
     private fun opensettings() {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)

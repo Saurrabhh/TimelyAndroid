@@ -3,13 +3,10 @@ package com.example.timely
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.timely.NoteEntity
-import com.example.timely.NotesActivity
-import com.example.timely.R
 
 class RecyclerViewAdapter(private val listener: NotesActivity) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
@@ -21,8 +18,8 @@ class RecyclerViewAdapter(private val listener: NotesActivity) :
      * (custom ViewHolder).
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.note)
-        val imageButton: ImageButton = view.findViewById(R.id.delete_button)
+        val textView: TextView = view.findViewById(R.id.note_view)
+        val imageButton: ImageView = view.findViewById(R.id.delete_button)
     }
 
     // Create new views (invoked by the layout manager)
@@ -32,9 +29,9 @@ class RecyclerViewAdapter(private val listener: NotesActivity) :
             .inflate(R.layout.note_item, viewGroup, false)
 
         val viewHolder = ViewHolder(view)
-//        viewHolder.imageButton.setOnClickListener {
-//            listener.onItemClick(dataSet[viewHolder.adapterPosition])
-//        }
+        viewHolder.imageButton.setOnClickListener {
+            listener.onItemClick(dataSet[viewHolder.adapterPosition])
+        }
         return viewHolder
     }
 
