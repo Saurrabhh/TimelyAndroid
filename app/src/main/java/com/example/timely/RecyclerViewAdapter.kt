@@ -3,12 +3,12 @@ package com.example.timely
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.timely.fragments.NotesFragment
 
-class RecyclerViewAdapter(private val listener: NotesActivity) :
+class RecyclerViewAdapter(private val listener: NotesFragment) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
     private val dataSet = ArrayList<NoteEntity>()

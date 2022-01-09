@@ -5,305 +5,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     android:id="@+id/drawerLayout"
     android:background="@drawable/gradient"
     >
 
-    <RelativeLayout
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient">
-
-
-
-
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:orientation="vertical">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/refresh">
-
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/listview"/>
-
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CurrentClassCard"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/Blue1"
+            android:elevation="4dp"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        </com.google.android.material.appbar.MaterialToolbar>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-
-            android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="@color/Blue3"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            >
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/currclass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/arima_madurai_bold"
-                    android:text="@string/current_class"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Main_CurrentClass"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toEndOf="@id/currclass"
-                    android:fontFamily="@font/cambo"
-
-                    android:text="@string/no_class"
-                    android:textSize="25sp" />
-
-
-            </RelativeLayout>
-
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/TimeLeftCard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:layout_below="@+id/CurrentClassCard"
-            android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="@color/Blue3"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            >
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/Time_left"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/arima_madurai_bold"
-                    android:text="@string/time_left"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Main_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toEndOf="@id/Time_left"
-                    android:fontFamily="@font/cambo"
-                    android:text="@string/notime"
-                    android:textSize="25sp" />
-
-
-            </RelativeLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/nextperiodcard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/TimeLeftCard"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="25dp"
-            app:cardBackgroundColor="@color/Blue3"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="12dp"
-            app:cardPreventCornerOverlap="true"
-            >
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp">
-
-                <TextView
-                    android:id="@+id/NextPeriod"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/arima_madurai_bold"
-                    android:text="@string/next_period"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Main_NextPeriod"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/cambo"
-                    android:layout_toEndOf="@id/NextPeriod"
-                    android:text="@string/no_class"
-                    android:textSize="25sp"
-
-
-                    />
-
-
-            </RelativeLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/TodayTT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nextperiodcard"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/arima_madurai_bold"
-            android:padding="10dp"
-            android:text="@string/today_s_time_table"
-            android:textSize="30sp" />
-
-
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_below="@id/TodayTT"
-            >
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/MainHeading"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_margin="10dp"
-                    app:cardBackgroundColor="@color/Blue1"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="6dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-
-                        <TextView
-                            android:id="@+id/MainPeriod"
-                            android:layout_width="80dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="@font/arima_madurai_bold"
-                            android:gravity="center"
-                            android:text="@string/period"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/MainTime"
-                            android:layout_width="180dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_toEndOf="@+id/MainPeriod"
-                            android:fontFamily="@font/arima_madurai_bold"
-                            android:gravity="center"
-                            android:textColor="@color/white"
-                            android:text="@string/time"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/MainSubject"
-                            android:layout_width="130dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/arima_madurai_bold"
-                            android:layout_toEndOf="@+id/MainTime"
-                            android:gravity="center"
-                            android:text="@string/subject"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/MainTeacher"
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_toEndOf="@+id/MainSubject"
-                            android:fontFamily="@font/arima_madurai_bold"
-                            android:gravity="center"
-                            android:text="@string/teacher"
-                            android:textColor="@color/white"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/MainHeading"
-
-                    tools:itemCount="5"
-                    tools:listitem="@layout/card_view_design" />
-
-
-            </RelativeLayout>
-        </HorizontalScrollView>
-
-    </RelativeLayout>
-
-
-
-
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"
+            />
+    </LinearLayout>
 
 
     <com.google.android.material.navigation.NavigationView
@@ -312,7 +44,6 @@
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
         android:id="@+id/nav_view"
-
         app:headerLayout="@layout/main_drawer_header"
         app:menu="@menu/main_drawer_menu"
 
@@ -320,7 +51,6 @@
         >
 
     </com.google.android.material.navigation.NavigationView>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
 

@@ -1,342 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".SignUp2Activity">
+    tools:context=".activity.SignUp2Activity">
 
-    <ScrollView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+
+    <TextView
+        android:id="@+id/Personal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="@string/personal_info"
+        android:textColor="@color/Blue3"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Personal"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:text="@string/name"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+
+
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        app:endIconMode="clear_text"
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/InputName1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="@string/input_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:text="@string/enter_username"
+        android:textColor="@color/black"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UserName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
 
 
-            <TextView
-                android:id="@+id/Personal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:text="@string/personal_info"
-                android:textColor="@color/Blue3"
-                android:textSize="35sp"
-                android:textStyle="bold" />
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        app:endIconMode="clear_text"
+        android:background="@android:color/transparent"
 
-            <TextView
-                android:id="@+id/Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Personal"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:gravity="start"
-                android:text="@string/name"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/InputUsername1"
+            android:inputType="text"
+            android:hint="@string/input_username"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+    <TextView
+        android:id="@+id/UniRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:text="@string/university_roll_no"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
 
-                android:id="@+id/TextInputLout1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Name"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-
-
-                android:background="@android:color/transparent"
-                android:fontFamily="serif-monospace"
-                android:textSize="20sp"
-                app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
-
-                app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                app:endIconMode="clear_text">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/InputName1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/input_name"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/UserName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/TextInputLout1"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:gravity="start"
-                android:text="@string/enter_username"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/TextInputLout2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/UserName"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+        android:id="@+id/TextInputLout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UniRoll"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
 
 
-                android:background="@android:color/transparent"
-                android:fontFamily="serif-monospace"
-                android:textSize="20sp"
-                app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        app:endIconMode="clear_text"
+        android:background="@android:color/transparent"
 
-                app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                app:endIconMode="clear_text">
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/InputUsername1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/input_username"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/UniRoll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/TextInputLout2"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:gravity="start"
-                android:text="@string/university_roll_no"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/TextInputLout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/UniRoll"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/InputURN1"
+            android:layout_width="match_parent"
+            android:hint="@string/eg_3001"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:maxLength="12"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-                android:background="@android:color/transparent"
-                android:fontFamily="serif-monospace"
-                android:textSize="20sp"
-                app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+    <TextView
+        android:id="@+id/Semester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="start"
+        android:paddingTop="8dp"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:text="@string/semester"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
 
-                app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
-                app:endIconMode="clear_text">
+        android:id="@+id/TextInputLout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout3"
+        android:layout_toEndOf="@+id/Semester"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/InputURN1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/eg_3001"
-                    android:inputType="number"
-                    android:maxLength="12" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <TextView
-                android:id="@+id/Semester"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/TextInputLout3"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:gravity="start"
-                android:paddingTop="8dp"
-                android:text="@string/semester"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/TextInputLout4"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/TextInputLout3"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toEndOf="@+id/Semester"
+        android:layout_marginEnd="10dp"
 
 
-                android:fontFamily="serif-monospace"
-                android:gravity="center_horizontal"
-                android:textSize="20sp"
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
+
+        android:background="@android:color/transparent"
+
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <AutoCompleteTextView
+            android:id="@+id/InputSem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_semester"
+            android:paddingTop="10dp"
+            android:inputType="none"
+            android:paddingBottom="10dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/Section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout4"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:paddingTop="3dp"
+        android:text="@string/section"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/TextInputLout5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout4"
+        android:layout_toEndOf="@+id/Section"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
 
 
-                app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size">
-                <AutoCompleteTextView
-                    android:id="@+id/InputSem1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select Semester"
-                    android:paddingTop="10dp"
-                    android:inputType="none"
-                    android:paddingBottom="10dp"/>
-            </com.google.android.material.textfield.TextInputLayout>
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
 
-            <TextView
-                android:id="@+id/Section"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/TextInputLout4"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:gravity="start"
-                android:paddingTop="3dp"
-                android:text="@string/section"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        android:background="@android:color/transparent"
 
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/TextInputLout5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/TextInputLout4"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toEndOf="@+id/Section"
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
-                android:background="@android:color/transparent"
-                android:fontFamily="serif-monospace"
-                android:gravity="center_horizontal"
-
-                android:textSize="20sp"
-
-                app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size">
-
-                <AutoCompleteTextView
-                    android:id="@+id/InputSection1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select Section"
-                    android:paddingTop="10dp"
-                    android:inputType="none"
-                    android:paddingBottom="10dp"/>
-            </com.google.android.material.textfield.TextInputLayout>
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <AutoCompleteTextView
+            android:id="@+id/InputSection1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Section"
+            android:paddingTop="10dp"
+            android:inputType="none"
+            android:paddingBottom="10dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-            <TextView
-                android:id="@+id/Class_Roll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Section"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:gravity="start"
-                android:paddingTop="5dp"
-                android:text="@string/class_roll"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/Class_Roll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Section"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:paddingTop="5dp"
+        android:text="@string/class_roll"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <com.google.android.material.textfield.TextInputLayout
 
-            <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLout6"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextInputLout5"
+        android:layout_toEndOf="@+id/Class_Roll"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
 
-                android:id="@+id/TextInputLout6"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/TextInputLout5"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:layout_toEndOf="@+id/Class_Roll"
+        android:inputType="number"
+        android:textSize="20sp"
+        android:fontFamily="serif-monospace"
+        android:gravity="center_horizontal"
 
-                android:background="@android:color/transparent"
-                android:fontFamily="serif-monospace"
-                android:gravity="center_horizontal"
-                android:inputType="number"
+        android:background="@android:color/transparent"
 
-                android:textSize="20sp"
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/InputRollNO1"
+            android:hint="@string/eg_13"
+            android:inputType="number"
+            android:maxLength="2"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
-                app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size">
+    <Button
+        android:id="@+id/SubmitBtn1"
+        style="@style/LogBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Class_Roll"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_border"
+        android:text="@string/submit"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
+        app:boxCornerRadiusTopStart="@android:dimen/app_icon_size" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/InputRollNO1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/eg_13"
-                    android:inputType="number"
-                    android:maxLength="2" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:id="@+id/SubmitBtn1"
-                style="@style/LogBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/Class_Roll"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/button_border"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:text="@string/submit"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-                app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
-                app:boxCornerRadiusTopStart="@android:dimen/app_icon_size" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/SubmitBtn1"
-                android:layout_marginStart="20dp"
-                android:text="@string/page_2_of_2"
-                android:textSize="15sp" />
-
-        </RelativeLayout>
-
-    </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SubmitBtn1"
+        android:text="@string/page_2_of_2"
+        android:textSize="15sp"
+        android:layout_marginStart="20dp"/>
 
 
+    </RelativeLayout>
 
-
-
-
-</RelativeLayout>
+</ScrollView>
