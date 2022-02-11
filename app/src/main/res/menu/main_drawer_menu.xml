@@ -1,29 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <group android:checkableBehavior="single">
-        <item android:title="General">
+        <item android:title="@string/general">
             <menu>
                 <item android:id="@+id/nav_profile"
                     android:icon="@drawable/ic_baseline_person_24"
-                    android:title="Profile" />
+                    android:title="@string/profile"/>
                 <item android:id="@+id/nav_timetable"
                     android:icon="@drawable/ic_baseline_table_view_24"
-                    android:title="Display Time-Table"/>
+                    android:title="@string/display_time_table"/>
+                <item android:id="@+id/notes"
+                    android:icon="@drawable/ic_baseline_note_add_24"
+                    android:title="@string/add_short_notes"
+                    />
             </menu>
         </item>
     </group>
     <group android:checkableBehavior="single">
-        <item android:title="Other">
+        <item android:title="@string/links">
+            <menu>
+                <item android:id="@+id/nav_college"
+                    android:icon="@drawable/color_logo"
+                    android:title="@string/college_website" />
+                <item android:id="@+id/nav_erp"
+                    android:icon="@drawable/ic_baseline_webpage_24"
+                    android:title="@string/student_erp"/>
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="@string/other">
             <menu>
                 <item android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_baseline_settings_24"
-                    android:title="Settings" />
+                    android:title="@string/settings" />
                 <item android:id="@+id/nav_contact"
                     android:icon="@drawable/ic_baseline_phone_24"
-                    android:title="Contact Us"/>
+                    android:title="@string/contact_us"/>
                 <item android:id="@+id/nav_logout"
                     android:icon="@drawable/ic_baseline_logout_new_24"
-                    android:title="Logout" />
+                    android:title="@string/logout" />
             </menu>
         </item>
     </group>

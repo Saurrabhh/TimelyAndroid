@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SettingsActivity"
+    android:id="@+id/drawerLayout"
+    android:background="@drawable/gradient"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/notif">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/notificationSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/notification"
+                android:textSize="28sp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notif">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/militaryswitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/convert_to_military_time"
+                android:textSize="28sp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

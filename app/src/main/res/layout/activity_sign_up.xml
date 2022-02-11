@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/gradient"
-    tools:context=".SignUpActivity">
+    tools:context=".activity.SignUpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/main_container"
@@ -26,14 +31,15 @@
         android:id="@+id/Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/main_container"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/main_container"
+        android:background="@drawable/button_border"
         android:gravity="start"
         android:padding="7dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:background="@drawable/button_border"
+        android:fontFamily="@font/arima_madurai_bold"
         android:text="@string/email"
         android:textColor="@color/black"
         android:textSize="25sp"
@@ -63,7 +69,7 @@
         >
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:hint="@string/email"
         android:inputType="text"
         android:id="@+id/InputEmail"
@@ -76,10 +82,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextInputLayout1"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_border"
         android:gravity="start"
         android:padding="7dp"
+        android:fontFamily="@font/arima_madurai_bold"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:text="@string/password"
@@ -99,6 +106,7 @@
         app:endIconMode="password_toggle"
 
 
+
         android:textSize="20sp"
         android:fontFamily="serif-monospace"
 
@@ -112,7 +120,7 @@
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:id="@+id/InputPass"
             android:inputType="textPassword"
             android:hint="@string/password"
@@ -126,9 +134,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextInputLayout2"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_border"
         android:gravity="start"
+        android:fontFamily="@font/arima_madurai_bold"
         android:padding="7dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
@@ -162,7 +171,7 @@
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
             android:id="@+id/InputConfirmPass"
@@ -178,10 +187,11 @@
         android:layout_below="@+id/TextInputLayout3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="@string/sign_up"
-        android:textColor="@color/black"
-        android:textSize="25sp"
         android:background="@drawable/button_border"
+        android:text="@string/sign_up"
+        android:fontFamily="@font/arima_madurai_bold"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         app:boxCornerRadiusBottomEnd="@android:dimen/app_icon_size"
         app:boxCornerRadiusBottomStart="@android:dimen/app_icon_size"
         app:boxCornerRadiusTopEnd="@android:dimen/app_icon_size"
@@ -195,4 +205,6 @@
             android:textSize="15sp"
             android:layout_marginStart="20dp"
             />
-</RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

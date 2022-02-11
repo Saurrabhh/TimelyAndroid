@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/arima_madurai_bold</item>
+        <item>@font/berkshire_swash</item>
+        <item>@font/cambo</item>
+    </array>
+</resources>
