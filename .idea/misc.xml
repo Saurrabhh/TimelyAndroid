@@ -3,12 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/activity_contact.xml" value="0.25416666666666665" />
+        <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/login_try.xml" value="0.2" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_log.xml" value="0.2" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_login (2).xml" value="0.2" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/card_view_design.xml" value="0.22" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/fragment_main.xml" value="0.22" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/full_tt_view_design.xml" value="0.2" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/login_try.xml" value="0.22" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/main_drawer_header.xml" value="0.12395833333333334" />
+        <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/note_item.xml" value="0.12395833333333334" />
         <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/activity_sign_up2.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/dropdowntext.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/fragment_ful_t_t.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Documents/GitHub/Android-Study-Jams-1/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
@@ -41,7 +50,6 @@
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/activity_welcome.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/card_view_design.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/content_layout.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/fragment_ful_t_t.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/full_tt_view_design.xml" value="0.1" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/main_drawer_header.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/layout/main_drawer_menu.xml" value="0.15104166666666666" />
