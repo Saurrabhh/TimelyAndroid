@@ -3,66 +3,64 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="100dp"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/Blue3"
+    app:cardBackgroundColor="@color/Blue4"
     app:cardCornerRadius="15dp"
     app:cardElevation="6dp"
+    android:outlineSpotShadowColor="@color/black"
     >
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
-
-        <TextView
-            android:id="@+id/Period"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/period"
-            android:fontFamily="@font/cambo"
-            android:textColor="@color/Blue1"
-            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/Time"
-            android:layout_width="180dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@+id/Period"
-            android:gravity="center"
-            android:text="@string/time"
+            android:layout_below="@+id/Subject"
+            android:layout_marginStart="30dp"
             android:fontFamily="@font/cambo"
+            android:text="@string/time"
             android:textColor="@color/Blue1"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/Subject"
-            android:layout_width="130dp"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_toEndOf="@+id/Time"
-            android:gravity="center"
-            android:text="@string/subject"
             android:fontFamily="@font/cambo"
+            android:text="@string/subject"
             android:textColor="@color/Blue1"
-            android:textSize="20sp" />
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/Teacher"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:gravity="center"
+            android:layout_below="@+id/Time"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="30dp"
             android:fontFamily="@font/cambo"
-            android:textColor="@color/Blue1"
+            android:gravity="center"
             android:text="@string/teacher"
+            android:textColor="@color/Blue1"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/Subject"
-            android:textSize="20sp"
-             />
+            app:srcCompat="@drawable/clock" />
 
 
     </RelativeLayout>
