@@ -41,7 +41,7 @@
             android:layout_below="@+id/Personal"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:src="@drawable/profile"
+            android:src="@drawable/avatar_signup"
 
             />
 
