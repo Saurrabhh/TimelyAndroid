@@ -22,9 +22,7 @@ class SignUpActivity : AppCompatActivity() {
 
         binding.NextBtn.setOnClickListener{
 
-
-
-            val email: String = binding.InputEmail.text.toString().trim()
+            val email: String = binding.Inputmail.text.toString().trim()
             val password: String = binding.InputPass.text.toString().trim()
             val confpassword: String = binding.InputConfirmPass.text.toString().trim()
 

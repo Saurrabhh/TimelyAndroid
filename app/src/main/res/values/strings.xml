@@ -11,14 +11,14 @@
     </string-array>
     <string name="app_name">Timely</string>
     <string name="username">Username:</string>
-    <string name="password">Password: </string>
+    <string name="password">Password </string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="log_in">Log in</string>
     <string name="sign_up">Sign Up</string>
     <string name="log_out">Log Out</string>
     <string name="time_table">Time Table</string>
-    <string name="email">Email :</string>
-    <string name="confirm_password">Confirm Password: </string>
+    <string name="email">Email </string>
+    <string name="confirm_password">Confirm Password </string>
     <string name="next">Next</string>
     <string name="page_1_of_2">Page 1 of 2</string>
     <string name="name">Name:</string>
