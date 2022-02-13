@@ -31,7 +31,7 @@ class SignUp2Activity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
 
-        binding.SubmitBtn1.setOnClickListener {
+        binding.SubmitBtn.setOnClickListener {
             createnewuser()
         }
 
@@ -41,8 +41,8 @@ class SignUp2Activity : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdowntext, semesters)
         val arrayAdapter1 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, sections)
 
-        binding.InputSem1.setAdapter(arrayAdapter)
-        binding.InputSection1.setAdapter(arrayAdapter1)
+        binding.Inputsem.setAdapter(arrayAdapter)
+        binding.Inputsec.setAdapter(arrayAdapter1)
 
 //        binding.InputSem1?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
 //            override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -70,12 +70,12 @@ class SignUp2Activity : AppCompatActivity() {
 
     private fun createnewuser() {
 
-        val name = binding.InputName1.text.toString().trim()
-        val username = binding.InputUsername1.text.toString().trim()
-        val urn = binding.InputURN1.text.toString().trim()
-        val semester = binding.InputSem1.text.toString().trim()
-        val section = binding.InputSection1.text.toString().uppercase(Locale.getDefault()).trim()
-        val rollno = binding.InputRollNO1.text.toString().trim()
+        val name = binding.Inputname.text.toString().trim()
+        val username = binding.Inputusername.text.toString().trim()
+        val urn = binding.InputUrn.text.toString().trim()
+        val semester = binding.Inputsem.text.toString().trim()
+        val section = binding.Inputsec.text.toString().uppercase(Locale.getDefault()).trim()
+        val rollno = binding.InputclassRoll.text.toString().trim()
         val email = intent.getStringExtra("email").toString().trim()
         val password = intent.getStringExtra("password").toString().trim()
 

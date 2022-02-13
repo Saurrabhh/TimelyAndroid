@@ -128,7 +128,6 @@ class MainFragment : Fragment() {
         var time = timeFormatter.format(calender).toString()
         time = time.slice(0..4)
         return time
-
     }
 
     private fun refreshapp() {
