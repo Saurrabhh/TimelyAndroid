@@ -5,35 +5,37 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardElevation="6dp"
-    app:cardBackgroundColor="@color/Blue3"
+    android:background="@drawable/background1"
     app:cardCornerRadius="15dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:paddingStart="5dp">
 
 
         <TextView
             android:id="@+id/Main_Day"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
             android:layout_marginStart="10dp"
+            android:background="@color/Blue1"
             android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
             android:text="@string/day"
-            android:textAlignment="center"
-            android:textColor="@color/Blue1"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/Main_period1"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/Main_Day"
+            android:background="@color/Blue4"
             android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
             android:text="@string/period_1"
             android:textAlignment="center"
             android:textColor="@color/Blue1"
@@ -41,75 +43,88 @@
 
         <TextView
             android:id="@+id/Main_period2"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/Main_period1"
-            android:text="@string/period_2"
             android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@color/Blue4"
+            android:text="@string/period_2"
             android:textAlignment="center"
             android:textColor="@color/Blue1"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/Main_period3"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/Main_period2"
-            android:text="@string/period_3"
             android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@color/Blue4"
+            android:text="@string/period_3"
             android:textAlignment="center"
             android:textColor="@color/Blue1"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/Main_period4"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="@string/period_4"
-            android:fontFamily="@font/cambo"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="@color/Blue1"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/Main_period3"
-            />
+            android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@color/Blue4"
+            android:text="@string/period_4"
+            android:textAlignment="center"
+            android:textColor="@color/Blue1"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/Main_period5"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/Main_period4"
-            android:text="@string/period_5"
             android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@color/Blue4"
+            android:text="@string/period_5"
             android:textAlignment="center"
             android:textColor="@color/Blue1"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/Main_period6"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="@string/period_6"
-            android:fontFamily="@font/cambo"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="@color/Blue1"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/Main_period5"
-            />
+            android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@color/Blue4"
+            android:text="@string/period_6"
+            android:textAlignment="center"
+            android:textColor="@color/Blue1"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/Main_period7"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="@string/period_7"
-            android:fontFamily="@font/cambo"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="@color/Blue1"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/Main_period6"
-            />
+            android:fontFamily="@font/cambo"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@color/Blue4"
+            android:text="@string/period_7"
+            android:textAlignment="center"
+            android:textColor="@color/Blue1"
+            android:textSize="20sp"
+            android:layout_marginEnd="10dp"/>
 
     </RelativeLayout>
 
