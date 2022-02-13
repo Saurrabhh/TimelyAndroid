@@ -57,8 +57,8 @@ class ProfileFragment : Fragment() {
         }
 
         val navController= Navigation.findNavController(view)
-        binding.Home.setOnClickListener{
-            navController.navigate(R.id.action_profileFragment_to_mainFragment)
-        }
+//        binding.Home.setOnClickListener{
+//            navController.navigate(R.id.action_profileFragment_to_mainFragment)
+//        }
     }
 }
