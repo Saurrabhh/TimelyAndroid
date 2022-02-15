@@ -36,11 +36,11 @@ class NotesFragment : Fragment() {
         val adapter = RecyclerViewAdapter(this)
         binding.myRecyclerView.adapter = adapter
 
-        viewModel.allNotes.observe(viewLifecycleOwner, { notes ->
+        viewModel.allNotes.observe(viewLifecycleOwner) { notes ->
             notes?.let {
                 adapter.updateNotes(notes)
             }
-        })
+        }
 
         binding.addButton.setOnClickListener {
             val noteText = binding.addNoteView.text.toString()

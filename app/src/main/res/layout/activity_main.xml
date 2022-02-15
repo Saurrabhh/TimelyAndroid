@@ -10,12 +10,11 @@
     android:background="@drawable/gradient"
     >
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -27,6 +26,8 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
         </com.google.android.material.appbar.MaterialToolbar>
+
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -46,7 +47,6 @@
         android:id="@+id/nav_view"
         app:headerLayout="@layout/main_drawer_header"
         app:menu="@menu/main_drawer_menu"
-
         android:background="@color/Blue4"
         >
 
