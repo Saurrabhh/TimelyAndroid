@@ -43,12 +43,30 @@ class SignUp2Activity : AppCompatActivity() {
         val arrayAdapter1 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, sections)
 
         binding.Inputsem.threshold = 0
+        binding.Inputsec.threshold = 0
 
         binding.Inputsem.setAdapter(arrayAdapter)
+        binding.Inputsec.setAdapter(arrayAdapter1)
         binding.Inputsem.setOnFocusChangeListener { v, hasFocus ->
 
+            if (hasFocus){
+                binding.Inputsem.showDropDown()
+            }
+
         }
-        binding.Inputsec.setAdapter(arrayAdapter1)
+
+
+        binding.Inputsec.setOnFocusChangeListener { v, hasFocus ->
+
+            if (hasFocus){
+                binding.Inputsec.showDropDown()
+            }
+            else{
+                binding.Inputsec.dismissDropDown()
+            }
+
+        }
+
 
 
 //        binding.InputSem1?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{

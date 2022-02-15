@@ -174,10 +174,11 @@
 
             <AutoCompleteTextView
                 android:id="@+id/Inputsem"
-                android:dropDownAnchor="@id/Sem_input"
                 android:dropDownHeight="wrap_content"
                 android:layout_width="80pt"
                 android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:paddingTop="10dp"
                 android:hint="Semester"
                 android:paddingBottom="10dp" />
@@ -219,7 +220,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="none"
                 android:paddingTop="10dp"
-                android:paddingBottom="10dp" />
+                android:paddingBottom="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
