@@ -3,8 +3,15 @@ package com.example.timely.activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.util.TypedValue
+import android.view.WindowManager
+import android.widget.Toast
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -18,10 +25,19 @@ import com.example.timely.databinding.ActivityMainBinding
 import com.example.timely.fragments.KEY
 import com.example.timely.fragments.KEY.Companion.fragmentName
 import com.google.android.material.navigation.NavigationView
+import com.example.timely.themes.ColorDialogCallback
+import com.example.timely.themes.DialogManager.Companion.showCustomAlertDialog
+import com.example.timely.themes.ThemeManager.Companion.setCustomizedThemes
+import com.example.timely.themes.ThemeStorage.Companion.getThemeColor
+import com.example.timely.themes.ThemeStorage.Companion.setThemeColor
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 open class MainActivity : AppCompatActivity() {
+
+    companion object {
+        private const val TAG = "MainActivity"
+    }
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
@@ -30,8 +46,6 @@ open class MainActivity : AppCompatActivity() {
     private  lateinit var appBarConfiguration: AppBarConfiguration
 
     private lateinit var toggle : ActionBarDrawerToggle
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +58,11 @@ open class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
-
+        }
+        val window = window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        if (getThemeColor(this).equals("grey")) {
+            window.statusBarColor = resources.getColor(R.color.Blue1)
         }
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
@@ -65,11 +83,30 @@ open class MainActivity : AppCompatActivity() {
                 R.id.nav_profile -> displayprofile()
                 R.id.nav_timetable -> displayfullTT()
                 R.id.nav_settings -> opensettings()
+                R.id.nav_theme ->
+                {
+                    showCustomAlertDialog(this, object : ColorDialogCallback {
+                        override fun onChosen(chosenColor: String) {
+                            if (chosenColor == getThemeColor(applicationContext)) {
+                                Toast.makeText(
+                                    this@MainActivity,
+                                    "Theme has already chosen",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                return
+                            }
+                            Log.d(TAG, chosenColor)
+                            setThemeColor(applicationContext, chosenColor)
+                            setCustomizedThemes(applicationContext, chosenColor)
+                            recreate()
+                        }
+                    })
+                }
                 R.id.nav_contact -> opencontacts()
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
                 R.id.nav_logout -> logoutfun()
-                R.id.notes -> opennotes()
+                 R.id.notes -> opennotes()
             }
             true
         } }
@@ -134,7 +171,12 @@ open class MainActivity : AppCompatActivity() {
         drawerLayout.closeDrawer(GravityCompat.START)
 
     }
-
+    @ColorInt
+    fun getThemeColor(@AttrRes attributeColor: Int): Int {
+        val value = TypedValue()
+        theme.resolveAttribute(attributeColor, value, true)
+        return value.data
+    }
 
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

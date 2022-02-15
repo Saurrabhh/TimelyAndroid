@@ -35,6 +35,9 @@
                 <item android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_baseline_settings_24"
                     android:title="@string/settings" />
+                <item android:id="@+id/nav_theme"
+                    android:icon="@drawable/ic_baseline_color"
+                    android:title="@string/themes" />
                 <item android:id="@+id/nav_contact"
                     android:icon="@drawable/ic_baseline_phone_24"
                     android:title="@string/contact_us"/>

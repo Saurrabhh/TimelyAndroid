@@ -43,7 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/Theme.Timely.NoActionBar"
+            android:theme="@style/Theme.Timely"
             android:exported="false" />
 
         <meta-data
