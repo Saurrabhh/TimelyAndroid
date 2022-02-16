@@ -55,7 +55,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:4.2.2'
 
 
-    def nav_version = "2.3.5"
+    def nav_version = "2.4.1"
 
     // Kotlin
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
