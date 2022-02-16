@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.timely.R
 import com.example.timely.dataClasses.Users
 import com.example.timely.databinding.ActivitySignUp2Binding
+import com.example.timely.themes.ThemeManager
+import com.example.timely.themes.ThemeStorage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -28,7 +31,14 @@ class SignUp2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUp2Binding.inflate(layoutInflater)
+        ThemeManager.setCustomizedThemes(this, ThemeStorage.getThemeColor(this))
         setContentView(binding.root)
+
+        val window = window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        if (ThemeStorage.getThemeColor(this).equals("blue")) {
+            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+        }
         auth = FirebaseAuth.getInstance()
 
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.SettingsActivity"
     android:id="@+id/drawerLayout"
-    android:background="@drawable/gradient"
+    android:background="?colorOnPrimary"
     >
     <RelativeLayout
         android:layout_width="match_parent"
