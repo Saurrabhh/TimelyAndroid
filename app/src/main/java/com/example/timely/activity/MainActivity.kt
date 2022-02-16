@@ -70,6 +70,11 @@ open class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
 
+        if (auth.currentUser?.email.toString() == "shubhankartiwary11@gmail.com"){
+            navController.navigate(R.id.action_mainFragment_to_teacherFragment)
+        }
+
+
     }
 
 
