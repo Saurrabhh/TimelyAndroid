@@ -48,6 +48,7 @@ class MainFragment : Fragment() {
     private lateinit var recyclerview: RecyclerView
     private lateinit var PeriodList: ArrayList<Periods>
     private lateinit var navController: NavController
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

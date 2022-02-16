@@ -3,7 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_contact.xml" value="0.2" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_forgot.xml" value="0.10822401614530777" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_login.xml" value="0.1490036231884058" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_settings.xml" value="0.10822401614530777" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_sign_up.xml" value="0.136" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_sign_up2.xml" value="0.16799999999999998" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/activity_splash.xml" value="0.10822401614530777" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/card_view_design.xml" value="0.264" />
         <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/color_pallete.xml" value="0.264" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/dropdowntext.xml" value="0.1490036231884058" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/fragment_ful_t_t.xml" value="0.2" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/fragment_main.xml" value="0.2" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/fragment_notes.xml" value="0.16799999999999998" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/full_tt_view_design.xml" value="0.264" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/main_drawer_header.xml" value="0.264" />
+        <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/layout/note_item.xml" value="0.1490036231884058" />
         <entry key="..\:/ANDROID/Projects/Timely-Android-App/app/src/main/res/menu/main_drawer_menu.xml" value="0.19814814814814816" />
         <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/login_try.xml" value="0.2" />

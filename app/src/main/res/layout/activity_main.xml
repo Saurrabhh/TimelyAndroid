@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity"
     android:id="@+id/drawerLayout"
-    android:background="@drawable/gradient"
+    android:background="?colorOnPrimary"
     >
 
 
@@ -20,7 +20,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/Blue1"
+            android:background="?colorPrimary"
             android:elevation="4dp"
             app:title="@string/app_name"
             app:titleTextColor="@color/white"
@@ -47,7 +47,7 @@
         app:headerLayout="@layout/main_drawer_header"
         app:menu="@menu/main_drawer_menu"
 
-        android:background="@color/Blue4"
+        android:background="?colorSecondary"
         >
 
     </com.google.android.material.navigation.NavigationView>

@@ -4,10 +4,14 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.timely.R
 import com.example.timely.databinding.ActivityLoginBinding
+import com.example.timely.themes.ThemeManager
+import com.example.timely.themes.ThemeStorage
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
@@ -20,7 +24,14 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        ThemeManager.setCustomizedThemes(this, ThemeStorage.getThemeColor(this))
         setContentView(binding.root)
+
+        val window = window
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        if (ThemeStorage.getThemeColor(this).equals("blue")) {
+            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+        }
 
 
         auth = FirebaseAuth.getInstance()

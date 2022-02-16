@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background1"
+    android:background="?colorOnPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.FulTTFragment">
 
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:background="@color/Blue3"
+            android:background="?colorSecondaryVariant"
             android:fontFamily="@font/arima_madurai_bold"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     app:cardElevation="6dp"
-                    app:cardBackgroundColor="@color/Blue1"
+                    app:cardBackgroundColor="?colorPrimary"
                     android:id="@+id/Header"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"

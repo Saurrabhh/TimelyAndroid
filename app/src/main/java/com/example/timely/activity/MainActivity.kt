@@ -27,7 +27,9 @@ import com.example.timely.fragments.KEY.Companion.fragmentName
 import com.google.android.material.navigation.NavigationView
 import com.example.timely.themes.ColorDialogCallback
 import com.example.timely.themes.DialogManager.Companion.showCustomAlertDialog
+import com.example.timely.themes.ThemeManager
 import com.example.timely.themes.ThemeManager.Companion.setCustomizedThemes
+import com.example.timely.themes.ThemeStorage
 import com.example.timely.themes.ThemeStorage.Companion.getThemeColor
 import com.example.timely.themes.ThemeStorage.Companion.setThemeColor
 import com.google.firebase.auth.FirebaseAuth
@@ -51,6 +53,7 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         auth = FirebaseAuth.getInstance()
+        ThemeManager.setCustomizedThemes(this, ThemeStorage.getThemeColor(this))
         setContentView(binding.root)
         drawerLayout = binding.drawerLayout
         displayNavbar()
@@ -61,8 +64,8 @@ open class MainActivity : AppCompatActivity() {
         }
         val window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        if (getThemeColor(this).equals("grey")) {
-            window.statusBarColor = resources.getColor(R.color.Blue1)
+        if (getThemeColor(this).equals("blue")) {
+            window.statusBarColor = resources.getColor(R.color.colorPrimary)
         }
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController

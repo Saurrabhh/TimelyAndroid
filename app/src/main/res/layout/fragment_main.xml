@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.MainFragment"
-    android:background="@drawable/background1"
+    android:background="?colorOnPrimary"
     android:id="@+id/fragmentMain">
 
 
@@ -34,7 +34,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="@color/Blue3"
+            app:cardBackgroundColor="?colorSecondaryVariant"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
@@ -90,7 +90,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="@color/Blue3"
+            app:cardBackgroundColor="?colorSecondaryVariant"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
@@ -143,7 +143,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
-            app:cardBackgroundColor="@color/Blue3"
+            app:cardBackgroundColor="?colorSecondaryVariant"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="12dp"

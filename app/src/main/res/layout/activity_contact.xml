@@ -12,7 +12,7 @@
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Blue4">
+    android:background="?colorSecondary">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="90dp"
-        app:cardBackgroundColor="@color/Blue1"
+        app:cardBackgroundColor="?colorPrimary"
         app:cardCornerRadius="15dp"
         app:cardElevation="6dp">
 
@@ -173,7 +173,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="90dp"
-        app:cardBackgroundColor="@color/Blue1"
+        app:cardBackgroundColor="?colorPrimary"
         app:cardCornerRadius="15dp"
         app:cardElevation="6dp"
         android:layout_toEndOf="@+id/Card1">
@@ -311,7 +311,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/Blue1"
+        app:cardBackgroundColor="?colorPrimary"
         app:cardCornerRadius="15dp"
         app:cardElevation="6dp"
 
@@ -451,7 +451,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/Blue1"
+        app:cardBackgroundColor="?colorPrimary"
         app:cardCornerRadius="15dp"
         app:cardElevation="6dp"
         android:layout_below="@+id/Card2"

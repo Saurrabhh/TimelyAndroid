@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.ForgotActivity"
-    android:background="@drawable/background1">
+    android:background="?colorOnPrimary">
 
     <ImageView
         android:id="@+id/image_Forgot"
