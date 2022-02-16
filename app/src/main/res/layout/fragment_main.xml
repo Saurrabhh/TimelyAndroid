@@ -34,7 +34,8 @@
                     <ListView
                         android:id="@+id/listview"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        />
 
                 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -210,42 +211,56 @@
         </RelativeLayout>
 
     </FrameLayout>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="100dp"
+    app:cardBackgroundColor="@color/Black4"
+    style="@style/CustomCardViewStyle"
+    >
 
     <RelativeLayout
         android:id="@+id/my_btm_sheet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:behavior_hideable="false"
-        app:behavior_peekHeight="250dp"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        >
+       >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_keyboard_arrow_up_24"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            />
         <TextView
             android:id="@+id/TodayTT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/arima_madurai_bold"
             android:padding="10dp"
             android:text="@string/today_s_time_table"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/TodayTT"
             tools:itemCount="5"
-            android:layout_marginTop="50dp"
-            tools:listitem="@layout/card_view_design" />
-
-
-
-
+            tools:listitem="@layout/card_view_design"
+            android:layout_centerHorizontal="true"
+            />
 
     </RelativeLayout>
 
+</androidx.cardview.widget.CardView>
 
 
 

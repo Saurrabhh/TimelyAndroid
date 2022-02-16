@@ -36,22 +36,22 @@
                     android:id="@+id/Profile_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/arima_madurai_bold"
-                    android:layout_centerHorizontal="true"
                     android:text="PROFILE"
                     android:textColor="@color/Blue1"
                     android:textSize="30sp"
                     android:textStyle="bold" />
+
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_pen"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_alignParentEnd="true"
-                    />
+                    android:src="@drawable/ic_pen" />
 
                 <LinearLayout
                     android:id="@+id/Profile_Name"
@@ -61,8 +61,7 @@
                     android:layout_centerVertical="true"
 
                     android:background="@drawable/button_border"
-                    android:padding="5dp"
-                    >
+                    android:padding="5dp">
 
                     <TextView
                         android:id="@+id/P_txtName"
