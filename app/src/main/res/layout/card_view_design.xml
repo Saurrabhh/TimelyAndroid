@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="100dp"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/Blue4"
+    style="@style/Theme.Timely.custom"
     app:cardCornerRadius="15dp"
     app:cardElevation="6dp"
     android:outlineSpotShadowColor="@color/black"
