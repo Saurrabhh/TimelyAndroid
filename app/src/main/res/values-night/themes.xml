@@ -14,5 +14,21 @@
         <!-- Customize your theme here. -->
 
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="backgroundColor">#FF0404</item>
+
+    </style>
+
+    <style name="Theme.Timely.NoActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#E6FD00</item>
+    </style>
+
+    <style name="Theme.Timely.custom">
+
+        <item name="android:background">#68D63D</item>
+        <item name="cardBackgroundColor">#E45CA5</item>
+
+
     </style>
 </resources>

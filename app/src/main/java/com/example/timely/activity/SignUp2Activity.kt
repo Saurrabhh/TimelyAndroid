@@ -7,6 +7,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.timely.R
@@ -46,13 +47,37 @@ class SignUp2Activity : AppCompatActivity() {
         }
 
         val semesters = resources.getStringArray(R.array.semesters)
-        var sections: Array<String> = arrayOf("A","B")
+        val sections: Array<String> = arrayOf("A","B")
 
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdowntext, semesters)
         val arrayAdapter1 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, sections)
 
+        binding.Inputsem.threshold = 0
+        binding.Inputsec.threshold = 0
+
         binding.Inputsem.setAdapter(arrayAdapter)
         binding.Inputsec.setAdapter(arrayAdapter1)
+        binding.Inputsem.setOnFocusChangeListener { v, hasFocus ->
+
+            if (hasFocus){
+                binding.Inputsem.showDropDown()
+            }
+
+        }
+
+
+        binding.Inputsec.setOnFocusChangeListener { v, hasFocus ->
+
+            if (hasFocus){
+                binding.Inputsec.showDropDown()
+            }
+            else{
+                binding.Inputsec.dismissDropDown()
+            }
+
+        }
+
+
 
 //        binding.InputSem1?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
 //            override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -147,6 +172,8 @@ class SignUp2Activity : AppCompatActivity() {
         }
     }
 }
+
+
 
 
 
