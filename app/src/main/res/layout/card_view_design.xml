@@ -21,6 +21,15 @@
 
 
         <TextView
+            android:id="@+id/Subject"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/cambo"
+            android:text="@string/subject"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+        <TextView
             android:id="@+id/Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,19 +37,8 @@
             android:layout_marginStart="30dp"
             android:fontFamily="@font/cambo"
             android:text="@string/time"
-            android:textColor="@color/Blue1"
+            android:textColor="@color/black"
             android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/Subject"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/cambo"
-            android:text="@string/subject"
-            android:textColor="@color/Blue1"
-            android:textSize="25sp" />
-
         <TextView
             android:id="@+id/Teacher"
             android:layout_width="wrap_content"
@@ -51,7 +49,7 @@
             android:fontFamily="@font/cambo"
             android:gravity="center"
             android:text="@string/teacher"
-            android:textColor="@color/Blue1"
+            android:textColor="@color/black"
             android:textSize="15sp" />
 
         <ImageView

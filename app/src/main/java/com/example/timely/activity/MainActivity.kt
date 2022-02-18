@@ -38,7 +38,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 open class MainActivity : AppCompatActivity() {
 
     companion object {
-        private const val TAG = "MainActivity"
+        const val TAG = "MainActivity"
     }
 
     private lateinit var auth: FirebaseAuth
@@ -91,25 +91,8 @@ open class MainActivity : AppCompatActivity() {
                 R.id.nav_profile -> displayprofile()
                 R.id.nav_timetable -> displayfullTT()
                 R.id.nav_settings -> opensettings()
-                R.id.nav_theme ->
-                {
-                    showCustomAlertDialog(this, object : ColorDialogCallback {
-                        override fun onChosen(chosenColor: String) {
-                            if (chosenColor == getThemeColor(applicationContext)) {
-                                Toast.makeText(
-                                    this@MainActivity,
-                                    "Theme has already chosen",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                return
-                            }
-                            Log.d(TAG, chosenColor)
-                            setThemeColor(applicationContext, chosenColor)
-                            setCustomizedThemes(applicationContext, chosenColor)
-                            recreate()
-                        }
-                    })
-                }
+                R.id.nav_theme -> changeTheme()
+
                 R.id.nav_contact -> opencontacts()
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
@@ -119,6 +102,23 @@ open class MainActivity : AppCompatActivity() {
             true
         } }
 
+    private fun changeTheme() {
+        showCustomAlertDialog(this, object : ColorDialogCallback {
+            override fun onChosen(chosenColor: String) {
+                if (chosenColor == getThemeColor(applicationContext)) {
+                    Toast.makeText(this@MainActivity,
+                        "Theme is already chosen",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    return
+                }
+                Log.d(TAG, chosenColor)
+                setThemeColor(applicationContext, chosenColor)
+                setCustomizedThemes(applicationContext, chosenColor)
+                recreate()
+            }
+        })
+    }
     private fun opensettings() {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)

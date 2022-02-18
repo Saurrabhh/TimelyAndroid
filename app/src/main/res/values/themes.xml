@@ -16,7 +16,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely2" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Red" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Red1</item>
         <item name="colorPrimaryVariant">@color/Red2</item>
@@ -34,7 +34,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely3" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Green" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Green1</item>
         <item name="colorPrimaryVariant">@color/Green2</item>
@@ -44,7 +44,7 @@
         <item name="colorSecondaryVariant">@color/Green3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">#0E8B3A</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -52,7 +52,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely4" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Purple" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Purple1</item>
         <item name="colorPrimaryVariant">@color/Purple2</item>
@@ -70,7 +70,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely5" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Pink" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Pink1</item>
         <item name="colorPrimaryVariant">@color/Pink2</item>
@@ -88,7 +88,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely6" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Grey" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Grey1</item>
         <item name="colorPrimaryVariant">@color/Grey2</item>
@@ -106,7 +106,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely7" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Orange" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Orange1</item>
         <item name="colorPrimaryVariant">@color/Orange2</item>
@@ -124,7 +124,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely8" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Yellow" parent="Theme.MaterialComponents.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Black1</item>
         <item name="colorPrimaryVariant">@color/Black2</item>
