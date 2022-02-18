@@ -24,6 +24,7 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/Main_card"
             style="@style/CustomCardViewStyle"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="320dp">

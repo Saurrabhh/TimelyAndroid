@@ -14,7 +14,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#353535"
+            android:background="@color/Grey1"
             android:textColor="#00000000"
             android:gravity="center"
             android:text="grey"/>
@@ -24,17 +24,17 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#000"
+            android:background="#FFEB3B"
             android:textColor="#00000000"
             android:gravity="center"
-            android:text="black"/>
+            android:text="yellow"/>
 
         <TextView
             android:id="@+id/redColor"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#F10000"
+            android:background="@color/Red1"
             android:textColor="#00000000"
             android:gravity="center"
             android:text="red"/>
@@ -45,7 +45,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#79008E"
+            android:background="@color/Purple1"
             android:textColor="#00000000"
             android:gravity="center"
             android:text="purple"/>
@@ -61,7 +61,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#009688"
+            android:background="@color/Green1"
             android:textColor="#00000000"
             android:gravity="center"
             android:text="green"/>
@@ -71,7 +71,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#00189A"
+            android:background="@color/Blue1"
             android:textColor="#00000000"
             android:gravity="center"
             android:text="blue"/>
@@ -81,7 +81,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#FF5722"
+            android:background="@color/Orange1"
             android:textColor="#00000000"
             android:gravity="center"
             android:text="orange"/>
@@ -92,7 +92,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="#E91E63"
+            android:background="@color/Pink1"
             android:textColor="#00000000"
             android:gravity="center"
             android:text="pink"/>

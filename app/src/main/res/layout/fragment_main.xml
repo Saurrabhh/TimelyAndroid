@@ -6,13 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.MainFragment"
     android:background="?colorOnPrimary"
-    >
+>
+
 
     <FrameLayout
         android:id="@+id/fragmentMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         >
 
         <RelativeLayout
@@ -34,8 +34,7 @@
                     <ListView
                         android:id="@+id/listview"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        />
+                        android:layout_height="wrap_content" />
 
                 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -205,22 +204,78 @@
 
 
 
+<!-- Color check TIME     PASS-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/nextperiodcard"
+        android:layout_marginTop="20dp">
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="1"
+                android:background="?colorPrimary"
+            />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/nextperiodcard"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="110dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="?colorPrimaryVariant"
+                />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/nextperiodcard"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="220dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="3"
+            android:background="?colorSecondaryVariant"
+            />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/nextperiodcard"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="330dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="4"
+            android:background="?colorSecondary"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+<!--Yaha tak ka delete kar na                 -->
             </RelativeLayout>
 
 
         </RelativeLayout>
 
     </FrameLayout>
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:orientation="vertical"
     app:behavior_hideable="false"
     app:behavior_peekHeight="100dp"
-    app:cardBackgroundColor="@color/Black4"
-    style="@style/CustomCardViewStyle"
-    >
+    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCardView.Cut"
+    app:cardBackgroundColor="@color/BG_grey"
+    app:cardElevation="100dp"
+    app:cardMaxElevation="20dp">
 
     <RelativeLayout
         android:id="@+id/my_btm_sheet"
@@ -253,14 +308,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TodayTT"
-            tools:itemCount="5"
-            tools:listitem="@layout/card_view_design"
             android:layout_centerHorizontal="true"
-            />
+            tools:itemCount="5"
+            tools:listitem="@layout/card_view_design" />
 
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
 
 
 

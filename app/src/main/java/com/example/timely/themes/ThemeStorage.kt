@@ -3,7 +3,6 @@ package com.example.timely.themes
 import android.content.Context
 
 class ThemeStorage {
-
     companion object {
         fun setThemeColor(context: Context, themeColor: String) {
             val sharedPreferences = context.getSharedPreferences("theme_data", Context.MODE_PRIVATE)

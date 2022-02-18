@@ -8,14 +8,14 @@ class ThemeManager {
     companion object {
         fun setCustomizedThemes(context: Context, theme: String?) {
             when (theme) {
-                "grey" -> context.setTheme(R.style.Theme_Timely)
-                "black" -> context.setTheme(R.style.Theme_Timely8)
-                "red" -> context.setTheme(R.style.Theme_Timely2)
-                "purple" -> context.setTheme(R.style.Theme_Timely4)
-                "green" -> context.setTheme(R.style.Theme_Timely3)
+                "grey" -> context.setTheme(R.style.Theme_Timely_Grey)
+                "red" -> context.setTheme(R.style.Theme_Timely_Red)
+                "purple" -> context.setTheme(R.style.Theme_Timely_Purple)
+                "green" -> context.setTheme(R.style.Theme_Timely_Green)
                 "blue" -> context.setTheme(R.style.Theme_Timely)
-                "orange" -> context.setTheme(R.style.Theme_Timely7)
-                "pink" -> context.setTheme(R.style.Theme_Timely5)
+                "orange" -> context.setTheme(R.style.Theme_Timely_Orange)
+                "pink" -> context.setTheme(R.style.Theme_Timely_Pink)
+                "yellow" -> context.setTheme(R.style.Theme_Timely_Yellow)
             }
         }
     }

@@ -39,7 +39,7 @@
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/full_time_table"
-            android:textColor="@color/Blue1"
+            android:textColor="@color/white"
             android:textSize="40sp"
 
             />
