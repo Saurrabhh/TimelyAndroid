@@ -94,8 +94,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/TimeLeftCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/CurrentClassCard"
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="10dp"
@@ -109,7 +109,10 @@
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        >
 
                         <TextView
                             android:id="@+id/Time_left"
@@ -205,57 +208,57 @@
 
 
 <!-- Color check TIME     PASS-->
-    <androidx.cardview.widget.CardView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/nextperiodcard"
-        android:layout_marginTop="20dp">
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="1"
-                android:background="?colorPrimary"
-            />
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/nextperiodcard"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="110dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="2"
-                android:background="?colorPrimaryVariant"
-                />
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/nextperiodcard"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="220dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="3"
-            android:background="?colorSecondaryVariant"
-            />
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/nextperiodcard"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="330dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="4"
-            android:background="?colorSecondary"
-            />
-    </androidx.cardview.widget.CardView>
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_below="@+id/nextperiodcard"-->
+<!--        android:layout_marginTop="20dp">-->
+<!--            <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="1"-->
+<!--                android:background="?colorPrimary"-->
+<!--            />-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_below="@+id/nextperiodcard"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="110dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="2"-->
+<!--                android:background="?colorPrimaryVariant"-->
+<!--                />-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_below="@+id/nextperiodcard"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="220dp">-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="3"-->
+<!--            android:background="?colorSecondaryVariant"-->
+<!--            />-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_below="@+id/nextperiodcard"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="330dp">-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="4"-->
+<!--            android:background="?colorSecondary"-->
+<!--            />-->
+<!--    </androidx.cardview.widget.CardView>-->
 
 
 <!--Yaha tak ka delete kar na                 -->
@@ -264,19 +267,19 @@
 
         </RelativeLayout>
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/lottieAnimationView"
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-android:layout_marginTop="370dp"
-            android:layout_marginLeft="100dp"
-            app:layout_constraintBottom_toBottomOf="@id/nextperiodcard"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.20"
-            app:lottie_autoPlay="true"
-            app:lottie_rawRes="@raw/meditating_monkey" />
+<!--        <com.airbnb.lottie.LottieAnimationView-->
+<!--            android:id="@+id/lottieAnimationView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="300dp"-->
+<!--android:layout_marginTop="370dp"-->
+<!--            android:layout_marginLeft="100dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/nextperiodcard"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="0.20"-->
+<!--            app:lottie_autoPlay="true"-->
+<!--            app:lottie_rawRes="@raw/meditating_monkey" />-->
 
     </FrameLayout>
 <com.google.android.material.card.MaterialCardView

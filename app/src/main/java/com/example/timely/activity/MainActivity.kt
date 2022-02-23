@@ -53,7 +53,7 @@ open class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         auth = FirebaseAuth.getInstance()
-        ThemeManager.setCustomizedThemes(this, ThemeStorage.getThemeColor(this))
+        setCustomizedThemes(this, getThemeColor(this))
         setContentView(binding.root)
         drawerLayout = binding.drawerLayout
         displayNavbar()

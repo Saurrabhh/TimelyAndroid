@@ -40,6 +40,9 @@ class SignUp2Activity : AppCompatActivity() {
             window.statusBarColor = resources.getColor(R.color.colorPrimary)
         }
         auth = FirebaseAuth.getInstance()
+//        val email = intent.getStringExtra("email").toString().trim()
+//        val password = intent.getStringExtra("password").toString().trim()
+//        Toast.makeText(this, "$email $password", Toast.LENGTH_SHORT).show()
 
 
         binding.SubmitBtn.setOnClickListener {
@@ -48,19 +51,31 @@ class SignUp2Activity : AppCompatActivity() {
 
         val semesters = resources.getStringArray(R.array.semesters)
         val sections: Array<String> = arrayOf("A","B")
+        val genders: Array<String> = arrayOf("Male","Female","Others")
 
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdowntext, semesters)
         val arrayAdapter1 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, sections)
+        val arrayAdapter2 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, genders)
 
         binding.Inputsem.threshold = 0
         binding.Inputsec.threshold = 0
+        binding.InputGender.threshold = 0
 
         binding.Inputsem.setAdapter(arrayAdapter)
         binding.Inputsec.setAdapter(arrayAdapter1)
+        binding.InputGender.setAdapter(arrayAdapter2)
         binding.Inputsem.setOnFocusChangeListener { v, hasFocus ->
 
             if (hasFocus){
                 binding.Inputsem.showDropDown()
+            }
+
+        }
+
+        binding.InputGender.setOnFocusChangeListener { v, hasFocus ->
+
+            if (hasFocus){
+                binding.InputGender.showDropDown()
             }
 
         }
@@ -109,8 +124,10 @@ class SignUp2Activity : AppCompatActivity() {
         val username = binding.Inputusername.text.toString().trim()
         val urn = binding.InputUrn.text.toString().trim()
         val semester = binding.Inputsem.text.toString().trim()
-        val section = binding.Inputsec.text.toString().uppercase(Locale.getDefault()).trim()
+//        val section = binding.Inputsec.text.toString().uppercase(Locale.getDefault()).trim()
+        val section = binding.Inputsec.text.toString().trim()
         val rollno = binding.InputclassRoll.text.toString().trim()
+        val gender = binding.InputGender.text.toString().trim()
         val email = intent.getStringExtra("email").toString().trim()
         val password = intent.getStringExtra("password").toString().trim()
 
@@ -132,14 +149,14 @@ class SignUp2Activity : AppCompatActivity() {
         else if (TextUtils.isEmpty(semester)){
             Toast.makeText(this, "Please Enter your Semester", Toast.LENGTH_SHORT).show()
         }
-        else if (semester !in "1 2 3 4 5 6 7 8"){
-            Toast.makeText(this, "Please Enter a valid Semester", Toast.LENGTH_SHORT).show()
-        }
         else if (TextUtils.isEmpty(section)){
             Toast.makeText(this, "Please Enter your Section", Toast.LENGTH_SHORT).show()
         }
         else if (TextUtils.isEmpty(rollno)){
             Toast.makeText(this, "Please Enter your Roll No", Toast.LENGTH_SHORT).show()
+        }
+        else if (TextUtils.isEmpty(gender)){
+            Toast.makeText(this, "Please Enter your Gender", Toast.LENGTH_SHORT).show()
         }
         else if (rollno.toInt() <= 0){
             Toast.makeText(this, "Please Enter a valid Roll No", Toast.LENGTH_SHORT).show()
@@ -152,7 +169,7 @@ class SignUp2Activity : AppCompatActivity() {
                 task ->
                     if (task.isSuccessful) {
 
-                        val user = Users(name, username, urn, semester, rollno, section, email)
+                        val user = Users(name, username, urn, semester, rollno, section, email, gender)
                         database =
                             FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/")
                                 .getReference("Users")

@@ -23,9 +23,7 @@
             android:background="?colorPrimary"
             android:elevation="4dp"
             app:title="@string/app_name"
-            app:titleTextColor="@color/white"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            app:titleTextColor="@color/white">
         </com.google.android.material.appbar.MaterialToolbar>
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"

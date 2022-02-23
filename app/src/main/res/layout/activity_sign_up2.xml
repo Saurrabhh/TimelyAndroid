@@ -139,7 +139,8 @@
                 android:id="@+id/InputUrn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:inputType="text" />
+                android:maxLength="12"
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--    <TextView-->
@@ -180,6 +181,7 @@
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:paddingTop="10dp"
+                android:inputType="none"
                 android:hint="Semester"
                 android:paddingBottom="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -271,11 +273,16 @@
             android:hint="Gender"
             android:textSize="20sp">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/InputGender"
                 android:layout_width="80pt"
                 android:layout_height="wrap_content"
-                android:maxLength="1"
+                android:inputType="none"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+
                 />
         </com.google.android.material.textfield.TextInputLayout>
 

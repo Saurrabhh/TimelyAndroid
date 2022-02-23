@@ -9,584 +9,566 @@
     android:id="@+id/drawerLayout"
     android:background="?colorOnPrimary"
     >
-    <RelativeLayout
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <TextView
+    android:layout_height="match_parent"
+    >
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/arima_madurai_bold"
-        android:text="@string/contact_our_team"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
 
-<!--Card 1-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Card1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
-        app:cardBackgroundColor="?colorPrimary"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="6dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/arima_madurai_bold"
+            android:text="@string/contact_our_team"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/avatar1"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="10dp"
-                android:padding="10dp"
-                app:srcCompat="@drawable/avatar_sky2" />
 
-            <TextView
-                android:id="@+id/name1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/avatar1"
-                android:layout_marginStart="20dp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/saurabh_yadav"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:fontFamily="@font/arima_madurai_bold"
-                />
-
-            <TextView
-                android:id="@+id/roll1"
-                android:layout_below="@+id/name1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/e_47"
-                android:textColor="@color/white"
-                android:textSize="11sp"
-                />
-
-            <TextView
-                android:id="@+id/sem1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name1"
-                android:layout_marginStart="5dp"
-                android:layout_toEndOf="@+id/roll1"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="3rd Sem"
-                android:textColor="@color/white"
-                android:textSize="11sp" android:fontFamily="@font/arima_madurai_bold"
-                />
-            <TextView
-                android:fontFamily="@font/cambo"
-                android:id="@+id/branch1"
-                android:layout_below="@+id/name1"
-                android:layout_toEndOf="@+id/roll1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/cse"
-                android:textColor="@color/white"
-                android:textSize="11sp"
-                />
-
-            <ImageButton
-                android:id="@+id/mail1"
-                android:layout_below="@id/branch1"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                />
-
-            <ImageView
-                android:layout_below="@+id/branch1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/gmail"
-                />
-
-            <ImageButton
-                android:id="@+id/insta1"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_below="@id/mail1"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_bg" />
-
-            <ImageView
-                android:layout_below="@id/mail1"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_icon"
-                />
-
-            <ImageButton
-                android:id="@+id/in1"
-                android:layout_below="@id/insta1"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:background="#0077b5"
-                />
-
-            <ImageView
-                android:layout_below="@id/insta1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/in"
-                />
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-
-<!--Card 2-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Card2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="90dp"
-        app:cardBackgroundColor="?colorPrimary"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="6dp"
-        android:layout_toEndOf="@+id/Card1">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <!--Card 1-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Card1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="90dp"
+            app:cardBackgroundColor="?colorPrimary"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp">
 
-            <ImageView
-                android:id="@+id/avatar2"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="10dp"
-                android:padding="10dp"
-                app:srcCompat="@drawable/avatar_st2" />
-
-            <TextView
-                android:id="@+id/name2"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/avatar2"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/shubhankar_tiwary"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:fontFamily="@font/arima_madurai_bold"/>
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-            <TextView
-                android:id="@+id/sem2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name2"
-                android:layout_marginStart="5dp"
-                android:layout_toEndOf="@+id/roll2"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="3rd Sem"
-                android:textColor="@color/white"
-                android:textSize="11sp" />
-            <TextView
-                android:id="@+id/roll2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name2"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/e_54"
-                android:textColor="@color/white"
-                android:textSize="11sp" />
+                <ImageView
+                    android:id="@+id/avatar1"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginStart="10dp"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/avatar_sky2" />
 
-            <TextView
-                android:id="@+id/branch2"
-                android:layout_below="@+id/name2"
-                android:layout_toEndOf="@+id/roll2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/cse"
-                android:textColor="@color/white"
-                android:textSize="11sp"
-                />
+                <TextView
+                    android:id="@+id/name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/avatar1"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/saurabh_yadav"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
 
-            <ImageButton
-                android:id="@+id/mail2"
-                android:layout_below="@id/branch2"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                />
+                <TextView
+                    android:id="@+id/roll1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/e_47"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageView
-                android:layout_below="@+id/branch2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/gmail"
-                />
+                <TextView
+                    android:id="@+id/sem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name1"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/roll1"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="3rd Sem"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageButton
-                android:id="@+id/insta2"
-                android:layout_below="@id/mail2"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_bg"
-                />
+                <TextView
+                    android:id="@+id/branch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name1"
+                    android:layout_marginStart="70dp"
+                    android:layout_toEndOf="@+id/roll1"
+                    android:fontFamily="@font/cambo"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/cse"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageView
-                android:layout_below="@id/mail2"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_icon"
-                />
+                <ImageButton
+                    android:id="@+id/mail1"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/branch1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
 
-            <ImageButton
-                android:id="@+id/in2"
-                android:layout_below="@id/insta2"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:background="#0077b5"
-                />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch1"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/gmail" />
 
-            <ImageView
-                android:layout_below="@id/insta2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/in"
-                />
-        </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/insta1"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_bg" />
 
-    </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail1"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_icon" />
 
-<!--Card 3-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Card3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="?colorPrimary"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="6dp"
+                <ImageButton
+                    android:id="@+id/in1"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/insta1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#0077b5" />
 
-        android:layout_below="@+id/Card1">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/insta1"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/in" />
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        </androidx.cardview.widget.CardView>
+
+        <!--Card 2-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Card2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="90dp"
+            android:layout_toEndOf="@+id/Card1"
+            app:cardBackgroundColor="?colorPrimary"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp">
 
-            <ImageView
-                android:id="@+id/avatar3"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="10dp"
-                android:padding="10dp"
-                app:srcCompat="@drawable/avatar_cr" />
-
-            <TextView
-                android:id="@+id/name3"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/avatar3"
-                android:layout_marginStart="20dp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:text="@string/chaitanya_rao"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-            <TextView
-                android:id="@+id/roll3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name3"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/e_13"
-                android:textColor="@color/white"
-                android:textSize="11sp" />
+                <ImageView
+                    android:id="@+id/avatar2"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginStart="10dp"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/avatar_st2" />
 
-            <TextView
-                android:id="@+id/sem3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name3"
-                android:layout_marginStart="5dp"
-                android:layout_toEndOf="@+id/roll3"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="3rd Sem"
-                android:textColor="@color/white"
-                android:textSize="11sp" />
-            <TextView
-                android:id="@+id/branch3"
-                android:layout_below="@+id/name3"
-                android:layout_toEndOf="@+id/roll3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/cse"
-                android:textColor="@color/white"
-                android:textSize="11sp"
-                />
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/avatar2"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/shubhankar_tiwary"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
 
-            <ImageButton
-                android:id="@+id/mail3"
-                android:layout_below="@id/branch3"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                />
+                <TextView
+                    android:id="@+id/sem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name2"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/roll2"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="3rd Sem"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageView
-                android:layout_below="@+id/branch3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/gmail"
-                />
+                <TextView
+                    android:id="@+id/roll2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name2"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/e_54"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageButton
-                android:id="@+id/insta3"
-                android:layout_below="@id/mail3"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_bg"
-                />
+                <TextView
+                    android:id="@+id/branch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name2"
+                    android:layout_marginStart="70dp"
+                    android:layout_toEndOf="@+id/roll2"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/cse"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageView
-                android:layout_below="@id/mail3"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_icon"
-                />
+                <ImageButton
+                    android:id="@+id/mail2"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/branch2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
 
-            <ImageButton
-                android:id="@+id/in3"
-                android:layout_below="@id/insta3"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:background="#0077b5"
-                />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch2"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/gmail" />
 
-            <ImageView
-                android:layout_below="@id/insta3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/in"
-                />
-        </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/insta2"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_bg" />
 
-    </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail2"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_icon" />
 
-<!--Card 4-->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Card4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="?colorPrimary"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="6dp"
-        android:layout_below="@+id/Card2"
-        android:layout_toEndOf="@+id/Card3">
+                <ImageButton
+                    android:id="@+id/in2"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/insta2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#0077b5" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/insta2"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/in" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--Card 3-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Card3"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:layout_below="@+id/Card1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="?colorPrimary"
+            app:cardCornerRadius="15dp"
 
-            <ImageView
-                android:id="@+id/avatar4"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="10dp"
-                android:padding="10dp"
-                app:srcCompat="@drawable/avatar_krish" />
+            app:cardElevation="6dp">
 
-            <TextView
-                android:id="@+id/name4"
-                android:layout_below="@+id/avatar4"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="3dp"
-                android:layout_marginStart="20dp"
-                android:text="@string/krish_chopra"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:fontFamily="@font/arima_madurai_bold"
-                />
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-            <TextView
-                android:id="@+id/roll4"
-                android:layout_below="@+id/name4"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/avatar3"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginStart="10dp"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/avatar_cr" />
+
+                <TextView
+                    android:id="@+id/name3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/avatar3"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/chaitanya_rao"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/roll3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name3"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/e_13"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/sem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name3"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/roll3"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="3rd Sem"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/branch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name3"
+                    android:layout_marginStart="70dp"
+                    android:layout_toEndOf="@+id/roll3"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/cse"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+
+                <ImageButton
+                    android:id="@+id/mail3"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/branch3"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch3"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/gmail" />
+
+                <ImageButton
+                    android:id="@+id/insta3"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail3"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_bg" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail3"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_icon" />
+
+                <ImageButton
+                    android:id="@+id/in3"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/insta3"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#0077b5" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/insta3"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/in" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--Card 4-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/Card4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Card2"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/Card3"
+            app:cardBackgroundColor="?colorPrimary"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/e_25"
-                android:textColor="@color/white"
-                android:textSize="11sp"
-                />
+                android:orientation="horizontal"
+                android:padding="5dp">
 
-            <TextView
-                android:id="@+id/sem4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/name4"
-                android:layout_marginStart="5dp"
-                android:layout_toEndOf="@+id/roll4"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="3rd Sem"
-                android:textColor="@color/white"
-                android:textSize="11sp"
-                android:fontFamily="@font/arima_madurai_bold"
-                />
-            <TextView
-                android:id="@+id/branch4"
-                android:layout_below="@+id/name4"
-                android:layout_toEndOf="@+id/roll4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:text="@string/cse"
-                android:textColor="@color/white"
-                android:textSize="11sp"
-                />
+                <ImageView
+                    android:id="@+id/avatar4"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginStart="10dp"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/avatar_krish" />
 
-            <ImageButton
-                android:id="@+id/mail4"
-                android:layout_below="@id/branch4"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                />
+                <TextView
+                    android:id="@+id/name4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/avatar4"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="3dp"
+                    android:text="@string/krish_chopra"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
 
-            <ImageView
-                android:layout_below="@+id/branch4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/gmail"
-                />
+                <TextView
+                    android:id="@+id/roll4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name4"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/e_25"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageButton
-                android:id="@+id/insta4"
-                android:layout_below="@id/mail4"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_bg"
-                />
+                <TextView
+                    android:id="@+id/sem4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name4"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/roll4"
+                    android:fontFamily="@font/arima_madurai_bold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="3rd Sem"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageView
-                android:layout_below="@id/mail4"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/insta_icon"
-                />
+                <TextView
+                    android:id="@+id/branch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name4"
+                    android:layout_marginStart="70dp"
+                    android:layout_toEndOf="@+id/roll4"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/cse"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
 
-            <ImageButton
-                android:id="@+id/in4"
-                android:layout_below="@id/insta4"
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:background="#0077b5"
-                />
+                <ImageButton
+                    android:id="@+id/mail4"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/branch4"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
 
-            <ImageView
-                android:layout_below="@id/insta4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/in"
-                />
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/branch4"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/gmail" />
 
-    </androidx.cardview.widget.CardView>
-</RelativeLayout>
+                <ImageButton
+                    android:id="@+id/insta4"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail4"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_bg" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/mail4"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/insta_icon" />
+
+                <ImageButton
+                    android:id="@+id/in4"
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/insta4"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#0077b5" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/insta4"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/in" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    </HorizontalScrollView>
+
+</ScrollView>
 
 
 </RelativeLayout>

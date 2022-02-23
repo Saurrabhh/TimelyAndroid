@@ -28,7 +28,7 @@
         <activity
             android:name=".activity.ContactActivity"
             android:exported="false" />
-               <activity
+        <activity
             android:name=".activity.SignUp2Activity"
             android:exported="false" />
         <activity
@@ -42,7 +42,6 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/Theme.Timely"
             android:exported="false" />
 
 
