@@ -12,7 +12,7 @@ class ThemeManager {
                 "red" -> context.setTheme(R.style.Theme_Timely_Red)
                 "purple" -> context.setTheme(R.style.Theme_Timely_Purple)
                 "green" -> context.setTheme(R.style.Theme_Timely_Green)
-                "blue" -> context.setTheme(R.style.Theme_Timely)
+                "blue" -> context.setTheme(R.style.Theme_Timely_Blue)
                 "orange" -> context.setTheme(R.style.Theme_Timely_Orange)
                 "pink" -> context.setTheme(R.style.Theme_Timely_Pink)
                 "yellow" -> context.setTheme(R.style.Theme_Timely_Yellow)

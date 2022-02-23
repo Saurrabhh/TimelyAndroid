@@ -36,7 +36,6 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
 open class MainActivity : AppCompatActivity() {
-
     companion object {
         const val TAG = "MainActivity"
     }
@@ -51,6 +50,7 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         auth = FirebaseAuth.getInstance()
         ThemeManager.setCustomizedThemes(this, ThemeStorage.getThemeColor(this))
