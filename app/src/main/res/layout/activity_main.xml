@@ -20,7 +20,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?colorPrimary"
             android:elevation="4dp"
             app:title="@string/app_name"
             app:titleTextColor="@color/white">
@@ -44,8 +43,6 @@
         android:id="@+id/nav_view"
         app:headerLayout="@layout/main_drawer_header"
         app:menu="@menu/main_drawer_menu"
-
-        android:background="?colorSecondary"
         >
 
     </com.google.android.material.navigation.NavigationView>
