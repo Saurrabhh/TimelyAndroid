@@ -52,18 +52,31 @@ class SignUp2Activity : AppCompatActivity() {
         val semesters = resources.getStringArray(R.array.semesters)
         val sections: Array<String> = arrayOf("A","B")
         val genders: Array<String> = arrayOf("Male","Female","Others")
+        val branch: Array<String> =arrayOf("CSE","IT","Mech","Civil")
 
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdowntext, semesters)
         val arrayAdapter1 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, sections)
         val arrayAdapter2 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, genders)
+        val arrayAdapter3 = ArrayAdapter(this@SignUp2Activity, R.layout.dropdowntext, branch)
 
         binding.Inputsem.threshold = 0
         binding.Inputsec.threshold = 0
         binding.InputGender.threshold = 0
+        binding.Inputbranch.threshold = 0
 
         binding.Inputsem.setAdapter(arrayAdapter)
         binding.Inputsec.setAdapter(arrayAdapter1)
         binding.InputGender.setAdapter(arrayAdapter2)
+        binding.Inputbranch.setAdapter(arrayAdapter3)
+
+
+        binding.Inputbranch.setOnFocusChangeListener { v, hasFocus ->
+
+            if (hasFocus){
+                binding.Inputbranch.showDropDown()
+            }
+
+        }
         binding.Inputsem.setOnFocusChangeListener { v, hasFocus ->
 
             if (hasFocus){
@@ -130,8 +143,7 @@ class SignUp2Activity : AppCompatActivity() {
         val gender = binding.InputGender.text.toString().trim()
         val email = intent.getStringExtra("email").toString().trim()
         val password = intent.getStringExtra("password").toString().trim()
-
-
+        val branch = binding.Inputbranch.text.toString().trim()
 
 
         if (TextUtils.isEmpty(name)){
@@ -160,6 +172,9 @@ class SignUp2Activity : AppCompatActivity() {
         }
         else if (rollno.toInt() <= 0){
             Toast.makeText(this, "Please Enter a valid Roll No", Toast.LENGTH_SHORT).show()
+        }
+        else if (TextUtils.isEmpty(branch)){
+            Toast.makeText(this, "Please Enter your Branch", Toast.LENGTH_SHORT).show()
         }
 
         else{
