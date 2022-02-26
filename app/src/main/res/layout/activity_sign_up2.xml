@@ -10,7 +10,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
 
 
         <TextView
@@ -41,7 +42,7 @@
             android:layout_below="@+id/Personal"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:src="@drawable/avatar_signup"
+            android:src="@drawable/character_try"
 
             />
 
@@ -67,20 +68,6 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/UserName"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginStart="20dp"-->
-        <!--            android:layout_marginTop="30dp"-->
-        <!--            android:layout_below="@+id/Name_input"-->
-        <!--            android:gravity="start"-->
-        <!--            android:text="@string/enter_username"-->
-        <!--            android:textColor="@color/black"-->
-        <!--            android:fontFamily="@font/arima_madurai_bold"-->
-        <!--            android:textSize="25sp"-->
-        <!--            android:textStyle="bold" -->
-        <!--            />-->
         <!--INPUT USERNAME-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/Username_input"
@@ -104,21 +91,7 @@
                 android:layout_height="60dp"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
-        <!--    <TextView-->
-        <!--        android:id="@+id/UniRoll"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_below="@+id/TextInputLout2"-->
-        <!--        android:layout_marginStart="20dp"-->
-        <!--        android:layout_marginTop="30dp"-->
-        <!--        android:gravity="start"-->
-        <!--        android:text="@string/university_roll_no"-->
-        <!--        android:fontFamily="@font/arima_madurai_bold"-->
-        <!--        android:textColor="@color/black"-->
-        <!--        android:textSize="25sp"-->
-        <!--        android:textStyle="bold" />-->
 
-        <!--        INPUT URN-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/Urn_input"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -143,26 +116,12 @@
                 android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--    <TextView-->
-        <!--        android:id="@+id/Semester"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_below="@+id/TextInputLout3"-->
-        <!--        android:layout_marginStart="20dp"-->
-        <!--        android:layout_marginTop="30dp"-->
-        <!--        android:gravity="start"-->
-        <!--        android:paddingTop="8dp"-->
-        <!--        android:fontFamily="@font/arima_madurai_bold"-->
-        <!--        android:text="@string/semester"-->
-        <!--        android:textColor="@color/black"-->
-        <!--        android:textSize="25sp"-->
-        <!--        android:textStyle="bold" />-->
 
         <com.google.android.material.textfield.TextInputLayout
 
             android:id="@+id/Sem_input"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="80pt"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Urn_input"
             android:layout_marginStart="20dp"
@@ -176,7 +135,7 @@
             <AutoCompleteTextView
                 android:id="@+id/Inputsem"
                 android:dropDownHeight="wrap_content"
-                android:layout_width="80pt"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -186,31 +145,42 @@
                 android:paddingBottom="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--    <TextView-->
-        <!--        android:id="@+id/Section"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_below="@+id/TextInputLout4"-->
-        <!--        android:layout_marginStart="20dp"-->
-        <!--        android:layout_marginTop="10dp"-->
-        <!--        android:gravity="start"-->
-        <!--        android:paddingTop="3dp"-->
-        <!--        android:text="@string/section"-->
-        <!--        android:fontFamily="@font/arima_madurai_bold"-->
-        <!--        android:textColor="@color/black"-->
-        <!--        android:textSize="25sp"-->
-        <!--        android:textStyle="bold" />-->
         <com.google.android.material.textfield.TextInputLayout
-
-            android:id="@+id/Sec_input"
+            android:id="@+id/Branch_input"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="80pt"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Urn_input"
-            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/Sem_input"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:layout_toEndOf="@+id/Sem_input"
+            android:fontFamily="serif-monospace"
+            android:hint="Branch"
+
+            android:textSize="20sp">
+
+            <AutoCompleteTextView
+                android:id="@+id/Inputbranch"
+                android:layout_width="50pt"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+       <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Sec_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Urn_input"
+           android:layout_toEndOf="@+id/Branch_input"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="serif-monospace"
             android:hint="Section"
 
@@ -218,7 +188,7 @@
 
             <AutoCompleteTextView
                 android:id="@+id/Inputsec"
-                android:layout_width="80pt"
+                android:layout_width="50pt"
                 android:layout_height="wrap_content"
                 android:inputType="none"
                 android:paddingTop="10dp"
@@ -228,16 +198,6 @@
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <!--    <TextView-->
-        <!--        android:layout_marginStart="20dp"-->
-        <!--        android:layout_marginTop="20dp"-->
-        <!--        android:gravity="start"-->
-        <!--        android:paddingTop="5dp"-->
-        <!--        android:text="@string/class_roll"-->
-        <!--        android:fontFamily="@font/arima_madurai_bold"-->
-        <!--        android:textColor="@color/black"-->
-        <!--        android:textSize="25sp"-->
-        <!--        android:textStyle="bold" />-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ClassRoll_input"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

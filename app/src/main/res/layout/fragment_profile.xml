@@ -7,10 +7,6 @@
     tools:context=".fragments.MainFragment"
     android:background="?colorOnPrimary">
 
-    <FrameLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".fragments.ProfileFragment">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,14 +18,12 @@
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_marginTop="-30dp"
-            android:src="@drawable/profile"
-            />
+            android:src="@drawable/profile" />
 
 
 
 
     </RelativeLayout>
-</FrameLayout>
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/Main_card"
         style="@style/CustomCardViewStyle"
