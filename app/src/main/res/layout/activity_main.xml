@@ -20,8 +20,6 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:elevation="4dp"
-            app:title="@string/app_name"
             app:titleTextColor="@color/white">
         </com.google.android.material.appbar.MaterialToolbar>
         <androidx.fragment.app.FragmentContainerView

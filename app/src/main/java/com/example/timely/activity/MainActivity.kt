@@ -92,18 +92,18 @@ open class MainActivity : AppCompatActivity() {
 
         val navView : NavigationView = binding.navView
         val toolBar = binding.toolbar
-        val sharedPreferences = this.getSharedPreferences("theme_data", Context.MODE_PRIVATE)
-        val a = sharedPreferences.getString("theme", "grey")
-        when(a){
-            "pink" -> toolBar.setBackgroundColor(resources.getColor(R.color.Pink2))
-            "red" -> toolBar.setBackgroundColor(resources.getColor(R.color.Red2))
-            "blue" -> toolBar.setBackgroundColor(resources.getColor(R.color.Blue1))
-            "green" -> toolBar.setBackgroundColor(resources.getColor(R.color.Green2))
-            "purple" -> toolBar.setBackgroundColor(resources.getColor(R.color.Purple2))
-            "yellow" -> toolBar.setBackgroundColor(resources.getColor(R.color.Yellow2))
-            "grey" -> toolBar.setBackgroundColor(resources.getColor(R.color.Grey2))
-            "orange" -> toolBar.setBackgroundColor(resources.getColor(R.color.Orange2))
-        }
+//        val sharedPreferences = this.getSharedPreferences("theme_data", Context.MODE_PRIVATE)
+//        val a = sharedPreferences.getString("theme", "grey")
+//        when(a){
+//            "pink" -> toolBar.setBackgroundColor(resources.getColor(R.color.Pink2))
+//            "red" -> toolBar.setBackgroundColor(resources.getColor(R.color.Red2))
+//            "blue" -> toolBar.setBackgroundColor(resources.getColor(R.color.Blue1))
+//            "green" -> toolBar.setBackgroundColor(resources.getColor(R.color.Green2))
+//            "purple" -> toolBar.setBackgroundColor(resources.getColor(R.color.Purple2))
+//            "yellow" -> toolBar.setBackgroundColor(resources.getColor(R.color.Yellow2))
+//            "grey" -> toolBar.setBackgroundColor(resources.getColor(R.color.Grey2))
+//            "orange" -> toolBar.setBackgroundColor(resources.getColor(R.color.Orange2))
+//        }
 
         toggle = ActionBarDrawerToggle(this, drawerLayout,toolBar, R.string.menu_drawer_open, R.string.menu_drawer_close)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
