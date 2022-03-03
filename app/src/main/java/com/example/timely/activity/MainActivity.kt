@@ -14,29 +14,24 @@ import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.timely.R
 import com.example.timely.databinding.ActivityMainBinding
 import com.example.timely.fragments.KEY
 import com.example.timely.fragments.KEY.Companion.fragmentName
-import com.google.android.material.navigation.NavigationView
 import com.example.timely.themes.ColorDialogCallback
 import com.example.timely.themes.DialogManager.Companion.showCustomAlertDialog
-import com.example.timely.themes.ThemeManager
 import com.example.timely.themes.ThemeManager.Companion.setCustomizedThemes
-import com.example.timely.themes.ThemeStorage
 import com.example.timely.themes.ThemeStorage.Companion.getThemeColor
 import com.example.timely.themes.ThemeStorage.Companion.setThemeColor
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.FirebaseDatabase
 
 open class MainActivity : AppCompatActivity() {
     companion object {
@@ -80,6 +75,14 @@ open class MainActivity : AppCompatActivity() {
 
 
 //        binding.navView.setBackgroundColor(resources.getColor(R.color.Purple2))
+
+
+       val database1 = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+        database1.get().addOnSuccessListener {
+            Toast.makeText(this, it.children.toString(), Toast.LENGTH_SHORT).show()
+//            val a = it.child()
+//            Toast.makeText(this, a.toString(), Toast.LENGTH_SHORT).show()
+        }
 
 
     }
@@ -215,3 +218,4 @@ open class MainActivity : AppCompatActivity() {
     }
 
 }
+

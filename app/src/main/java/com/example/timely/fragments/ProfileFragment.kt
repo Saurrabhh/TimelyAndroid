@@ -49,6 +49,8 @@ class ProfileFragment : Fragment() {
                     binding.MainSection.text = user.child("section").value.toString()
                     binding.MainSemester.text = user.child("semester").value.toString()
                     binding.MainEmail.text = user.child("email").value.toString()
+                    binding.MainBranch.text = user.child("branch").value.toString()
+                    binding.MainGender.text = user.child("gender").value.toString()
                     break
                 }
             }

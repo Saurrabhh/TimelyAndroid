@@ -184,7 +184,7 @@ class SignUp2Activity : AppCompatActivity() {
                 task ->
                     if (task.isSuccessful) {
 
-                        val user = Users(name, username, urn, semester, rollno, section, email, gender)
+                        val user = Users(name, username, urn, semester, rollno, section, email, gender, branch)
                         database =
                             FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/")
                                 .getReference("Users")
