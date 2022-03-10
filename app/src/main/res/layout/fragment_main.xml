@@ -266,21 +266,6 @@
 
 
         </RelativeLayout>
-
-<!--        <com.airbnb.lottie.LottieAnimationView-->
-<!--            android:id="@+id/lottieAnimationView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="300dp"-->
-<!--android:layout_marginTop="370dp"-->
-<!--            android:layout_marginLeft="100dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/nextperiodcard"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.20"-->
-<!--            app:lottie_autoPlay="true"-->
-<!--            app:lottie_rawRes="@raw/meditating_monkey" />-->
-
     </FrameLayout>
 <com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
