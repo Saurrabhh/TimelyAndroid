@@ -58,5 +58,6 @@
     <color name="Yellow3">#EDD616</color>
     <color name="Yellow4">#FFFB68</color>
 
-    <color name="BG_grey">#EFEFEF</color>
+    <color name="BG_grey">#e7e7e7</color>
+    <color name="BG">#fcfcfc</color>
 </resources>

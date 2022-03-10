@@ -55,7 +55,6 @@
 <!--                    android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />-->
 
 
-
                 <TextView
                     android:id="@+id/Profile_heading"
                     android:layout_width="wrap_content"
@@ -68,6 +67,12 @@
                     android:textColor="@color/Blue1"
                     android:textSize="30sp"
                     android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Data-----------------------------"
+                    android:id="@+id/P_head"
+                    android:layout_below="@+id/Profile_heading"/>
 
                 <ImageView
                     android:layout_width="30dp"
@@ -106,7 +111,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Profile_Username"
                     android:layout_centerVertical="true"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:layout_marginTop="10dp">
 
 
                     <TextView
@@ -127,17 +133,18 @@
                     android:layout_below="@id/Profile_Username"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:layout_marginTop="10dp">
 
-                    <TextView
-                        android:id="@+id/P_Sec"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="@font/arima_madurai_bold"
-                        android:text="Section: "
-                        android:textSize="10dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/P_Sec"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:fontFamily="@font/arima_madurai_bold"-->
+<!--                        android:text="Section: "-->
+<!--                        android:textSize="10dp"-->
+<!--                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/MainSection"
@@ -149,15 +156,15 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/P_CLassRoll"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:fontFamily="@font/arima_madurai_bold"
-                        android:text="Class Roll No.: "
-                        android:textSize="10dp"
-                        android:textStyle="bold" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/P_CLassRoll"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:fontFamily="@font/arima_madurai_bold"-->
+<!--                        android:text="Class Roll No.: "-->
+<!--                        android:textSize="10dp"-->
+<!--                        android:textStyle="bold" />-->
 
                     <TextView
                         android:id="@+id/MainClass"
@@ -186,7 +193,8 @@
                         android:fontFamily="@font/arima_madurai_bold"
                         android:text="Branch"
                         android:textSize="15sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingStart="20dp"/>
 
                     <TextView
                         android:id="@+id/MainBranch"
@@ -206,7 +214,8 @@
                         android:paddingStart="20dp"
                         android:text="Sem"
                         android:textSize="15sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        />
 
                     <TextView
                         android:id="@+id/MainSemester"
@@ -216,15 +225,15 @@
                         android:layout_toEndOf="@+id/P_Sem"
 
                         android:fontFamily="@font/cambo"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/MainGender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_toEndOf="@+id/P_Sem"
-
                         android:fontFamily="@font/cambo"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -239,19 +248,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginTop="15dp"
 
-                    android:background="@drawable/button_border"
                     android:padding="5dp">
-
-                    <TextView
-                        android:id="@+id/P_email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-
-                        android:fontFamily="@font/arima_madurai_bold"
-                        android:text="Email: "
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/MainEmail"
@@ -272,20 +269,7 @@
                     android:layout_below="@+id/Profile_Email"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="15dp"
-
-                    android:background="@drawable/button_border"
                     android:padding="5dp">
-
-                    <TextView
-                        android:id="@+id/P_URN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-
-                        android:fontFamily="@font/arima_madurai_bold"
-                        android:text="University Roll No.: "
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/MainURN"
@@ -297,33 +281,6 @@
                         android:fontFamily="@font/cambo"
                         android:textSize="20sp"
                         android:textStyle="bold" />
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:id="@+id/Profile_Sem"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/Profile_URN"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="15dp"
-
-                    android:background="@drawable/button_border"
-                    android:padding="5dp">
-
-                    <TextView
-                        android:id="@+id/P_Sem"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-
-                        android:fontFamily="@font/arima_madurai_bold"
-                        android:text="Semester: "
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-
                 </LinearLayout>
 
             </RelativeLayout>
