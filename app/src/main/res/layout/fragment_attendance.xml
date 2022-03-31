@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AttendanceFragment">
+
+<TextView
+    android:id="@+id/Attedance_Heading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="120dp"
+    android:text="Attendance"
+    android:textAllCaps="true"
+    android:textSize="30dp"
+    />
+
+
+    <TextView
+        android:id="@+id/Att_Sem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Attedance_Heading"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Semester : " />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Attedance_Heading"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/Att_Sem"
+        android:text="3 " />
+
+    <TextView
+        android:id="@+id/Att_Sec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Att_Sem"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Section : " />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Att_Sem"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/Att_Sec"
+        android:text="A " />
+
+    <TextView
+        android:id="@+id/Att_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:layout_below="@+id/Att_Sec"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Att_Sec"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/Att_date"
+        android:text="10-Mar-2022"
+        />
+
+    <TextView
+        android:id="@+id/Att_Time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time: "
+        android:layout_below="@+id/Att_date"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Att_date"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/Att_Time"
+        android:text="10am-11am" />
+
+    <CheckBox
+        android:id="@+id/checkBox_PresentAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Attedance_Heading"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Mark All Present" />
+    <CheckBox
+        android:id="@+id/checkBox_AbsentAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox_PresentAll"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:text="Mark All Absent " />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Attedance_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox_AbsentAll"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        tools:itemCount="5"
+        tools:listitem="@layout/card_attendance" />
+
+
+</RelativeLayout>

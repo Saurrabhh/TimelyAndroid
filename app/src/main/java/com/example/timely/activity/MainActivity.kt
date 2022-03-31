@@ -21,6 +21,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.timely.R
 import com.example.timely.databinding.ActivityMainBinding
+import com.example.timely.fragments.AttendanceFragment
 import com.example.timely.fragments.KEY
 import com.example.timely.fragments.KEY.Companion.fragmentName
 import com.example.timely.services.MyService
@@ -129,7 +130,7 @@ open class MainActivity : AppCompatActivity() {
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
                 R.id.nav_logout -> logoutfun()
-                 R.id.notes -> opennotes()
+                R.id.notes -> opennotes()
             }
             true
         } }
@@ -164,7 +165,6 @@ open class MainActivity : AppCompatActivity() {
 
     private fun opencontacts() {
         startActivity(Intent(this, ContactActivity::class.java))
-
     }
 
     open fun displayfullTT() {
