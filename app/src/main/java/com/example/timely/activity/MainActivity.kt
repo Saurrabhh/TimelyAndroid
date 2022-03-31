@@ -93,18 +93,6 @@ open class MainActivity : AppCompatActivity() {
 
         val navView : NavigationView = binding.navView
         val toolBar = binding.toolbar
-//        val sharedPreferences = this.getSharedPreferences("theme_data", Context.MODE_PRIVATE)
-//        val a = sharedPreferences.getString("theme", "grey")
-//        when(a){
-//            "pink" -> toolBar.setBackgroundColor(resources.getColor(R.color.Pink2))
-//            "red" -> toolBar.setBackgroundColor(resources.getColor(R.color.Red2))
-//            "blue" -> toolBar.setBackgroundColor(resources.getColor(R.color.Blue1))
-//            "green" -> toolBar.setBackgroundColor(resources.getColor(R.color.Green2))
-//            "purple" -> toolBar.setBackgroundColor(resources.getColor(R.color.Purple2))
-//            "yellow" -> toolBar.setBackgroundColor(resources.getColor(R.color.Yellow2))
-//            "grey" -> toolBar.setBackgroundColor(resources.getColor(R.color.Grey2))
-//            "orange" -> toolBar.setBackgroundColor(resources.getColor(R.color.Orange2))
-//        }
 
         toggle = ActionBarDrawerToggle(this, drawerLayout,toolBar, R.string.menu_drawer_open, R.string.menu_drawer_close)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -112,6 +100,7 @@ open class MainActivity : AppCompatActivity() {
         toggle.syncState()
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
+                R.id.nav_home-> opendashboard()
                 R.id.nav_profile -> displayprofile()
                 R.id.nav_timetable -> displayfullTT()
                 R.id.nav_settings -> opensettings()
@@ -124,7 +113,8 @@ open class MainActivity : AppCompatActivity() {
                 R.id.notes -> opennotes()
             }
             true
-        } }
+        }
+    }
 
     private fun changeTheme() {
         showCustomAlertDialog(this, object : ColorDialogCallback {
@@ -148,6 +138,9 @@ open class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun opendashboard() {
+        startActivity(Intent(this, MainActivity::class.java))
+    }
     private fun opencontacts() {
         startActivity(Intent(this, ContactActivity::class.java))
     }
@@ -189,8 +182,6 @@ open class MainActivity : AppCompatActivity() {
         if (fragmentName== KEY().NOTES)
             navController.navigate(R.id.action_notesFragment_to_profileFragment)
         drawerLayout.closeDrawer(GravityCompat.START)
-
-
     }
     private fun opennotes() {
         if (fragmentName == KEY().HOME)
@@ -200,7 +191,6 @@ open class MainActivity : AppCompatActivity() {
         if (fragmentName== KEY().PROFILE)
             navController.navigate(R.id.action_profileFragment_to_notesFragment)
         drawerLayout.closeDrawer(GravityCompat.START)
-
     }
     @ColorInt
     fun getThemeColor(@AttrRes attributeColor: Int): Int {
