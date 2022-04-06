@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_height="match_parent"
+<FrameLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,288 +7,301 @@
     tools:context=".fragments.MainFragment"
     android:background="?colorOnPrimary">
 
+
+
+<!--    Backend se jo data aara hai sabke text view mai id MainName,MainURn.. (MainXXXXX)-->
+
+<!--    Jo Line vali 3 headings hai unki id P_XXX aise hai-->
+
+
+<!--    Har TextView ko Input Text mai karna hai abhi sirf top mai username vale ko he kiya hu -->
+<!--Input text type karne se kt file mai error aara-->
+
+
+
+
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?colorOnPrimary"
-        >
+        tools:ignore="ExtraText">
 
         <ImageView
             android:id="@+id/Profile_Pic"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_marginTop="-30dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:src="@drawable/profile" />
 
 
+        <TextView
+                    android:id="@+id/MainUserName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif-monospace"
+                    android:hint="Username"
+                    app:endIconMode="clear_text"
+                    android:layout_below="@id/Profile_Pic"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+            />
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/MainUserName"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="serif-monospace"-->
+<!--            android:hint="Username"-->
+<!--            app:endIconMode="clear_text"-->
+<!--            android:layout_below="@id/Profile_Pic"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/ChangeEmail"-->
+<!--                android:editable="false"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="text" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
 
-    </RelativeLayout>
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/Main_card"
-        style="@style/CustomCardViewStyle"
+        <LinearLayout
+            android:id="@+id/LinkBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MainUserName"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp">
 
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+            <ImageButton
+                android:id="@+id/LinkBtn1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/profile"
+                android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/LinkBtn2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/profile"
+                android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/LinkBtn3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/profile"
+                android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/LinkBtn4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/profile"
+                android:layout_margin="2dp"/>
+        </LinearLayout>
 
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:orientation="vertical"
-        app:behavior_hideable="false"
-        app:behavior_peekHeight="430dp"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCardView.Cut"
-        app:cardBackgroundColor="@color/BG_grey"
-        app:cardElevation="100dp"
-        app:cardMaxElevation="20dp"
+        <TextView
+            android:id="@+id/P_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LinkBtn"
+            android:text="      Profile Data-----------------------------"
+            />
 
-        >
+        <TextView
+            android:id="@+id/MainName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/P_head"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/cambo"
+            android:text="NAME"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-            <RelativeLayout
+        <LinearLayout
+            android:id="@+id/Profile_PersonalDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MainName"
+            android:layout_centerVertical="true"
+            android:padding="5dp">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:text="Branch"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-                >
-<!--                <ImageView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_centerHorizontal="true"-->
-<!--                    android:layout_marginTop="2dp"-->
-<!--                    android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />-->
+            <TextView
+                android:id="@+id/MainBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/cambo"
+                android:text="CSE"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:text="Sem"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MainSemester"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/P_Sem"
+                android:fontFamily="@font/cambo"
+                android:text="4th"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MainGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/P_Sem"
+                android:fontFamily="@font/cambo"
+                android:text="Male"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        <!--    End mai algin karna hai -->
+<!--            Right side mai jo bhi rakhna hai vo iss linear layout mai hai-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            >
 
                 <TextView
-                    android:id="@+id/Profile_heading"
+                    android:id="@+id/MainSection"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/arima_madurai_bold"
-                    android:text="PROFILE"
-                    android:textColor="@color/Blue1"
-                    android:textSize="30sp"
+                    android:layout_below="@id/MainName"
+                    android:layout_marginStart="15dp"
+                    android:layout_toEndOf="@+id/P_Sec"
+
+                    android:fontFamily="@font/cambo"
+                    android:text="A"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Profile Data-----------------------------"
-                    android:id="@+id/P_head"
-                    android:layout_below="@+id/Profile_heading"/>
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_pen" />
-
-
-                <LinearLayout
-                    android:id="@+id/Profile_Username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/Profile_heading"
-                    android:layout_centerVertical="true"
-                    android:padding="5dp">
-
-                    <TextView
-                        android:id="@+id/MainUserName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_Username"
-
-                        android:fontFamily="@font/cambo"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/Profile_Name"
+                    android:id="@+id/MainClass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/Profile_Username"
-                    android:layout_centerVertical="true"
-                    android:padding="5dp"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/P_CLassRoll"
+                    android:fontFamily="@font/cambo"
+                    android:text="54"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
 
 
-                    <TextView
-                        android:id="@+id/MainName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_txtName"
-                        android:fontFamily="@font/cambo"
-                        android:textSize="30sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/Profile_Username"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:padding="5dp"
-                    android:layout_marginTop="10dp">
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/P_Sec"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:fontFamily="@font/arima_madurai_bold"-->
-<!--                        android:text="Section: "-->
-<!--                        android:textSize="10dp"-->
-<!--                        android:textStyle="bold" />-->
-
-                    <TextView
-                        android:id="@+id/MainSection"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_Sec"
-                        android:fontFamily="@font/cambo"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/P_CLassRoll"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="10dp"-->
-<!--                        android:fontFamily="@font/arima_madurai_bold"-->
-<!--                        android:text="Class Roll No.: "-->
-<!--                        android:textSize="10dp"-->
-<!--                        android:textStyle="bold" />-->
-
-                    <TextView
-                        android:id="@+id/MainClass"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_CLassRoll"
-                        android:fontFamily="@font/cambo"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/P_contactinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Profile_PersonalDetails"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="      Contact Info-----------------------------" />
 
 
-                </LinearLayout>
+        <TextView
+            android:id="@+id/MainEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/P_contactinfo"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/cambo"
+            android:text="Email"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-                <LinearLayout
-                    android:id="@+id/Profile_Branch"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/Profile_Name"
-                    android:layout_centerVertical="true"
-                    android:padding="5dp">
+        <TextView
+            android:id="@+id/MainPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MainEmail"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/cambo"
+            android:text="1234567890"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/arima_madurai_bold"
-                        android:text="Branch"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:paddingStart="20dp"/>
 
-                    <TextView
-                        android:id="@+id/MainBranch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_Username"
+        <TextView
+            android:id="@+id/P_clginfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MainPhone"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="      College Info-----------------------------" />
 
-                        android:fontFamily="@font/cambo"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/arima_madurai_bold"
-                        android:paddingStart="20dp"
-                        android:text="Sem"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        />
+        <TextView
+            android:id="@+id/MainURN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/P_clginfo"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/cambo"
+            android:text="URN"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/MainSemester"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_Sem"
+        <TextView
+            android:id="@+id/MainEnroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MainURN"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/cambo"
+            android:text="Enroll"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-                        android:fontFamily="@font/cambo"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/MainGender"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_Sem"
-                        android:fontFamily="@font/cambo"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/Profile_Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/Profile_Branch"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="15dp"
-
-                    android:padding="5dp">
-
-                    <TextView
-                        android:id="@+id/MainEmail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_email"
-
-                        android:fontFamily="@font/cambo"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/Profile_URN"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/Profile_Email"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="15dp"
-                    android:padding="5dp">
-
-                    <TextView
-                        android:id="@+id/MainURN"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_toEndOf="@+id/P_Urn"
-
-                        android:fontFamily="@font/cambo"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Swipe Up to Edit"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"/>
 
             </RelativeLayout>
-
-
-
-
-
-
-    </com.google.android.material.card.MaterialCardView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>
