@@ -24,6 +24,7 @@ import com.example.timely.databinding.ActivityMainBinding
 import com.example.timely.fragments.AttendanceFragment
 import com.example.timely.fragments.KEY
 import com.example.timely.fragments.KEY.Companion.fragmentName
+import com.example.timely.services.MyService
 import com.example.timely.themes.ColorDialogCallback
 import com.example.timely.themes.DialogManager.Companion.showCustomAlertDialog
 import com.example.timely.themes.ThemeManager.Companion.setCustomizedThemes
@@ -75,7 +76,9 @@ open class MainActivity : AppCompatActivity() {
         }
 
 
-//        binding.navView.setBackgroundColor(resources.getColor(R.color.Purple2))
+
+
+
 
 
        val database1 = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
@@ -84,6 +87,12 @@ open class MainActivity : AppCompatActivity() {
 //            val a = it.child()
 //            Toast.makeText(this, a.toString(), Toast.LENGTH_SHORT).show()
         }
+
+
+
+
+//        val intent = Intent(this, MyService::class.java)
+//        startService(intent)
 
 
     }
@@ -105,7 +114,7 @@ open class MainActivity : AppCompatActivity() {
                 R.id.nav_timetable -> displayfullTT()
                 R.id.nav_settings -> opensettings()
                 R.id.nav_theme -> changeTheme()
-
+                R.id.nav_home -> openDashboard()
                 R.id.nav_contact -> opencontacts()
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
@@ -114,6 +123,12 @@ open class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    private fun openDashboard() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun changeTheme() {

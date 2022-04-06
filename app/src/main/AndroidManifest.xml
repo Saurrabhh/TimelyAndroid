@@ -13,6 +13,11 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/Theme.Timely">
+        <service
+            android:name=".services.MyService"
+            android:enabled="true"
+            android:exported="true"></service>
+
         <activity
             android:name=".activity.SettingsActivity"
             android:exported="false" />
@@ -43,7 +48,6 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="false" />
-
 
         <meta-data
             android:name="preloaded_fonts"
