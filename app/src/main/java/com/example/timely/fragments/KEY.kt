@@ -8,4 +8,5 @@ class KEY {
     val FULLTT="FULLTT"
     val NOTES = "NOTES"
     val PROFILE = "PROFILE"
+    val ATTENDANCE = "ATTENDANCE"
 }

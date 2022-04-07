@@ -11,6 +11,10 @@
                     android:icon="@drawable/dashboard_icon"
                     android:title="Dashboard"
                     />
+                <item android:id="@+id/nav_attendance"
+                    android:icon="@drawable/dashboard_icon"
+                    android:title="Attendance"
+                    />
                 <item android:id="@+id/nav_profile"
                     android:icon="@drawable/ic_baseline_person_24"
                     android:title="@string/profile"/>

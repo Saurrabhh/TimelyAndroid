@@ -15,14 +15,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="15dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp">
+        android:padding="10dp">
 
 
         <TextView
-            android:id="@+id/Subject"
-            android:layout_width="270dp"
+            android:id="@+id/Student"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:fontFamily="@font/cambo"
@@ -52,7 +50,25 @@
 <!--            android:textColor="@color/black"-->
 <!--            android:textSize="15sp" />-->
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toEndOf="@+id/Student">
 
+            <RadioButton
+                android:id="@+id/P"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:layout_marginEnd="10dp"/>
+
+            <RadioButton
+                android:id="@+id/A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
 
     </RelativeLayout>
 
