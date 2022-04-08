@@ -291,18 +291,18 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />
+
         <TextView
             android:id="@+id/TodayTT"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/arima_madurai_bold"
             android:padding="10dp"
             android:text="@string/today_s_time_table"
-            android:textSize="30sp"
-            android:layout_centerHorizontal="true"
-            />
+            android:textSize="30sp" />
 
 
         <androidx.recyclerview.widget.RecyclerView
