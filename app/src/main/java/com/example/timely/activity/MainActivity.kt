@@ -24,7 +24,7 @@ import com.example.timely.databinding.ActivityMainBinding
 import com.example.timely.fragments.AttendanceFragment
 import com.example.timely.fragments.KEY
 import com.example.timely.fragments.KEY.Companion.fragmentName
-import com.example.timely.services.MyService
+//import com.example.timely.services.MyService
 import com.example.timely.themes.ColorDialogCallback
 import com.example.timely.themes.DialogManager.Companion.showCustomAlertDialog
 import com.example.timely.themes.ThemeManager.Companion.setCustomizedThemes

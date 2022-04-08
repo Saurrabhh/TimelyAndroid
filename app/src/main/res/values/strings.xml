@@ -106,7 +106,7 @@
     <string name="cse">CSE</string>
     <string name="period_7">Period 7</string>
     <string name="_7">7</string>
-    <string name="next_period">Next Period : </string>
+    <string name="next_period">Next Period :</string>
     <string name="current_class">Current Period :</string>
     <string name="notification">Notification</string>
     <string name="convert_to_military_time">Convert to Military Time</string>
@@ -119,6 +119,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="select_semester">Select Semester</string>
     <string name="themes">Themes</string>
+    <string name="sem">Sem :</string>
 
 
 </resources>
