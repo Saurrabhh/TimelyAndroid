@@ -38,7 +38,9 @@ import java.util.*
 
 class TeacherFragment : Fragment() {
 
+
     private lateinit var auth: FirebaseAuth
+
     private lateinit var binding: FragmentMainBinding
     private lateinit var day: String
     lateinit var notificationManager: NotificationManager
@@ -50,6 +52,7 @@ class TeacherFragment : Fragment() {
     private lateinit var recyclerview: RecyclerView
     private lateinit var PeriodList: ArrayList<Periods>
     private lateinit var navController: NavController
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,6 +70,7 @@ class TeacherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         KEY.fragmentName = KEY().HOME
 
         if(auth.currentUser == null){

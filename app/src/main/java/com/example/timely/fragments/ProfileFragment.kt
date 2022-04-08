@@ -43,7 +43,7 @@ class ProfileFragment : Fragment() {
                 if ( user.child("email").value.toString() == currentemail ){
 
                     binding.MainName.text = user.child("name").value.toString()
-                    binding.MainUserName.text = user.child("username").value.toString()
+                    binding.MainUserName.text= user.child("username").value.toString()
                     binding.MainURN.text = user.child("urn").value.toString()
                     binding.MainClass.text = user.child("rollno").value.toString()
                     binding.MainSection.text = user.child("section").value.toString()

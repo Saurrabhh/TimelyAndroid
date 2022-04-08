@@ -57,36 +57,38 @@ open class MainActivity : AppCompatActivity() {
         setCustomizedThemes(this, getThemeColor(this))
         setContentView(binding.root)
         drawerLayout = binding.drawerLayout
-        displayNavbar()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+
+        navController = navHostFragment.navController
+
         if(auth.currentUser == null){
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
+        }
+        else if(auth.currentUser?.email.toString() == "shubhankartiwary11@gmail.com"){
+
+            navController.navigate(R.id.action_mainFragment_to_teacherFragment)
+
         }
         val window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         if (getThemeColor(this).equals("blue")) {
             window.statusBarColor = resources.getColor(R.color.colorPrimary)
         }
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        navController = navHostFragment.navController
-
-        if (auth.currentUser?.email.toString() == "shubhankartiwary11@gmail.com"){
-            navController.navigate(R.id.action_mainFragment_to_teacherFragment)
-        }
 
 
 
 
+        displayNavbar()
 
 
-
-       val database1 = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        database1.get().addOnSuccessListener {
-            Toast.makeText(this, it.children.toString(), Toast.LENGTH_SHORT).show()
-//            val a = it.child()
-//            Toast.makeText(this, a.toString(), Toast.LENGTH_SHORT).show()
-        }
+//       val database1 = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+//        database1.get().addOnSuccessListener {
+//            Toast.makeText(this, it.children.toString(), Toast.LENGTH_SHORT).show()
+////            val a = it.child()
+////            Toast.makeText(this, a.toString(), Toast.LENGTH_SHORT).show()
+//        }
 
 
 
@@ -102,18 +104,6 @@ open class MainActivity : AppCompatActivity() {
 
         val navView : NavigationView = binding.navView
         val toolBar = binding.toolbar
-//        val sharedPreferences = this.getSharedPreferences("theme_data", Context.MODE_PRIVATE)
-//        val a = sharedPreferences.getString("theme", "grey")
-//        when(a){
-//            "pink" -> toolBar.setBackgroundColor(resources.getColor(R.color.Pink2))
-//            "red" -> toolBar.setBackgroundColor(resources.getColor(R.color.Red2))
-//            "blue" -> toolBar.setBackgroundColor(resources.getColor(R.color.Blue1))
-//            "green" -> toolBar.setBackgroundColor(resources.getColor(R.color.Green2))
-//            "purple" -> toolBar.setBackgroundColor(resources.getColor(R.color.Purple2))
-//            "yellow" -> toolBar.setBackgroundColor(resources.getColor(R.color.Yellow2))
-//            "grey" -> toolBar.setBackgroundColor(resources.getColor(R.color.Grey2))
-//            "orange" -> toolBar.setBackgroundColor(resources.getColor(R.color.Orange2))
-//        }
 
         toggle = ActionBarDrawerToggle(this, drawerLayout,toolBar, R.string.menu_drawer_open, R.string.menu_drawer_close)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -121,25 +111,32 @@ open class MainActivity : AppCompatActivity() {
         toggle.syncState()
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
+                R.id.nav_home-> opendashboard()
                 R.id.nav_profile -> displayprofile()
                 R.id.nav_timetable -> displayfullTT()
                 R.id.nav_settings -> opensettings()
                 R.id.nav_theme -> changeTheme()
-                R.id.nav_home -> openDashboard()
                 R.id.nav_contact -> opencontacts()
                 R.id.nav_college -> openwebsite("http://www.bitdurg.ac.in/")
                 R.id.nav_erp -> openwebsite("http://20.124.220.25/Accsoft_BIT/StudentLogin.aspx")
                 R.id.nav_logout -> logoutfun()
                 R.id.notes -> opennotes()
+                R.id.nav_attendance -> openattendance()
             }
             true
-        } }
-
-    private fun openDashboard() {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        finish()
+        }
     }
+
+    private fun openattendance() {
+        when(fragmentName){
+            KEY().HOME ->navController.navigate(R.id.action_mainFragment_to_attendanceFragment)
+            KEY().FULLTT -> navController.navigate(R.id.action_fulTTFragment_to_attendanceFragment)
+            KEY().PROFILE -> navController.navigate(R.id.action_profileFragment_to_attendanceFragment)
+            KEY().NOTES -> navController.navigate(R.id.action_notesFragment_to_attendanceFragment)
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+    }
+
 
     private fun changeTheme() {
         showCustomAlertDialog(this, object : ColorDialogCallback {
@@ -163,20 +160,23 @@ open class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun opendashboard() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
     private fun opencontacts() {
         startActivity(Intent(this, ContactActivity::class.java))
     }
 
     open fun displayfullTT() {
-        if (fragmentName == KEY().HOME)
-            navController.navigate(R.id.action_mainFragment_to_fulTTFragment)
-        if (fragmentName == KEY().PROFILE)
-            navController.navigate(R.id.action_profileFragment_to_fulTTFragment)
-        if (fragmentName== KEY().NOTES)
-            navController.navigate(R.id.action_notesFragment_to_fulTTFragment)
-        drawerLayout.closeDrawer(GravityCompat.START)
+        when(fragmentName){
+            KEY().HOME -> navController.navigate(R.id.action_mainFragment_to_fulTTFragment)
+            KEY().PROFILE -> navController.navigate(R.id.action_profileFragment_to_fulTTFragment)
+            KEY().NOTES -> navController.navigate(R.id.action_notesFragment_to_fulTTFragment)
+            KEY().ATTENDANCE -> navController.navigate(R.id.action_attendanceFragment_to_fulTTFragment)
 
-//        startActivity(Intent(this, MainActivity::class.java))
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
     }
 
     open fun openwebsite(link: String) {
@@ -195,27 +195,22 @@ open class MainActivity : AppCompatActivity() {
     }
 
     open fun displayprofile() {
-//        val intent = Intent(this, ProfileActivity::class.java)
-//        startActivity(intent)
-        if (fragmentName == KEY().HOME)
-        navController.navigate(R.id.action_mainFragment_to_profileFragment)
-        if (fragmentName == KEY().FULLTT)
-            navController.navigate(R.id.action_fulTTFragment_to_profileFragment)
-        if (fragmentName== KEY().NOTES)
-            navController.navigate(R.id.action_notesFragment_to_profileFragment)
+        when(fragmentName){
+            KEY().HOME -> navController.navigate(R.id.action_mainFragment_to_profileFragment)
+            KEY().FULLTT -> navController.navigate(R.id.action_fulTTFragment_to_profileFragment)
+            KEY().NOTES -> navController.navigate(R.id.action_notesFragment_to_profileFragment)
+            KEY().ATTENDANCE -> navController.navigate(R.id.action_attendanceFragment_to_profileFragment)
+        }
         drawerLayout.closeDrawer(GravityCompat.START)
-
-
     }
     private fun opennotes() {
-        if (fragmentName == KEY().HOME)
-            navController.navigate(R.id.action_mainFragment_to_notesFragment)
-        if (fragmentName == KEY().FULLTT)
-            navController.navigate(R.id.action_fulTTFragment_to_notesFragment)
-        if (fragmentName== KEY().PROFILE)
-            navController.navigate(R.id.action_profileFragment_to_notesFragment)
+        when(fragmentName){
+            KEY().HOME ->navController.navigate(R.id.action_mainFragment_to_notesFragment)
+            KEY().FULLTT -> navController.navigate(R.id.action_fulTTFragment_to_notesFragment)
+            KEY().PROFILE -> navController.navigate(R.id.action_profileFragment_to_notesFragment)
+            KEY().ATTENDANCE -> navController.navigate(R.id.action_attendanceFragment_to_notesFragment)
+        }
         drawerLayout.closeDrawer(GravityCompat.START)
-
     }
     @ColorInt
     fun getThemeColor(@AttrRes attributeColor: Int): Int {
