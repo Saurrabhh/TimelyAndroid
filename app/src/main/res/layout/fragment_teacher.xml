@@ -14,16 +14,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="false"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/cambo"
+            android:textColor="@color/black"
+            android:text="Dashboard"
+            android:textSize="45sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/Name_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="false"
+            android:layout_gravity="start"
+            android:layout_toEndOf="@id/dashboard"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/cambo"
+            android:text="Full Name"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/profile"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
 
 
             <RelativeLayout
                 android:id="@+id/RL_1"
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="500dp">
 
 
                 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -44,19 +83,19 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="120dp"
                     android:layout_marginEnd="10dp"
                     app:cardBackgroundColor="?colorSecondaryVariant"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="10dp"
-                    app:cardMaxElevation="12dp"
+                    app:cardMaxElevation="14dp"
                     app:cardPreventCornerOverlap="true">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp">
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp">
 
                         <TextView
                             android:id="@+id/currclass"
@@ -164,8 +203,8 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp">
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
 
                         <TextView
                             android:id="@+id/Time_left"
@@ -219,8 +258,8 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="5dp">
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp">
 
                         <TextView
                             android:id="@+id/NextPeriod"
