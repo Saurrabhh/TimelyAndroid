@@ -138,7 +138,7 @@
                             android:layout_marginBottom="5dp"
                             android:fontFamily="@font/cambo"
 
-                            android:text="Prof. Kaulishwar Prasad"
+                            android:text="Prof. Kauleshwar Prasad"
                             android:textSize="24sp" />
 
 
@@ -250,6 +250,7 @@
                             android:fontFamily="@font/cambo"
                             android:text="@string/no_class"
                             android:textSize="25sp" />
+
                         <TextView
                             android:id="@+id/ProfName2"
                             android:layout_width="wrap_content"
@@ -260,7 +261,7 @@
                             android:layout_marginBottom="5dp"
                             android:fontFamily="@font/cambo"
 
-                            android:text="Prof. Kaulishwar Prasad"
+                            android:text="Prof. Kauleshwar Prasad"
                             android:textSize="24sp" />
 
 
