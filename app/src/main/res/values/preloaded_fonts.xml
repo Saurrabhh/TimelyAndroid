@@ -4,5 +4,9 @@
         <item>@font/arima_madurai_bold</item>
         <item>@font/berkshire_swash</item>
         <item>@font/cambo</item>
+        <item>@font/poppins_bold</item>
+        <item>@font/poppins_medium</item>
+        <item>@font/poppins_regular</item>
+        <item>@font/poppins_semibold</item>
     </array>
 </resources>

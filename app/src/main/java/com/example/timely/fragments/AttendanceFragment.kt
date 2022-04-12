@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,12 +26,20 @@ class AttendanceFragment : Fragment() {
     private lateinit var recyclerview: RecyclerView
     private lateinit var binding: FragmentAttendanceBinding
     private lateinit var StudentList: ArrayList<Students>
+//    private lateinit  var Present: Boolean
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+//        Present = binding.checkBoxPresentAll.isChecked();
+//        if(Present){
+//
+//        }
+
+
         // Inflate the layout for this fragment
         binding = FragmentAttendanceBinding.inflate(layoutInflater, container, false)
         auth = FirebaseAuth.getInstance()
