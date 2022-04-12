@@ -162,6 +162,7 @@ class MainFragment : Fragment() {
                   val periodno = period.child("0").value.toString()
                   var time = period.child("1").value.toString()
                   val subject = period.child("2").child("Subject").value.toString()
+                  val teacher = period.child("2").child("Teacher").value.toString()
 
 
                   val array = time.split("-")
@@ -171,6 +172,7 @@ class MainFragment : Fragment() {
 
                   if (nextclassflag==1){
                       binding.MainNextPeriod.text = subject
+                      binding.NextProfName.text=teacher
                       createNotification(subject, newtimeleft.toString())
                       nextclassflag = 0
                   }
@@ -184,7 +186,7 @@ class MainFragment : Fragment() {
 
                       newtimeleft = timeleft.toInt()
                       timeleft = "$timeleft mins"
-
+                      binding.CurrProfName.text=teacher
                       binding.MainTime.text = timeleft
                       binding.MainCurrentClass.text = subject
                       nextclassflag = 1
@@ -199,7 +201,7 @@ class MainFragment : Fragment() {
 
 //                Toast.makeText(this, mili, Toast.LENGTH_SHORT).show()
 
-                  val teacher = period.child("2").child("Teacher").value.toString()
+
 
                   val periodobject = Periods(periodno, time, subject, teacher)
 
@@ -242,6 +244,7 @@ class MainFragment : Fragment() {
                     val section = user.child("section").value.toString()
                     val semester = user.child("semester").value.toString()
                     val email = user.child("email").value.toString()
+                    binding.NameTop.text=name
 
 
                     val editor = sharedPreferences.edit()
@@ -385,5 +388,7 @@ class MainFragment : Fragment() {
         notificationManager.notify(1234, builder.build())
 
     }
+
+
 
 }

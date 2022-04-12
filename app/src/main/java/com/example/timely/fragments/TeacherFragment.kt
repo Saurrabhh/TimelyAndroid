@@ -10,6 +10,7 @@ import android.graphics.Color
 import android.os.Binder
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +42,7 @@ class TeacherFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
 
-    private lateinit var binding: FragmentMainBinding
+    private lateinit var binding: FragmentTeacherBinding
     private lateinit var day: String
     lateinit var notificationManager: NotificationManager
     private lateinit var notificationChannel: NotificationChannel
@@ -59,8 +60,9 @@ class TeacherFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentMainBinding.inflate(layoutInflater, container, false)
+        binding = FragmentTeacherBinding.inflate(layoutInflater, container, false)
         PeriodList = arrayListOf()
+        Toast.makeText(activity, "teacher", Toast.LENGTH_SHORT).show()
 
         auth = FirebaseAuth.getInstance()
         getcurrentuserdata()
@@ -156,20 +158,23 @@ class TeacherFragment : Fragment() {
         var nextclassflag = 0
 
 //        Toast.makeText(this, d.toString(), Toast.LENGTH_SHORT).show()
-        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
-        database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
+        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("TeacherTT")
+        database.child("DineshBhawnani").get().addOnSuccessListener {
 
             if (it.exists()){
                 val data = getcurrentday()
 
 
                 val periods = it.child(data[1]).child(data[0]).children
+                Log.d("dinesh", periods.toString())
                 var newtimeleft = 0
 
                 for (period in periods){
                     val periodno = period.child("0").value.toString()
                     var time = period.child("1").value.toString()
                     val subject = period.child("2").child("Subject").value.toString()
+                    val semester = period.child("2").child("Semester").value.toString()
+                    val section = period.child("2").child("Section").value.toString()
 
 
                     val array = time.split("-")
@@ -179,6 +184,8 @@ class TeacherFragment : Fragment() {
 
                     if (nextclassflag==1){
                         binding.MainNextPeriod.text = subject
+                        binding.NextMainSection.text = section
+                        binding.NextMainSemester.text = semester
                         createNotification(subject, newtimeleft.toString())
                         nextclassflag = 0
                     }
@@ -195,6 +202,8 @@ class TeacherFragment : Fragment() {
 
                         binding.MainTime.text = timeleft
                         binding.MainCurrentClass.text = subject
+                        binding.MainSection.text = section
+                        binding.MainSemester.text = semester
                         nextclassflag = 1
                     }
 
