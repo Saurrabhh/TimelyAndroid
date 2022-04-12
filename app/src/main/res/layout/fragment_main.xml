@@ -20,7 +20,7 @@
             android:layout_height="wrap_content">
 
 
-            <RelativeLayout
+            <<RelativeLayout
                 android:id="@+id/RL_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -75,7 +75,6 @@
                     android:text="Full Name"
                     android:textSize="25sp"
                     android:textStyle="bold"/>
-
 
                 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                     android:id="@+id/refresh"

@@ -15,6 +15,15 @@
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintHorizontal_bias="0.652"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/P_clginfo"
+            android:id="@+id/add_button"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="44dp" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -51,5 +60,11 @@
             android:layout_width="match_parent"
             motion:layout_constraintTop_toBottomOf="@+id/MainUserName"
             android:id="@+id/P_head" />
+        <Constraint
+            motion:layout_editor_absoluteY="603dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/add_button" />
     </ConstraintSet>
 </MotionScene>
