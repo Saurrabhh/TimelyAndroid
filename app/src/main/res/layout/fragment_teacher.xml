@@ -10,53 +10,22 @@
 
 
     <FrameLayout
-        android:id="@+id/fragmentMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <TextView
-            android:id="@+id/dashboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="false"
-            android:layout_gravity="start"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/cambo"
-            android:textColor="@color/black"
-            android:text="Dashboard"
-            android:textSize="45sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/NameTop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="false"
-            android:layout_gravity="start"
-            android:layout_toEndOf="@id/dashboard"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/cambo"
-            android:text="Full Name"
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"/>
+        android:layout_height="200dp"
+        android:background="?colorSecondary"/>
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/profile"
-                app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp" />
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/profile_image"-->
+<!--                android:layout_width="96dp"-->
+<!--                android:layout_height="96dp"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:src="@drawable/profile"-->
+<!--                app:civ_border_color="#FF000000"-->
+<!--                app:civ_border_width="2dp" />-->
 
 
             <RelativeLayout
@@ -76,6 +45,33 @@
                         android:layout_height="wrap_content" />
 
                 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                <TextView
+                    android:id="@+id/dashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="false"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cambo"
+                    android:text="Dashboard"
+                    android:textColor="@color/Grey2"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/NameTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dashboard"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/cambo"
+                    android:text="Full Name"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/CurrentClassCard"
@@ -83,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="75dp"
                     android:layout_marginEnd="10dp"
                     app:cardBackgroundColor="?colorSecondaryVariant"
                     app:cardCornerRadius="20dp"
@@ -98,41 +94,14 @@
                         android:paddingBottom="15dp">
 
                         <TextView
-                            android:id="@+id/currclass"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="false"
-                            android:layout_gravity="start"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginBottom="10dp"
-                            android:fontFamily="@font/arima_madurai_bold"
-                            android:text="@string/current_class"
-                            android:textSize="25sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/Main_CurrentClass"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="false"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_toEndOf="@id/currclass"
-                            android:fontFamily="@font/cambo"
-
-                            android:text="@string/no_class"
-                            android:textSize="25sp" />
-
-                        <TextView
                             android:id="@+id/Semester"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="10dp"
 
                             android:fontFamily="@font/cambo"
                             android:text="@string/sem"
@@ -144,8 +113,8 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
                             android:layout_marginStart="15dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="10dp"
                             android:layout_toEndOf="@id/Semester"
                             android:fontFamily="@font/cambo"
 
@@ -157,10 +126,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
-                            android:layout_marginStart="90dp"
+                            android:layout_marginStart="20dp"
                             android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
-                            android:layout_toEndOf="@id/Main_Semester"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="@font/cambo"
                             android:text="@string/section"
                             android:textSize="25sp" />
@@ -172,11 +140,37 @@
                             android:layout_centerVertical="false"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_marginBottom="5dp"
                             android:layout_toEndOf="@id/Section"
                             android:fontFamily="@font/cambo"
 
                             android:text="-"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/currclass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="false"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="70dp"
+                            android:fontFamily="@font/arima_madurai_bold"
+                            android:text="@string/current_class"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/Main_CurrentClass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="false"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="75dp"
+                            android:layout_toEndOf="@id/currclass"
+                            android:fontFamily="@font/cambo"
+
+                            android:text="@string/no_class"
                             android:textSize="25sp" />
 
 
@@ -203,17 +197,16 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp">
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
 
                         <TextView
                             android:id="@+id/Time_left"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:layout_gravity="start"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="1dp"
                             android:layout_marginBottom="10dp"
                             android:fontFamily="@font/arima_madurai_bold"
                             android:text="@string/time_left"
@@ -224,14 +217,22 @@
                             android:id="@+id/Main_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:layout_marginStart="30dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="4dp"
                             android:layout_marginBottom="10dp"
                             android:layout_toEndOf="@id/Time_left"
                             android:fontFamily="@font/cambo"
                             android:text="@string/notime"
                             android:textSize="25sp" />
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="12dp"
+                            android:layout_below="@+id/Time_left"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/Grey1" />
 
 
                     </RelativeLayout>
@@ -267,9 +268,8 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
                             android:layout_gravity="start"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="70dp"
                             android:fontFamily="@font/arima_madurai_bold"
                             android:text="@string/next_period"
                             android:textSize="25sp"
@@ -280,23 +280,24 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
-                            android:layout_marginStart="55dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="75dp"
                             android:layout_toEndOf="@id/NextPeriod"
                             android:fontFamily="@font/cambo"
                             android:text="@string/no_class"
                             android:textSize="25sp"
 
                             />
+
                         <TextView
                             android:id="@+id/NextSemester"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="10dp"
 
                             android:fontFamily="@font/cambo"
                             android:text="@string/sem"
@@ -308,8 +309,8 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
                             android:layout_marginStart="15dp"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="10dp"
                             android:layout_toEndOf="@id/NextSemester"
                             android:fontFamily="@font/cambo"
 
@@ -321,10 +322,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
-                            android:layout_marginStart="90dp"
+                            android:layout_marginStart="20dp"
                             android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
-                            android:layout_toEndOf="@id/NextMain_Semester"
+                            android:layout_marginBottom="5dp"
                             android:fontFamily="@font/cambo"
                             android:text="@string/section"
                             android:textSize="25sp" />
@@ -336,7 +336,7 @@
                             android:layout_centerVertical="false"
                             android:layout_marginStart="15dp"
                             android:layout_marginTop="40dp"
-                            android:layout_marginBottom="1dp"
+                            android:layout_marginBottom="5dp"
                             android:layout_toEndOf="@id/NextSection"
                             android:fontFamily="@font/cambo"
 
@@ -354,8 +354,7 @@
 
 
         </RelativeLayout>
-    </FrameLayout>
-    <com.google.android.material.card.MaterialCardView
+<com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
@@ -367,20 +366,20 @@
         app:cardElevation="100dp"
         app:cardMaxElevation="20dp">
 
-        <RelativeLayout
+    <RelativeLayout
             android:id="@+id/my_btm_sheet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
 
-            <ImageView
+        <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/ic_baseline_keyboard_arrow_up_24" />
 
-            <TextView
+        <TextView
                 android:id="@+id/TodayTT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -393,7 +392,7 @@
                 android:textSize="30sp" />
 
 
-            <androidx.recyclerview.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -402,9 +401,9 @@
                 tools:itemCount="5"
                 tools:listitem="@layout/card_view_design" />
 
-        </RelativeLayout>
+    </RelativeLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+</com.google.android.material.card.MaterialCardView>
 
 
 
