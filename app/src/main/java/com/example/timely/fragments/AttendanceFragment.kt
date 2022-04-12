@@ -65,7 +65,7 @@ class AttendanceFragment : Fragment() {
             recyclerview.adapter = AttendanceAdapter(StudentList)
 //           Log.d("HEHE", StudentList.toString())
         }.addOnFailureListener{
-            Toast.makeText(activity, "Faliedd", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "Falied", Toast.LENGTH_SHORT).show()
         }
     }
 }
