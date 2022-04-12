@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_profile.*
+import kotlin.properties.Delegates
 
 class ProfileFragment : Fragment() {
 
@@ -24,6 +25,7 @@ class ProfileFragment : Fragment() {
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
     private lateinit var motionLayout: MotionLayout
+    private var onEdit by Delegates.notNull<Boolean>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,10 +41,33 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    //for motion layout swipe to edit function
+
 
         motionLayout = binding.motionlayout
+        val mainname=binding.MainName
         val mainusername = binding.MainUserName
+        val mainurn=binding.MainURN
+        val mainclass=binding.MainClass
+        val mainsection=binding.MainSection
+        val mainsemester=binding.MainSemester
+        val mainemail=binding.MainEmail
+        val mainbranch=binding.MainBranch
+        val maingender=binding.MainGender
+
+
+        onEdit=false //flag variable
         mainusername.inputType = InputType.TYPE_NULL
+        mainname.inputType = InputType.TYPE_NULL
+        mainurn.inputType = InputType.TYPE_NULL
+        mainclass.inputType = InputType.TYPE_NULL
+        mainsection.inputType = InputType.TYPE_NULL
+        mainsemester.inputType = InputType.TYPE_NULL
+        mainemail.inputType = InputType.TYPE_NULL
+        mainbranch.inputType = InputType.TYPE_NULL
+        maingender.inputType = InputType.TYPE_NULL
+
+
 
         KEY.fragmentName = KEY().PROFILE
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
@@ -53,15 +78,15 @@ class ProfileFragment : Fragment() {
             for (user in users){
                 if ( user.child("email").value.toString() == currentemail ){
 
-                    binding.MainName.text = user.child("name").value.toString()
+                    binding.MainName.setText(user.child("name").value.toString())
                     binding.MainUserName.setText(user.child("username").value.toString())
-                    binding.MainURN.text = user.child("urn").value.toString()
-                    binding.MainClass.text = user.child("rollno").value.toString()
-                    binding.MainSection.text = user.child("section").value.toString()
-                    binding.MainSemester.text = user.child("semester").value.toString()
-                    binding.MainEmail.text = user.child("email").value.toString()
-                    binding.MainBranch.text = user.child("branch").value.toString()
-                    binding.MainGender.text = user.child("gender").value.toString()
+                    binding.MainURN.setText(user.child("urn").value.toString())
+                    binding.MainClass.setText(user.child("rollno").value.toString())
+                    binding.MainSection.setText(user.child("section").value.toString())
+                    binding.MainSemester.setText(user.child("semester").value.toString())
+                    binding.MainEmail.setText(user.child("email").value.toString())
+                    binding.MainBranch.setText(user.child("branch").value.toString())
+                    binding.MainGender.setText(user.child("gender").value.toString())
                     break
                 }
             }
@@ -91,13 +116,35 @@ class ProfileFragment : Fragment() {
 
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
-
+                //Toast.makeText(activity, currentId.toString(), Toast.LENGTH_SHORT).show()
                 if (motionLayout != null) {
-                    if (currentId == 2131362137){
+                    if (!onEdit){
                         mainusername.inputType = InputType.TYPE_CLASS_TEXT
-                        Toast.makeText(activity, currentId.toString(), Toast.LENGTH_SHORT).show()
-                    }else{
+                        mainname.inputType = InputType.TYPE_CLASS_TEXT
+                        mainurn.inputType = InputType.TYPE_CLASS_TEXT
+                        mainclass.inputType = InputType.TYPE_CLASS_TEXT
+                        mainsection.inputType = InputType.TYPE_CLASS_TEXT
+                        mainsemester.inputType = InputType.TYPE_CLASS_TEXT
+                        mainemail.inputType = InputType.TYPE_CLASS_TEXT
+                        mainbranch.inputType = InputType.TYPE_CLASS_TEXT
+                        maingender.inputType = InputType.TYPE_CLASS_TEXT
+
+                        //Toast.makeText(activity, currentId.toString(), Toast.LENGTH_SHORT).show()
+                        onEdit=true
+
+                    } else{
                         mainusername.inputType = InputType.TYPE_NULL
+                        mainname.inputType = InputType.TYPE_NULL
+                        mainurn.inputType = InputType.TYPE_NULL
+                        mainclass.inputType = InputType.TYPE_NULL
+                        mainsection.inputType = InputType.TYPE_NULL
+                        mainsemester.inputType = InputType.TYPE_NULL
+                        mainemail.inputType = InputType.TYPE_NULL
+                        mainbranch.inputType = InputType.TYPE_NULL
+                        maingender.inputType = InputType.TYPE_NULL
+
+                        onEdit=false
+
                     }
                 }
             }
