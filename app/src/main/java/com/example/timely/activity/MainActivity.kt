@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
 import android.view.WindowManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
@@ -76,25 +77,8 @@ open class MainActivity : AppCompatActivity() {
         if (getThemeColor(this).equals("blue")) {
             window.statusBarColor = resources.getColor(R.color.colorPrimary)
         }
-
-
-
-
         displayNavbar()
 
-
-//       val database1 = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-//        database1.get().addOnSuccessListener {
-//            Toast.makeText(this, it.children.toString(), Toast.LENGTH_SHORT).show()
-////            val a = it.child()
-////            Toast.makeText(this, a.toString(), Toast.LENGTH_SHORT).show()
-//        }
-
-
-
-
-//        val intent = Intent(this, MyService::class.java)
-//        startService(intent)
 
 
     }
@@ -104,6 +88,12 @@ open class MainActivity : AppCompatActivity() {
 
         val navView : NavigationView = binding.navView
         val toolBar = binding.toolbar
+        val navname = navView.getHeaderView(0).findViewById<TextView>(R.id.nav_name)
+        val sharedPreferences = getSharedPreferences("sharedprefs",
+            MODE_PRIVATE
+        )
+        navname.text = sharedPreferences.getString("name", null)
+
 
         toggle = ActionBarDrawerToggle(this, drawerLayout,toolBar, R.string.menu_drawer_open, R.string.menu_drawer_close)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
