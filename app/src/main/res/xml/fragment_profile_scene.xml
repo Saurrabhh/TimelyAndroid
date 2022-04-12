@@ -9,7 +9,9 @@
         motion:duration="1000">
        <KeyFrameSet>
        </KeyFrameSet>
-        <OnSwipe />
+        <OnSwipe
+
+            />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
