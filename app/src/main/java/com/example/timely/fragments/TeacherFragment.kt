@@ -184,8 +184,8 @@ class TeacherFragment : Fragment() {
 
                     if (nextclassflag==1){
                         binding.MainNextPeriod.text = subject
-                        binding.MainSection.text = section
-                        binding.MainSemester.text = semester
+                        binding.NextMainSection.text = section
+                        binding.NextMainSemester.text = semester
                         createNotification(subject, newtimeleft.toString())
                         nextclassflag = 0
                     }
