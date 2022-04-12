@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MainUserName" />
 
-    <TextView
+    <EditText
         android:id="@+id/MainName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/MainBranch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/MainSemester"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <TextView
+        <EditText
             android:id="@+id/MainGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
+            <EditText
                 android:id="@+id/MainSection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <EditText
                 android:id="@+id/MainClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Profile_PersonalDetails" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/MainEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/P_contactinfo" />
 
-    <TextView
+    <EditText
         android:id="@+id/MainPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MainPhone" />
 
-    <TextView
+    <EditText
         android:id="@+id/MainURN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -227,7 +227,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/P_clginfo" />
 
-    <TextView
+    <EditText
         android:id="@+id/MainEnroll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -242,6 +242,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MainURN" />
 
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -254,6 +256,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MainEnroll" />
+
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
