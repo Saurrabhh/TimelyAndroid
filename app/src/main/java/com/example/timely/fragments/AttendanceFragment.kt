@@ -6,13 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.timely.R
 import com.example.timely.adapter.AttendanceAdapter
 import com.example.timely.dataClasses.Students
 import com.example.timely.databinding.FragmentAttendanceBinding
@@ -51,8 +48,6 @@ class AttendanceFragment : Fragment() {
 
 
         showStudent()
-
-
     }
 
     private fun showStudent() {
@@ -68,15 +63,6 @@ class AttendanceFragment : Fragment() {
                 StudentList.add(stdobj)
             }
             recyclerview.adapter = AttendanceAdapter(StudentList)
-
-
-            val a = recyclerview
-
-
-            Log.d("REC", a.adapter.toString())
-
-
-            Toast.makeText(activity, a.toString(), Toast.LENGTH_SHORT).show()
 //           Log.d("HEHE", StudentList.toString())
         }.addOnFailureListener{
             Toast.makeText(activity, "Falied", Toast.LENGTH_SHORT).show()

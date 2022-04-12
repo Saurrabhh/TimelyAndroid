@@ -319,7 +319,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/arima_madurai_bold"
+            android:fontFamily="@font/poppins_semibold"
             android:paddingBottom="8dp"
             android:text="Today's Schedule"
             android:textSize="30sp" />
@@ -345,9 +345,5 @@
     </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>
-
-
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

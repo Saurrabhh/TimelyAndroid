@@ -14,11 +14,13 @@ class AttendanceAdapter(private val StudentList: ArrayList<Students>): RecyclerV
             .inflate(R.layout.card_attendance, parent, false)
 
         return MyViewHolder(view)
+
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = StudentList[position]
         holder.sname.text = currentItem.sname
+        holder.roll.text = currentItem.rollno
     }
 
     override fun getItemCount(): Int {
@@ -26,7 +28,11 @@ class AttendanceAdapter(private val StudentList: ArrayList<Students>): RecyclerV
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val sname: TextView = itemView.findViewById(R.id.Student)
+        val sname: TextView = itemView.findViewById(R.id.Att_Student)
+        val roll: TextView = itemView.findViewById(R.id.Att_Rollno)
 
     }
+
 }
+
+
