@@ -19,7 +19,7 @@
 
 <!--saurabh chutiya-->
 
-    <TextView
+    <EditText
         android:id="@+id/MainUserName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="200dp"

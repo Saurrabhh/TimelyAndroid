@@ -29,6 +29,7 @@ import com.example.timely.databinding.FragmentMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -137,7 +138,16 @@ class MainFragment : Fragment() {
 //
 //            ft.detach(this).attach(this).commit()
 
-            navController.navigate(R.id.action_mainFragment_self)
+            try {
+                navController.navigate(R.id.action_mainFragment_self)
+            }catch (e: Exception){
+                navController.navigate(R.id.action_teacherFragment_self)
+            }
+
+
+
+
+
         }
     }
 
@@ -146,8 +156,6 @@ class MainFragment : Fragment() {
 
         val user = loaddata()
         var nextclassflag = 0
-
-//        Toast.makeText(this, d.toString(), Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
@@ -244,6 +252,8 @@ class MainFragment : Fragment() {
                     val section = user.child("section").value.toString()
                     val semester = user.child("semester").value.toString()
                     val email = user.child("email").value.toString()
+                    val branch = user.child("branch").value.toString()
+                    val gender = user.child("gender").value.toString()
                     binding.NameTop.text=name
 
 
@@ -256,6 +266,8 @@ class MainFragment : Fragment() {
                         putString("section", section)
                         putString("semester", semester)
                         putString("email", email)
+                        putString("branch", branch)
+                        putString("gender", gender)
                     }.apply()
 
                     break

@@ -54,6 +54,10 @@
             android:id="@+id/action_teacherFragment_self"
             app:destination="@id/teacherFragment"
             app:popUpTo="@id/teacherFragment" />
+        <action
+            android:id="@+id/action_teacherFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment"
+            app:popUpTo="@id/teacherFragment"/>
     </fragment>
     <fragment
         android:id="@+id/profileFragment"

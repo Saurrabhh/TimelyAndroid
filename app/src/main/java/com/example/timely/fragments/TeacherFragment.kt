@@ -37,7 +37,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class TeacherFragment : Fragment() {
+open class TeacherFragment : Fragment() {
 
 
     private lateinit var auth: FirebaseAuth
@@ -73,7 +73,7 @@ class TeacherFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        KEY.fragmentName = KEY().HOME
+        KEY.fragmentName = KEY().TEACHER
 
         if(auth.currentUser == null){
             val intent = Intent(activity, LoginActivity::class.java)
@@ -99,7 +99,7 @@ class TeacherFragment : Fragment() {
 
     }
 
-    private fun loaddata(): Users {
+    open fun loaddata(): Users {
         val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs", AppCompatActivity.MODE_PRIVATE)
         val name = sharedPreferences.getString("name", null)
         val username = sharedPreferences.getString("username", null)
@@ -108,8 +108,10 @@ class TeacherFragment : Fragment() {
         val section = sharedPreferences.getString("section", null)
         val semester = sharedPreferences.getString("semester", null)
         val email = sharedPreferences.getString("email", null)
+        val gender = sharedPreferences.getString("gender", null)
+        val branch = sharedPreferences.getString("branch", null)
 
-        return Users(name, username, urn, semester, rollno, section, email)
+        return Users(name, username, urn, semester, rollno, section, email, gender, branch)
 
 //        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
     }
@@ -155,6 +157,7 @@ class TeacherFragment : Fragment() {
 
 
         val user = loaddata()
+        binding.NameTop.text = user.name
         var nextclassflag = 0
 
 //        Toast.makeText(this, d.toString(), Toast.LENGTH_SHORT).show()

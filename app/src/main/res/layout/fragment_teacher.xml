@@ -30,7 +30,7 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/Name_input"
+            android:id="@+id/NameTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="false"

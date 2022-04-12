@@ -66,7 +66,7 @@ open class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        else if(auth.currentUser?.email.toString() == "shubhankartiwary11@gmail.com"){
+        else if(auth.currentUser?.email.toString() == "teacher@gmail.com"){
 
             navController.navigate(R.id.action_mainFragment_to_teacherFragment)
 
@@ -133,6 +133,7 @@ open class MainActivity : AppCompatActivity() {
             KEY().FULLTT -> navController.navigate(R.id.action_fulTTFragment_to_attendanceFragment)
             KEY().PROFILE -> navController.navigate(R.id.action_profileFragment_to_attendanceFragment)
             KEY().NOTES -> navController.navigate(R.id.action_notesFragment_to_attendanceFragment)
+            KEY().TEACHER -> navController.navigate(R.id.action_teacherFragment_to_attendanceFragment)
         }
         drawerLayout.closeDrawer(GravityCompat.START)
     }
@@ -174,6 +175,7 @@ open class MainActivity : AppCompatActivity() {
             KEY().PROFILE -> navController.navigate(R.id.action_profileFragment_to_fulTTFragment)
             KEY().NOTES -> navController.navigate(R.id.action_notesFragment_to_fulTTFragment)
             KEY().ATTENDANCE -> navController.navigate(R.id.action_attendanceFragment_to_fulTTFragment)
+            KEY().TEACHER -> navController.navigate(R.id.action_teacherFragment_to_fulTTFragment)
 
         }
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -200,6 +202,7 @@ open class MainActivity : AppCompatActivity() {
             KEY().FULLTT -> navController.navigate(R.id.action_fulTTFragment_to_profileFragment)
             KEY().NOTES -> navController.navigate(R.id.action_notesFragment_to_profileFragment)
             KEY().ATTENDANCE -> navController.navigate(R.id.action_attendanceFragment_to_profileFragment)
+            KEY().TEACHER -> navController.navigate(R.id.action_teacherFragment_to_profileFragment)
         }
         drawerLayout.closeDrawer(GravityCompat.START)
     }
@@ -209,6 +212,7 @@ open class MainActivity : AppCompatActivity() {
             KEY().FULLTT -> navController.navigate(R.id.action_fulTTFragment_to_notesFragment)
             KEY().PROFILE -> navController.navigate(R.id.action_profileFragment_to_notesFragment)
             KEY().ATTENDANCE -> navController.navigate(R.id.action_attendanceFragment_to_notesFragment)
+            KEY().TEACHER -> navController.navigate(R.id.action_teacherFragment_to_notesFragment)
         }
         drawerLayout.closeDrawer(GravityCompat.START)
     }
@@ -218,6 +222,8 @@ open class MainActivity : AppCompatActivity() {
         theme.resolveAttribute(attributeColor, value, true)
         return value.data
     }
+
+
 
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {

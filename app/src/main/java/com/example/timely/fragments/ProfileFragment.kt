@@ -1,5 +1,6 @@
 package com.example.timely.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputType
@@ -9,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.navigation.Navigation
 import com.example.timely.R
@@ -30,7 +32,7 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         auth = FirebaseAuth.getInstance()
 
@@ -70,29 +72,42 @@ class ProfileFragment : Fragment() {
 
 
         KEY.fragmentName = KEY().PROFILE
-        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        database.get().addOnSuccessListener {
+        val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs",
+            AppCompatActivity.MODE_PRIVATE
+        )
 
-            val currentemail = auth.currentUser?.email.toString()
-            val users = it.children
-            for (user in users){
-                if ( user.child("email").value.toString() == currentemail ){
+        val name = sharedPreferences.getString("name", null)
+        val username = sharedPreferences.getString("username", null)
+        val urn = sharedPreferences.getString("urn", null)
+        val rollno = sharedPreferences.getString("rollno", null)
+        val section = sharedPreferences.getString("section", null)
+        val semester = sharedPreferences.getString("semester", null)
+        val email = sharedPreferences.getString("email", null)
+        val branch = sharedPreferences.getString("branch", null)
+        val gender = sharedPreferences.getString("gender", null)
+//        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+//        database.get().addOnSuccessListener {
+//
+//            val currentemail = auth.currentUser?.email.toString()
+//            val users = it.children
+//            for (user in users){
+//                if ( user.child("email").value.toString() == currentemail ){
 
-                    binding.MainName.setText(user.child("name").value.toString())
-                    binding.MainUserName.setText(user.child("username").value.toString())
-                    binding.MainURN.setText(user.child("urn").value.toString())
-                    binding.MainClass.setText(user.child("rollno").value.toString())
-                    binding.MainSection.setText(user.child("section").value.toString())
-                    binding.MainSemester.setText(user.child("semester").value.toString())
-                    binding.MainEmail.setText(user.child("email").value.toString())
-                    binding.MainBranch.setText(user.child("branch").value.toString())
-                    binding.MainGender.setText(user.child("gender").value.toString())
-                    break
-                }
-            }
-        }.addOnFailureListener{
-            Toast.makeText(activity, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
-        }
+                    binding.MainName.setText(name)
+                    binding.MainUserName.setText(username)
+                    binding.MainURN.setText(urn)
+                    binding.MainClass.setText(rollno)
+                    binding.MainSection.setText(section)
+                    binding.MainSemester.setText(semester)
+                    binding.MainEmail.setText(email)
+                    binding.MainBranch.setText(branch)
+                    binding.MainGender.setText(gender)
+//                    break
+//                }
+//            }
+//        }.addOnFailureListener{
+//            Toast.makeText(activity, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
+//        }
 
 
         motionLayout.addTransitionListener(object: MotionLayout.TransitionListener{
@@ -165,3 +180,5 @@ class ProfileFragment : Fragment() {
 
     }
 }
+
+
