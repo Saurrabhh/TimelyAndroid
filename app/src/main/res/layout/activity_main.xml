@@ -21,8 +21,15 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
-
+            android:background="?colorSecondary"
             >
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="250dp"
+                android:src="@drawable/profile" />
         </com.google.android.material.appbar.MaterialToolbar>
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"

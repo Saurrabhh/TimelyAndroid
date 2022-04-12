@@ -400,7 +400,7 @@
                 android:layout_below="@+id/TodayTT"
                 android:layout_centerHorizontal="true"
                 tools:itemCount="5"
-                tools:listitem="@layout/teacher_card_view_design" />
+                tools:listitem="@layout/card_view_design" />
 
         </RelativeLayout>
 
