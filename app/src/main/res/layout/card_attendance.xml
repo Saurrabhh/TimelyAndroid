@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="70dp"
     android:layout_margin="10dp"
     app:cardBackgroundColor="?colorSecondary"
     app:cardCornerRadius="15dp"
@@ -17,57 +17,50 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
+        <TextView
+            android:id="@+id/Att_Rollno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingStart="10dp"
+            android:text="01."
+            android:textColor="@color/black"
+            android:textSize="18dp"
+
+            />
 
         <TextView
-            android:id="@+id/Student"
+            android:id="@+id/Att_Student"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/cambo"
-            android:text="@string/subject"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/Att_Rollno"
+            android:text="Student Name"
             android:textColor="@color/black"
-            android:textSize="25sp" />
-<!--        <TextView-->
-<!--            android:id="@+id/Time"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/Subject"-->
-<!--            android:layout_marginStart="30dp"-->
-<!--            android:fontFamily="@font/cambo"-->
-<!--            android:text="@string/time"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="18sp" />-->
-<!--        <TextView-->
-<!--            android:id="@+id/Teacher"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/Time"-->
-<!--            android:layout_marginTop="5dp"-->
-<!--            android:layout_marginStart="30dp"-->
-<!--            android:fontFamily="@font/cambo"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/teacher"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="15sp" />-->
+            android:textSize="15sp" />
+
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_toEndOf="@+id/Student">
+            android:layout_toEndOf="@+id/Att_Student"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/P"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes"
-                android:layout_marginEnd="10dp"/>
+                android:layout_marginEnd="10dp"
+                android:text="P"
+                android:buttonTint="?colorPrimary"/>
 
             <RadioButton
                 android:id="@+id/A"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No" />
+                android:text="A"
+                android:buttonTint="?colorPrimary"/>
         </RadioGroup>
 
     </RelativeLayout>

@@ -5,16 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".fragments.AttendanceFragment">
 
-<TextView
-    android:id="@+id/Attedance_Heading"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="30dp"
-    android:layout_marginLeft="120dp"
-    android:text="Attendance"
-    android:textAllCaps="true"
-    android:textSize="30dp"
-    />
+    <TextView
+        android:id="@+id/Attedance_Heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="?colorSecondaryVariant"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="13dp"
+        android:paddingEnd="13dp"
+        android:text="Attendance"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
 
 
     <TextView
@@ -22,9 +26,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Attedance_Heading"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:text="Semester : " />
+        android:layout_marginTop="20dp"
+        android:text="Semester : "
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +40,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/Att_Sem"
-        android:text="3 " />
+        android:text="3 "
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+        />
 
     <TextView
         android:id="@+id/Att_Sec"
@@ -42,7 +52,10 @@
         android:layout_below="@+id/Att_Sem"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
-        android:text="Section : " />
+        android:text="Section : "
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -51,7 +64,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/Att_Sec"
-        android:text="A " />
+        android:text="A "
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+        />
 
     <TextView
         android:id="@+id/Att_date"
@@ -61,6 +77,9 @@
         android:layout_below="@+id/Att_Sec"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+
         />
 
     <TextView
@@ -71,6 +90,9 @@
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/Att_date"
         android:text="10-Mar-2022"
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+
         />
 
     <TextView
@@ -81,6 +103,9 @@
         android:layout_below="@+id/Att_date"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+
         />
 
     <TextView
@@ -90,7 +115,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/Att_Time"
-        android:text="10am-11am" />
+        android:text="10am-11am"
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_regular"
+        />
 
     <CheckBox
         android:id="@+id/checkBox_PresentAll"
@@ -100,7 +128,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
-        android:text="Mark All Present" />
+        android:buttonTint="?colorPrimary"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Mark All Present"
+        android:textSize="15dp" />
     <CheckBox
         android:id="@+id/checkBox_AbsentAll"
         android:layout_width="wrap_content"
@@ -109,14 +140,18 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
-        android:text="Mark All Absent " />
+        android:text="Mark All Absent "
+        android:textSize="15dp"
+        android:buttonTint="?colorPrimary"
+        android:fontFamily="@font/poppins_regular"
+        />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Attedance_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox_AbsentAll"
+        android:layout_height="450dp"
+        android:layout_below="@+id/Att_Time"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -125,5 +160,15 @@
         tools:itemCount="5"
         tools:listitem="@layout/card_attendance" />
 
+    <Button
+        android:textColor="@color/white"
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Save."
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Attedance_recyclerview"
+        />
 
 </RelativeLayout>
