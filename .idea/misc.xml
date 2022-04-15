@@ -29,6 +29,8 @@
         <entry key="..\:/Android/Android Studio Projects/Timely-Android/app/src/main/res/layout/fragment_main.xml" value="0.264" />
         <entry key="..\:/Android/Android Studio Projects/Timely-Android/app/src/main/res/layout/fragment_teacher.xml" value="0.264" />
         <entry key="..\:/Android/Android Studio Projects/Timely-Android/app/src/main/res/layout/teacher_card_view_design.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_main.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_teacher.xml" value="0.264" />
         <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/login_try.xml" value="0.2" />
         <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_log.xml" value="0.2" />
@@ -148,10 +150,8 @@
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/drawable-v24/button_border.xml" value="0.1565" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/activity_contact.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_attendance.xml" value="0.24722222222222223" />
-
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/rahul/AndroidStudioProjects/Android-Study-Jams/app/src/main/res/drawable-v24/gradient.xml" value="0.1" />
