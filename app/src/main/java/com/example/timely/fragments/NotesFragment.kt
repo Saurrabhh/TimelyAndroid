@@ -22,7 +22,7 @@ class NotesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         viewModel = ViewModelProvider(this)[NotesViewModel::class.java]
         auth = FirebaseAuth.getInstance()

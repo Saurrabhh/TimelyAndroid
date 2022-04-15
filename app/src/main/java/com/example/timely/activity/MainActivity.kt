@@ -70,6 +70,8 @@ open class MainActivity : AppCompatActivity() {
         }
         else if(auth.currentUser?.email.toString() == "teacher@gmail.com"){
 
+            binding.navView.menu.findItem(R.id.nav_attendance).isVisible = true
+
             navController.navigate(R.id.action_mainFragment_to_teacherFragment)
 
         }

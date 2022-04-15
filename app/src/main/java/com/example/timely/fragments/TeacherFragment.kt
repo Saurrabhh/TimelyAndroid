@@ -7,16 +7,15 @@ import android.app.PendingIntent
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.os.Binder
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,8 +26,6 @@ import com.example.timely.activity.MainActivity
 import com.example.timely.adapter.MyAdapter
 import com.example.timely.dataClasses.Periods
 import com.example.timely.dataClasses.Users
-import com.example.timely.databinding.ActivityContactBinding
-import com.example.timely.databinding.FragmentMainBinding
 import com.example.timely.databinding.FragmentTeacherBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -44,7 +41,7 @@ open class TeacherFragment : Fragment() {
 
     private lateinit var binding: FragmentTeacherBinding
     private lateinit var day: String
-    lateinit var notificationManager: NotificationManager
+    private lateinit var notificationManager: NotificationManager
     private lateinit var notificationChannel: NotificationChannel
     private lateinit var builder: Notification.Builder
     private val channelId = "i.apps.notifications"
@@ -62,7 +59,7 @@ open class TeacherFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentTeacherBinding.inflate(layoutInflater, container, false)
         PeriodList = arrayListOf()
-        Toast.makeText(activity, "teacher", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(activity, "teacher", Toast.LENGTH_SHORT).show()
 
         auth = FirebaseAuth.getInstance()
         getcurrentuserdata()
@@ -308,41 +305,37 @@ open class TeacherFragment : Fragment() {
 
         if (starttarr[0].toInt() > 12){
             newstarttime = (starttarr[0].toInt() - 12).toString()
-            if (newstarttime.toInt()<9){
-                newstarttime = "0"+newstarttime+":"+starttarr[1]+ "pm"
-            }
-            else{
-                newstarttime = newstarttime+":"+starttarr[1]+ "pm"
+            newstarttime = if (newstarttime.toInt()<9){
+                "0"+newstarttime+":"+starttarr[1]+ "pm"
+            } else{
+                newstarttime+":"+starttarr[1]+ "pm"
             }
 
         }
         else{
             newstarttime = starttarr[0]
 
-            if (newstarttime.toInt()<9){
-                newstarttime = "0"+newstarttime+":"+starttarr[1]+ "am"
-            }
-            else{
-                newstarttime = newstarttime+":"+starttarr[1]+ "am"
+            newstarttime = if (newstarttime.toInt()<9){
+                "0"+newstarttime+":"+starttarr[1]+ "am"
+            } else{
+                newstarttime+":"+starttarr[1]+ "am"
             }
         }
 
         if (endtarr[0].toInt() > 12){
             newendtime = (endtarr[0].toInt() - 12).toString()
-            if (newendtime.toInt()<9){
-                newendtime = "0"+newendtime+":"+endtarr[1]+ "pm"
-            }
-            else{
-                newendtime = newendtime+":"+endtarr[1]+ "pm"
+            newendtime = if (newendtime.toInt()<9){
+                "0"+newendtime+":"+endtarr[1]+ "pm"
+            } else{
+                newendtime+":"+endtarr[1]+ "pm"
             }
         }
         else{
             newendtime = endtarr[0]
-            if (newendtime.toInt()<9){
-                newendtime = "0"+newendtime+":"+endtarr[1]+ "am"
-            }
-            else{
-                newendtime = newendtime+":"+endtarr[1]+ "am"
+            newendtime = if (newendtime.toInt()<9){
+                "0"+newendtime+":"+endtarr[1]+ "am"
+            } else{
+                newendtime+":"+endtarr[1]+ "am"
             }
         }
 

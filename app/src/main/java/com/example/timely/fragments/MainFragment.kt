@@ -143,11 +143,6 @@ class MainFragment : Fragment() {
             }catch (e: Exception){
                 navController.navigate(R.id.action_teacherFragment_self)
             }
-
-
-
-
-
         }
     }
 
@@ -181,12 +176,20 @@ class MainFragment : Fragment() {
                   if (nextclassflag==1){
                       binding.MainNextPeriod.text = subject
                       binding.NextProfName.text=teacher
-                      createNotification(subject, newtimeleft.toString())
+                      if(auth.currentUser?.email != "teacher@gmail.com")
+                        createNotification(subject, newtimeleft.toString())
                       nextclassflag = 0
                   }
 
                   if(currtime in st..et) {
                       var timeleft = (et - currtime).toString()
+
+                      val sharedPreferences1 = requireActivity().getSharedPreferences("currtime", AppCompatActivity.MODE_PRIVATE)
+                      val editor1 = sharedPreferences1.edit()
+                      editor1.apply {
+                          putString("time", time)
+                      }.apply()
+
 
                       if (timeleft.toInt()>=60){
                           timeleft = (timeleft.toInt() - 40).toString()
@@ -205,11 +208,6 @@ class MainFragment : Fragment() {
                   if (mili != "yes"){
                       time = timetoampm(time)
                   }
-
-
-//                Toast.makeText(this, mili, Toast.LENGTH_SHORT).show()
-
-
 
                   val periodobject = Periods(periodno, time, subject, teacher)
 
@@ -303,41 +301,37 @@ class MainFragment : Fragment() {
 
         if (starttarr[0].toInt() > 12){
             newstarttime = (starttarr[0].toInt() - 12).toString()
-            if (newstarttime.toInt()<9){
-                newstarttime = "0"+newstarttime+":"+starttarr[1]+ "pm"
-            }
-            else{
-                newstarttime = newstarttime+":"+starttarr[1]+ "pm"
+            newstarttime = if (newstarttime.toInt()<9){
+                "0"+newstarttime+":"+starttarr[1]+ "pm"
+            } else{
+                newstarttime+":"+starttarr[1]+ "pm"
             }
 
         }
         else{
             newstarttime = starttarr[0]
 
-            if (newstarttime.toInt()<9){
-                newstarttime = "0"+newstarttime+":"+starttarr[1]+ "am"
-            }
-            else{
-                newstarttime = newstarttime+":"+starttarr[1]+ "am"
+            newstarttime = if (newstarttime.toInt()<9){
+                "0"+newstarttime+":"+starttarr[1]+ "am"
+            } else{
+                newstarttime+":"+starttarr[1]+ "am"
             }
         }
 
         if (endtarr[0].toInt() > 12){
             newendtime = (endtarr[0].toInt() - 12).toString()
-            if (newendtime.toInt()<9){
-                newendtime = "0"+newendtime+":"+endtarr[1]+ "pm"
-            }
-            else{
-                newendtime = newendtime+":"+endtarr[1]+ "pm"
+            newendtime = if (newendtime.toInt()<9){
+                "0"+newendtime+":"+endtarr[1]+ "pm"
+            } else{
+                newendtime+":"+endtarr[1]+ "pm"
             }
         }
         else{
             newendtime = endtarr[0]
-            if (newendtime.toInt()<9){
-                newendtime = "0"+newendtime+":"+endtarr[1]+ "am"
-            }
-            else{
-                newendtime = newendtime+":"+endtarr[1]+ "am"
+            newendtime = if (newendtime.toInt()<9){
+                "0"+newendtime+":"+endtarr[1]+ "am"
+            } else{
+                newendtime+":"+endtarr[1]+ "am"
             }
         }
 

@@ -91,6 +91,7 @@
         />
 
     <TextView
+        android:id="@+id/MainAttDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Att_Sec"
@@ -117,16 +118,16 @@
         />
 
     <TextView
+        android:id="@+id/MainAttTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Att_date"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/Att_Time"
-        android:text="10am-11am"
-        android:textSize="15dp"
         android:fontFamily="@font/poppins_regular"
-        />
+        android:text="10am-11am"
+        android:textSize="15dp" />
 
     <CheckBox
         android:id="@+id/checkBox_PresentAll"

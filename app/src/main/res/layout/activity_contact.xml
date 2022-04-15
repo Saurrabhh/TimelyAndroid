@@ -85,12 +85,12 @@
                 android:layout_below="@+id/name1"
                 android:layout_marginStart="5dp"
                 android:layout_toEndOf="@+id/roll1"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="3rd Sem"
+                android:text="4th Sem"
                 android:textColor="@color/white"
-                android:textSize="11sp" android:fontFamily="@font/arima_madurai_bold"
-                />
+                android:textSize="11sp" />
             <TextView
                 android:fontFamily="@font/cambo"
                 android:id="@+id/branch1"
@@ -215,7 +215,7 @@
                 android:fontFamily="@font/arima_madurai_bold"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="3rd Sem"
+                android:text="4th Sem"
                 android:textColor="@color/white"
                 android:textSize="11sp" />
             <TextView
@@ -366,7 +366,7 @@
                 android:fontFamily="@font/arima_madurai_bold"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="3rd Sem"
+                android:text="4th Sem"
                 android:textColor="@color/white"
                 android:textSize="11sp" />
             <TextView
@@ -505,13 +505,12 @@
                 android:layout_below="@+id/name4"
                 android:layout_marginStart="5dp"
                 android:layout_toEndOf="@+id/roll4"
+                android:fontFamily="@font/arima_madurai_bold"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                android:text="3rd Sem"
+                android:text="4th Sem"
                 android:textColor="@color/white"
-                android:textSize="11sp"
-                android:fontFamily="@font/arima_madurai_bold"
-                />
+                android:textSize="11sp" />
             <TextView
                 android:id="@+id/branch4"
                 android:layout_below="@+id/name4"

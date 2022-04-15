@@ -339,6 +339,7 @@
             android:layout_below="@+id/Line"
             android:layout_centerHorizontal="true"
             tools:itemCount="5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/card_view_design" />
 
     </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.timely.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.os.Debug
 import android.util.Log
@@ -7,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +19,8 @@ import com.example.timely.databinding.FragmentAttendanceBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class AttendanceFragment : Fragment() {
@@ -38,6 +43,7 @@ class AttendanceFragment : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         KEY.fragmentName = KEY().ATTENDANCE
@@ -48,6 +54,14 @@ class AttendanceFragment : Fragment() {
 
 
         showStudent()
+
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
+        val formatted = current.format(formatter)
+
+        val sharedPreferences = requireActivity().getSharedPreferences("currtime", AppCompatActivity.MODE_PRIVATE)
+        binding.MainAttTime.text = sharedPreferences.getString("time", null)
+        binding.MainAttDate.text = formatted
     }
 
     private fun showStudent() {
