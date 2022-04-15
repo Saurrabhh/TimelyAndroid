@@ -21,6 +21,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.timely.R
+import com.example.timely.chat.MainChat
 import com.example.timely.databinding.ActivityMainBinding
 import com.example.timely.fragments.AttendanceFragment
 import com.example.timely.fragments.KEY
@@ -112,9 +113,15 @@ open class MainActivity : AppCompatActivity() {
                 R.id.nav_logout -> logoutfun()
                 R.id.notes -> opennotes()
                 R.id.nav_attendance -> openattendance()
+                R.id.nav_chat->openchat()
             }
             true
         }
+    }
+    // for opening chat
+    private fun openchat() {
+        val intent = Intent(this, MainChat::class.java)
+        startActivity(intent)
     }
 
     private fun openattendance() {

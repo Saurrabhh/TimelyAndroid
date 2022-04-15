@@ -120,6 +120,9 @@
     <string name="select_semester">Select Semester</string>
     <string name="themes">Themes</string>
     <string name="sem">Sem :</string>
+    <string name="attendance">Attendance</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="type_a_message">Type A Message</string>
 
 
 </resources>
