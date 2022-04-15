@@ -13,10 +13,14 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/Theme.Timely">
+        <activity
+            android:name=".chat.ChatActivity"
+            android:exported="false" />
+
         <service
             android:name=".services.MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".activity.SettingsActivity"
@@ -47,6 +51,9 @@
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".chat.MainChat"
             android:exported="false" />
 
         <meta-data

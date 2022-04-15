@@ -9,11 +9,11 @@
             <menu>
                 <item android:id="@+id/nav_home"
                     android:icon="@drawable/dashboard_icon"
-                    android:title="Dashboard"
+                    android:title="@string/dashboard"
                     />
                 <item android:id="@+id/nav_attendance"
                     android:icon="@drawable/dashboard_icon"
-                    android:title="Attendance"
+                    android:title="@string/attendance"
                     />
                 <item android:id="@+id/nav_profile"
                     android:icon="@drawable/ic_baseline_person_24"
@@ -24,6 +24,10 @@
                 <item android:id="@+id/notes"
                     android:icon="@drawable/ic_baseline_note_add_24"
                     android:title="@string/add_short_notes"
+                    />
+                <item android:id="@+id/nav_chat"
+                    android:icon="@drawable/ic_baseline_chat_24"
+                    android:title="Chat"
                     />
             </menu>
         </item>
