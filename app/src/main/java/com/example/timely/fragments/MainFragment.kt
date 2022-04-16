@@ -27,6 +27,7 @@ import com.example.timely.adapter.MyAdapter
 import com.example.timely.dataClasses.Periods
 import com.example.timely.dataClasses.User
 import com.example.timely.databinding.FragmentMainBinding
+import com.example.timely.utils.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -35,7 +36,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-open class MainFragment : Fragment() {
+class MainFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentMainBinding
@@ -60,7 +61,7 @@ open class MainFragment : Fragment() {
         PeriodList = arrayListOf()
 
         auth = FirebaseAuth.getInstance()
-        user = loaddata()
+        user = Utils().loaddata(requireActivity())
         displayPeriodData()
         return binding.root
     }
@@ -91,14 +92,6 @@ open class MainFragment : Fragment() {
 
     }
 
-    open fun loaddata(): User {
-        val sharedPreferences =
-            requireActivity().getSharedPreferences("curruserdata", AppCompatActivity.MODE_PRIVATE)
-        val gson = Gson()
-        val json: String? = sharedPreferences.getString("user", null)
-        Log.d("gg", json.toString())
-        return gson.fromJson(json, User::class.java)
-    }
 
     private fun getcurrentday(): Array<String> {
         val dayint = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)

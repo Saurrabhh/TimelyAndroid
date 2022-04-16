@@ -15,6 +15,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.navigation.Navigation
 import com.example.timely.R
 import com.example.timely.databinding.FragmentProfileBinding
+import com.example.timely.utils.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -47,18 +48,18 @@ class ProfileFragment : Fragment() {
 
 
         motionLayout = binding.motionlayout
-        val mainname=binding.MainName
+        val mainname = binding.MainName
         val mainusername = binding.MainUserName
-        val mainurn=binding.MainURN
-        val mainclass=binding.MainClass
-        val mainsection=binding.MainSection
-        val mainsemester=binding.MainSemester
-        val mainemail=binding.MainEmail
-        val mainbranch=binding.MainBranch
-        val maingender=binding.MainGender
+        val mainurn = binding.MainURN
+        val mainclass = binding.MainClass
+        val mainsection = binding.MainSection
+        val mainsemester = binding.MainSemester
+        val mainemail = binding.MainEmail
+        val mainbranch = binding.MainBranch
+        val maingender = binding.MainGender
 
 
-        onEdit=false //flag variable
+        onEdit = false //flag variable
         mainusername.inputType = InputType.TYPE_NULL
         mainname.inputType = InputType.TYPE_NULL
         mainurn.inputType = InputType.TYPE_NULL
@@ -76,15 +77,17 @@ class ProfileFragment : Fragment() {
             AppCompatActivity.MODE_PRIVATE
         )
 
-        val name = sharedPreferences.getString("name", null)
-        val username = sharedPreferences.getString("username", null)
-        val urn = sharedPreferences.getString("urn", null)
-        val rollno = sharedPreferences.getString("rollno", null)
-        val section = sharedPreferences.getString("section", null)
-        val semester = sharedPreferences.getString("semester", null)
-        val email = sharedPreferences.getString("email", null)
-        val branch = sharedPreferences.getString("branch", null)
-        val gender = sharedPreferences.getString("gender", null)
+        val user = Utils().loaddata(requireActivity())
+
+        val name = user.name
+        val username = user.username
+        val urn = user.urn
+        val rollno = user.rollno
+        val section = user.section
+        val semester = user.semester
+        val email = user.email
+        val branch = user.branch
+        val gender = user.gender
 //        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
 //        database.get().addOnSuccessListener {
 //
