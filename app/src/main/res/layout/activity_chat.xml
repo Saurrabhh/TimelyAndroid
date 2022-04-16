@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/mainchat"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,34 +9,36 @@
     tools:context=".chat.ChatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/display_chat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/display_chat"
         android:layout_above="@+id/chat_linearlayout"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
 
     <LinearLayout
         android:id="@+id/chat_linearlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="100"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="100">
 
         <EditText
+
+            android:id="@+id/messageBox"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:id="@+id/messageBox"
-            android:hint="@string/type_a_message"
             android:layout_marginStart="10dp"
-            android:layout_weight="85"/>
+            android:layout_weight="75"
+            android:hint="@string/type_a_message" />
 
 
-        <ImageView
-            android:layout_width="50dp"
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="10dp"
             android:layout_height="50dp"
-            android:src="@drawable/sendbutton"
-            android:layout_weight="20"/>
+            android:layout_weight="30"
+            android:src="@drawable/ic_baseline_send_24" />
 
 
     </LinearLayout>
