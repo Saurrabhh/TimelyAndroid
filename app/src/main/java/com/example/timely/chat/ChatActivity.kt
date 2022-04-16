@@ -1,20 +1,16 @@
 package com.example.timely.chat
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.timely.R
+import com.example.timely.adapter.MessageAdapter
 import com.example.timely.databinding.ActivityChatBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var chatRecyclerView: RecyclerView

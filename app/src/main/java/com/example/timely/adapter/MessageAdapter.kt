@@ -1,4 +1,4 @@
-package com.example.timely.chat
+package com.example.timely.adapter
 
 
 import android.content.Context
@@ -12,9 +12,8 @@ import android.widget.TextView
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.timely.R
-import com.example.timely.adapter.chat_user_adapter
+import com.example.timely.chat.Message
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 
 class MessageAdapter(val context: Context, private val messageList:ArrayList<Message>):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -44,7 +43,7 @@ class MessageAdapter(val context: Context, private val messageList:ArrayList<Mes
 
         val currentMessage= messageList[position]
 
-        if(holder.javaClass==SentViewHolder::class.java){
+        if(holder.javaClass == SentViewHolder::class.java){
             //for sent view holder
 
             val viewHolder = holder as SentViewHolder
@@ -56,6 +55,8 @@ class MessageAdapter(val context: Context, private val messageList:ArrayList<Mes
             viewHolder.receiveMessage.text=currentMessage.message
 
         }
+
+
 
     }
 

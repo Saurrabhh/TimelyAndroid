@@ -4,7 +4,6 @@ import android.content.Context
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.timely.dataClasses.User
-import com.example.timely.fragments.MainFragment
 import com.google.gson.Gson
 
 class Utils {

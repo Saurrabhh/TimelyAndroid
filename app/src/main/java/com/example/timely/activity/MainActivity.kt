@@ -33,6 +33,7 @@ import com.example.timely.themes.DialogManager.Companion.showCustomAlertDialog
 import com.example.timely.themes.ThemeManager.Companion.setCustomizedThemes
 import com.example.timely.themes.ThemeStorage.Companion.getThemeColor
 import com.example.timely.themes.ThemeStorage.Companion.setThemeColor
+import com.example.timely.utils.Utils
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -82,12 +83,11 @@ open class MainActivity : AppCompatActivity() {
         if (getThemeColor(this).equals("blue")) {
             window.statusBarColor = resources.getColor(R.color.colorPrimary)
         }
+
         displayNavbar()
 
-
-
-
-
+        val a = Utils().loaddata(this)
+        Log.d("aa", a.toString())
     }
 
     private fun getcurrentuserdata() {

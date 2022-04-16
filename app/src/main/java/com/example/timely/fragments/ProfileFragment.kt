@@ -71,11 +71,7 @@ class ProfileFragment : Fragment() {
         maingender.inputType = InputType.TYPE_NULL
 
 
-
         KEY.fragmentName = KEY().PROFILE
-        val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs",
-            AppCompatActivity.MODE_PRIVATE
-        )
 
         val user = Utils().loaddata(requireActivity())
 
@@ -88,29 +84,18 @@ class ProfileFragment : Fragment() {
         val email = user.email
         val branch = user.branch
         val gender = user.gender
-//        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-//        database.get().addOnSuccessListener {
-//
-//            val currentemail = auth.currentUser?.email.toString()
-//            val users = it.children
-//            for (user in users){
-//                if ( user.child("email").value.toString() == currentemail ){
 
-                    binding.MainName.setText(name)
-                    binding.MainUserName.setText(username)
-                    binding.MainURN.setText(urn)
-                    binding.MainClass.setText(rollno)
-                    binding.MainSection.setText(section)
-                    binding.MainSemester.setText(semester)
-                    binding.MainEmail.setText(email)
-                    binding.MainBranch.setText(branch)
-                    binding.MainGender.setText(gender)
-//                    break
-//                }
-//            }
-//        }.addOnFailureListener{
-//            Toast.makeText(activity, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
-//        }
+
+        binding.MainName.setText(name)
+        binding.MainUserName.setText(username)
+        binding.MainURN.setText(urn)
+        binding.MainClass.setText(rollno)
+        binding.MainSection.setText(section)
+        binding.MainSemester.setText(semester)
+        binding.MainEmail.setText(email)
+        binding.MainBranch.setText(branch)
+        binding.MainGender.setText(gender)
+
 
 
         motionLayout.addTransitionListener(object: MotionLayout.TransitionListener{

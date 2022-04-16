@@ -17,6 +17,7 @@ import com.example.timely.adapter.TTAdapter
 import com.example.timely.dataClasses.DayPeriod
 import com.example.timely.dataClasses.User
 import com.example.timely.databinding.FragmentFulTTBinding
+import com.example.timely.utils.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -35,10 +36,11 @@ class FulTTFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         auth = FirebaseAuth.getInstance()
         binding = FragmentFulTTBinding.inflate(layoutInflater,container,false)
+
         return binding.root
     }
 
@@ -47,6 +49,8 @@ class FulTTFragment : Fragment() {
         KEY.fragmentName = KEY().FULLTT
         navController = Navigation.findNavController(view)
         refreshapp()
+
+
 
 
 
@@ -64,9 +68,9 @@ class FulTTFragment : Fragment() {
 
     private fun displayfulltt() {
 
-        val user = loaddata()
+        val user = Utils().loaddata(requireActivity())
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
-        database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
+        database.child(user.branch!!).child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
             if (it.exists()){
                 val days = it.children
                 val list = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
@@ -190,28 +194,8 @@ class FulTTFragment : Fragment() {
             }
         }
 
-
-
         return "$newstarttime-$newendtime"
 
-    }
-
-
-    private fun loaddata(): User {
-        val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs", AppCompatActivity.MODE_PRIVATE)
-        val name = sharedPreferences.getString("name", null)
-        val username = sharedPreferences.getString("username", null)
-        val urn = sharedPreferences.getString("urn", null)
-        val rollno = sharedPreferences.getString("rollno", null)
-        val section = sharedPreferences.getString("section", null)
-        val semester = sharedPreferences.getString("semester", null)
-        val email = sharedPreferences.getString("email", null)
-
-        val user = User(name, username, urn, semester, rollno, section, email)
-
-        return user
-
-//        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
     }
 
 
