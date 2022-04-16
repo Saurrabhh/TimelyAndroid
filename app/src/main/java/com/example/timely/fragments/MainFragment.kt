@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -95,6 +96,7 @@ open class MainFragment : Fragment() {
             requireActivity().getSharedPreferences("curruserdata", AppCompatActivity.MODE_PRIVATE)
         val gson = Gson()
         val json: String? = sharedPreferences.getString("user", null)
+        Log.d("gg", json.toString())
         return gson.fromJson(json, User::class.java)
     }
 
