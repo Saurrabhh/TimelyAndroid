@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.timely.R
 import com.example.timely.adapter.TTAdapter
 import com.example.timely.dataClasses.DayPeriod
-import com.example.timely.dataClasses.Users
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.FragmentFulTTBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -197,7 +197,7 @@ class FulTTFragment : Fragment() {
     }
 
 
-    private fun loaddata(): Users {
+    private fun loaddata(): User {
         val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs", AppCompatActivity.MODE_PRIVATE)
         val name = sharedPreferences.getString("name", null)
         val username = sharedPreferences.getString("username", null)
@@ -207,7 +207,7 @@ class FulTTFragment : Fragment() {
         val semester = sharedPreferences.getString("semester", null)
         val email = sharedPreferences.getString("email", null)
 
-        val user = Users(name, username, urn, semester, rollno, section, email)
+        val user = User(name, username, urn, semester, rollno, section, email)
 
         return user
 

@@ -2,16 +2,14 @@ package com.example.timely.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.VerifiedInputEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.airbnb.lottie.animation.content.Content
 import com.example.timely.R
-import com.example.timely.dataClasses.Users
+import com.example.timely.dataClasses.User
 
-class chat_user_adapter(val context: Context, val userList:ArrayList<Users>): RecyclerView.Adapter<chat_user_adapter.ChatUserViewHolder>() {
+class chat_user_adapter(val context: Context, val userList:ArrayList<User>): RecyclerView.Adapter<chat_user_adapter.ChatUserViewHolder>() {
 
 
 

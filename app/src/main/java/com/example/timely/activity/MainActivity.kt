@@ -22,6 +22,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.timely.R
 import com.example.timely.chat.MainChat
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.ActivityMainBinding
 import com.example.timely.fragments.AttendanceFragment
 import com.example.timely.fragments.KEY
@@ -34,8 +35,8 @@ import com.example.timely.themes.ThemeStorage.Companion.getThemeColor
 import com.example.timely.themes.ThemeStorage.Companion.setThemeColor
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
+import com.google.gson.Gson
 
 open class MainActivity : AppCompatActivity() {
     companion object {
@@ -47,8 +48,8 @@ open class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
     private  lateinit var appBarConfiguration: AppBarConfiguration
-
     private lateinit var toggle : ActionBarDrawerToggle
+    private lateinit var database: DatabaseReference
 
     @RequiresApi(Build.VERSION_CODES.N_MR1)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +59,7 @@ open class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         setCustomizedThemes(this, getThemeColor(this))
         setContentView(binding.root)
+        getcurrentuserdata()
         drawerLayout = binding.drawerLayout
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
@@ -84,6 +86,33 @@ open class MainActivity : AppCompatActivity() {
 
 
 
+
+
+    }
+
+    private fun getcurrentuserdata() {
+        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+        auth.uid?.let {
+            database.child(it).addValueEventListener(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val sharedPreferences = getSharedPreferences("curruserdata", MODE_PRIVATE)
+                    val user = snapshot.getValue(User::class.java)
+                    val gson = Gson()
+                    val json = gson.toJson(user)
+                    Log.d(TAG, json)
+                    val editor = sharedPreferences.edit()
+                    editor.apply {
+                        putString("user", json)
+                    }.apply()
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
+        }
     }
 
 
@@ -115,11 +144,12 @@ open class MainActivity : AppCompatActivity() {
                 R.id.nav_logout -> logoutfun()
                 R.id.notes -> opennotes()
                 R.id.nav_attendance -> openattendance()
-                R.id.nav_chat->openchat()
+                R.id.nav_chat -> openchat()
             }
             true
         }
     }
+
     // for opening chat
     private fun openchat() {
         val intent = Intent(this, MainChat::class.java)
@@ -215,6 +245,7 @@ open class MainActivity : AppCompatActivity() {
         }
         drawerLayout.closeDrawer(GravityCompat.START)
     }
+
     @ColorInt
     fun getThemeColor(@AttrRes attributeColor: Int): Int {
         val value = TypedValue()

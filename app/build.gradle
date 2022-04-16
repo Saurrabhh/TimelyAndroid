@@ -77,4 +77,7 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.4.0'
 
 
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+
 }

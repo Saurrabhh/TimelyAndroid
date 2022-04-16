@@ -24,16 +24,17 @@ import com.example.timely.activity.LoginActivity
 import com.example.timely.activity.MainActivity
 import com.example.timely.adapter.MyAdapter
 import com.example.timely.dataClasses.Periods
-import com.example.timely.dataClasses.Users
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.FragmentMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.lang.Exception
+import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainFragment : Fragment() {
+
+open class MainFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentMainBinding
@@ -47,6 +48,7 @@ class MainFragment : Fragment() {
     private lateinit var recyclerview: RecyclerView
     private lateinit var PeriodList: ArrayList<Periods>
     private lateinit var navController: NavController
+    private lateinit var user: User
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,7 +59,7 @@ class MainFragment : Fragment() {
         PeriodList = arrayListOf()
 
         auth = FirebaseAuth.getInstance()
-        getcurrentuserdata()
+        user = loaddata()
         displayPeriodData()
         return binding.root
     }
@@ -70,8 +72,8 @@ class MainFragment : Fragment() {
             val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)
             activity?.finish()
-
         }
+
 
          navController = Navigation.findNavController(view)
         refreshapp()
@@ -84,25 +86,16 @@ class MainFragment : Fragment() {
 //        recyclerview.setHasFixedSize(true)
 
         // ArrayList of class ItemsViewModel
-
-
-
+        binding.NameTop.text = user.name
 
     }
 
-    private fun loaddata(): Users {
-        val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs", AppCompatActivity.MODE_PRIVATE)
-        val name = sharedPreferences.getString("name", null)
-        val username = sharedPreferences.getString("username", null)
-        val urn = sharedPreferences.getString("urn", null)
-        val rollno = sharedPreferences.getString("rollno", null)
-        val section = sharedPreferences.getString("section", null)
-        val semester = sharedPreferences.getString("semester", null)
-        val email = sharedPreferences.getString("email", null)
-
-        return Users(name, username, urn, semester, rollno, section, email)
-
-//        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
+    open fun loaddata(): User {
+        val sharedPreferences =
+            requireActivity().getSharedPreferences("curruserdata", AppCompatActivity.MODE_PRIVATE)
+        val gson = Gson()
+        val json: String? = sharedPreferences.getString("user", null)
+        return gson.fromJson(json, User::class.java)
     }
 
     private fun getcurrentday(): Array<String> {
@@ -149,10 +142,11 @@ class MainFragment : Fragment() {
     private fun displayPeriodData() {
 
 
-        val user = loaddata()
+
+
         var nextclassflag = 0
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
-        database.child("CSE").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
+        database.child("${user.branch}").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
           if (it.exists()){
               val data = getcurrentday()
@@ -222,60 +216,6 @@ class MainFragment : Fragment() {
 
         }.addOnFailureListener{
             Toast.makeText(activity, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
-        }
-
-    }
-
-
-
-    private fun getcurrentuserdata(){
-
-        val currentemail = auth.currentUser?.email.toString()
-
-        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        database.get().addOnSuccessListener {
-
-            val users = it.children
-            for (user in users) {
-                if (user.child("email").value.toString() == currentemail) {
-
-                    val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs",
-                        AppCompatActivity.MODE_PRIVATE
-                    )
-
-                    val name = user.child("name").value.toString()
-                    val username = user.child("username").value.toString()
-                    val urn = user.child("urn").value.toString()
-                    val rollno = user.child("rollno").value.toString()
-                    val section = user.child("section").value.toString()
-                    val semester = user.child("semester").value.toString()
-                    val email = user.child("email").value.toString()
-                    val branch = user.child("branch").value.toString()
-                    val gender = user.child("gender").value.toString()
-                    binding.NameTop.text=name
-
-
-                    val editor = sharedPreferences.edit()
-                    editor.apply{
-                        putString("name", name)
-                        putString("username", username)
-                        putString("urn", urn)
-                        putString("rollno", rollno)
-                        putString("section", section)
-                        putString("semester", semester)
-                        putString("email", email)
-                        putString("branch", branch)
-                        putString("gender", gender)
-                    }.apply()
-
-                    break
-
-                }
-
-            }
-
-        }.addOnFailureListener{
-            Toast.makeText(requireActivity(), "An Error occurred", Toast.LENGTH_SHORT).show()
         }
 
     }

@@ -3,22 +3,19 @@ package com.example.timely.activity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.view.WindowManager
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.timely.R
-import com.example.timely.dataClasses.Users
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.ActivitySignUp2Binding
 import com.example.timely.themes.ThemeManager
 import com.example.timely.themes.ThemeStorage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import java.util.*
 
 class SignUp2Activity : AppCompatActivity() {
 
@@ -37,17 +34,11 @@ class SignUp2Activity : AppCompatActivity() {
         val window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         if (ThemeStorage.getThemeColor(this).equals("blue")) {
-            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+            window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
         }
         auth = FirebaseAuth.getInstance()
-//        val email = intent.getStringExtra("email").toString().trim()
-//        val password = intent.getStringExtra("password").toString().trim()
-//        Toast.makeText(this, "$email $password", Toast.LENGTH_SHORT).show()
 
 
-        binding.SubmitBtn.setOnClickListener {
-            createnewuser()
-        }
 
         val semesters = resources.getStringArray(R.array.semesters)
         val sections: Array<String> = arrayOf("A","B")
@@ -103,6 +94,10 @@ class SignUp2Activity : AppCompatActivity() {
                 binding.Inputsec.dismissDropDown()
             }
 
+        }
+
+        binding.SubmitBtn.setOnClickListener {
+            createnewuser()
         }
 
 
@@ -184,14 +179,16 @@ class SignUp2Activity : AppCompatActivity() {
                 task ->
                     if (task.isSuccessful) {
 
-                        val user = Users(name, username, urn, semester, rollno, section, email, gender, branch)
+                        val user = User(auth.uid, name, username, urn, semester, rollno, section, email, gender, branch)
                         database =
                             FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/")
                                 .getReference("Users")
 
-                        database.child(username).setValue(user).addOnSuccessListener {
-                            Toast.makeText(this, "Successfully Registered", Toast.LENGTH_LONG).show()
+                        auth.uid?.let {
+                            database.child(it).setValue(user).addOnSuccessListener {
+                                Toast.makeText(this, "Successfully Registered", Toast.LENGTH_LONG).show()
 
+                            }
                         }
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)

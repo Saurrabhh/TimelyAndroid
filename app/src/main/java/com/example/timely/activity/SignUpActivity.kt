@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.timely.R
 import com.example.timely.databinding.ActivitySignUpBinding
 import com.example.timely.themes.ThemeManager
@@ -26,7 +27,7 @@ class SignUpActivity : AppCompatActivity() {
         val window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         if (ThemeStorage.getThemeColor(this).equals("blue")) {
-            window.statusBarColor = resources.getColor(R.color.colorPrimary)
+            window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimary)
         }
 
         auth = FirebaseAuth.getInstance()

@@ -5,16 +5,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.timely.R
 import com.example.timely.adapter.chat_user_adapter
-import com.example.timely.dataClasses.Users
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.MainchatBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class MainChat: AppCompatActivity() {
     private lateinit var chatUserRecyclerView: RecyclerView
-    private lateinit var chatuserList:ArrayList<Users>
+    private lateinit var chatuserList:ArrayList<User>
     private lateinit var chatUserAdapter: chat_user_adapter
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
@@ -43,7 +42,7 @@ class MainChat: AppCompatActivity() {
                 chatuserList.clear()// har bhar data lata h isliye
                 for(postsnapshot in snapshot.children){
                     // firebase se data lane ka
-                    val currentUser= postsnapshot.getValue(Users::class.java)
+                    val currentUser= postsnapshot.getValue(User::class.java)
 
 
                         chatuserList.add(currentUser!!)

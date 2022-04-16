@@ -25,7 +25,7 @@ import com.example.timely.activity.LoginActivity
 import com.example.timely.activity.MainActivity
 import com.example.timely.adapter.MyAdapter
 import com.example.timely.dataClasses.Periods
-import com.example.timely.dataClasses.Users
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.FragmentTeacherBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -96,7 +96,7 @@ open class TeacherFragment : Fragment() {
 
     }
 
-    open fun loaddata(): Users {
+    open fun loaddata(): User {
         val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs", AppCompatActivity.MODE_PRIVATE)
         val name = sharedPreferences.getString("name", null)
         val username = sharedPreferences.getString("username", null)
@@ -108,7 +108,7 @@ open class TeacherFragment : Fragment() {
         val gender = sharedPreferences.getString("gender", null)
         val branch = sharedPreferences.getString("branch", null)
 
-        return Users(name, username, urn, semester, rollno, section, email, gender, branch)
+        return User(name, username, urn, semester, rollno, section, email, gender, branch)
 
 //        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
     }
