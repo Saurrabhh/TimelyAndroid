@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.timely.adapter.MessageAdapter
@@ -25,6 +26,7 @@ class ChatActivity : AppCompatActivity() {
     var senderRoom:String? = null
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
@@ -78,13 +80,18 @@ class ChatActivity : AppCompatActivity() {
 
             val message = messageBox.text.toString()
             val messageObject = Message(message, senderUid)
+            if(message.isEmpty()){
+                Toast.makeText(this, "enter text", Toast.LENGTH_SHORT).show()
 
-            database.child("Chats").child(senderRoom!!).child("messages").push()
-                .setValue(messageObject).addOnSuccessListener {
-                    database.child("Chats").child(receiverRoom!!).child("messages").push()
-                        .setValue(messageObject)
-                }
-            messageBox.setText(" ")
+            }else{
+                database.child("Chats").child(senderRoom!!).child("messages").push()
+                    .setValue(messageObject).addOnSuccessListener {
+                        database.child("Chats").child(receiverRoom!!).child("messages").push()
+                            .setValue(messageObject)
+                    }
+                messageBox.setText("")
+            }
+
 
         }
     }
