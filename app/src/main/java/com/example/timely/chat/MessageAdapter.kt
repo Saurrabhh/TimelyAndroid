@@ -48,12 +48,12 @@ class MessageAdapter(val context: Context, private val messageList:ArrayList<Mes
             //for sent view holder
 
             val viewHolder = holder as SentViewHolder
-            holder.sentMessage.text= currentMessage.message
+            viewHolder.sentMessage.text= currentMessage.message
 
         }else{
             //for receive view holder
             val viewHolder = holder as ReceiveViewHolder
-            holder.receiveMessage.text=currentMessage.message
+            viewHolder.receiveMessage.text=currentMessage.message
 
         }
 
