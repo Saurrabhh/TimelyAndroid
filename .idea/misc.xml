@@ -127,7 +127,6 @@
         <entry key="..\:/Users/Saurabh Yadav/Timely/app/src/main/res/xml/activity_signup.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/drawable-v24/gradient.xml" value="0.153" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout-v28/card_chat_user_design.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/activity_chat.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/activity_contact.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/activity_forgot.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
@@ -148,7 +147,6 @@
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/fragment_teacher.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/full_tt_view_design.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/main_drawer_header.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/mainchat.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/note_item.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/menu/main_drawer_menu.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/drawable-v24/button_border.xml" value="0.1565" />
@@ -159,6 +157,7 @@
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_attendance.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/sent_chat.xml" value="0.20599409033347404" />
         <entry key="..\:/Users/rahul/AndroidStudioProjects/Android-Study-Jams/app/src/main/res/drawable-v24/gradient.xml" value="0.1" />
         <entry key="..\:/Users/rahul/AndroidStudioProjects/Android-Study-Jams/app/src/main/res/drawable-v24/ic_baseline_add_circle_24.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/rahul/AndroidStudioProjects/Android-Study-Jams/app/src/main/res/drawable-v24/ic_baseline_note_add_24.xml" value="0.13541666666666666" />

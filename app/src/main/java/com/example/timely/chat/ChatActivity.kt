@@ -1,5 +1,6 @@
 package com.example.timely.chat
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,12 +8,12 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.timely.R
 import com.example.timely.databinding.ActivityChatBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
 class ChatActivity : AppCompatActivity() {
@@ -51,6 +52,32 @@ class ChatActivity : AppCompatActivity() {
         messageList = ArrayList()
         messageAdapter = MessageAdapter(this, messageList)
 
+        chatRecyclerView.layoutManager = LinearLayoutManager(this)
+        chatRecyclerView.adapter = messageAdapter
+
+        // for adding data into recycler view
+        database.child("Chats").child(senderRoom!!).child("messages")
+            .addValueEventListener(object: ValueEventListener{
+                @SuppressLint("NotifyDataSetChanged")
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    messageList.clear()
+                    for(postsnapshot in snapshot.children){
+
+
+                        val message = postsnapshot.getValue(Message::class.java)
+                        messageList.add(message!!)
+                    }
+                    messageAdapter.notifyDataSetChanged()
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+
         sendButton.setOnClickListener{
 
             val message = messageBox.text.toString()
@@ -61,6 +88,7 @@ class ChatActivity : AppCompatActivity() {
                     database.child("Chats").child(receiverRoom!!).child("messages").push()
                         .setValue(messageObject)
                 }
+            messageBox.setText(" ")
 
         }
     }
