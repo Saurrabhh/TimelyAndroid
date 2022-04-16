@@ -15,7 +15,7 @@ import com.example.timely.dataClasses.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.ktx.Firebase
 
-class chat_user_adapter(val context: Context, val userList:ArrayList<User>): RecyclerView.Adapter<chat_user_adapter.ChatUserViewHolder>() {
+class chat_user_adapter(val context: Context, private val userList:ArrayList<User>): RecyclerView.Adapter<chat_user_adapter.ChatUserViewHolder>() {
 
 
 

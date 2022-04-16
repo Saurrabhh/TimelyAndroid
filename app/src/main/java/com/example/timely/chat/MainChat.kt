@@ -25,15 +25,15 @@ class MainChat: AppCompatActivity() {
         setContentView(binding.root)
         // variables needed to initialise recycler view
         auth = FirebaseAuth.getInstance()
-        database=FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
+        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
 
-        chatuserList= ArrayList()
-        chatUserAdapter= chat_user_adapter(this,chatuserList)
+        chatuserList = ArrayList()
+        chatUserAdapter = chat_user_adapter(this,chatuserList)
 
         chatUserRecyclerView=binding.chatRecyclerview
 
-        chatUserRecyclerView.layoutManager=LinearLayoutManager(this)
-        chatUserRecyclerView.adapter=chatUserAdapter
+        chatUserRecyclerView.layoutManager = LinearLayoutManager(this)
+        chatUserRecyclerView.adapter = chatUserAdapter
 
         database.child("Users").addValueEventListener(object: ValueEventListener{
             @SuppressLint("NotifyDataSetChanged")
