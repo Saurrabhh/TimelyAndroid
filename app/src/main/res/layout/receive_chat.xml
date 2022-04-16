@@ -18,7 +18,9 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="This is receive message"
-
+            android:background="@drawable/receive_background"
+            android:textColor="@color/black"
+            android:fontFamily="@font/cambo"
             android:textSize="18sp" />
 
     </RelativeLayout>
