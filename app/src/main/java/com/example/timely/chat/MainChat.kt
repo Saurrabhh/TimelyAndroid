@@ -44,8 +44,10 @@ class MainChat: AppCompatActivity() {
                     // firebase se data lane ka
                     val currentUser= postsnapshot.getValue(User::class.java)
 
+                        if(currentUser?.uid != auth.uid){
 
-                        chatuserList.add(currentUser!!)
+                            chatuserList.add(currentUser!!)
+                        }
 
 
                 }
