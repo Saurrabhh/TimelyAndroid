@@ -77,7 +77,7 @@ class MainFragment : Fragment() {
         }
 
 
-         navController = Navigation.findNavController(view)
+        navController = Navigation.findNavController(view)
         refreshapp()
 
 
@@ -143,71 +143,71 @@ class MainFragment : Fragment() {
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("${user.branch}").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
-          if (it.exists()){
-              val data = getcurrentday()
+            if (it.exists()){
+                val data = getcurrentday()
 
 
-              val periods = it.child(data[1]).child(data[0]).children
-              var newtimeleft = 0
+                val periods = it.child(data[1]).child(data[0]).children
+                var newtimeleft = 0
 
-              for (period in periods){
-                  val periodno = period.child("0").value.toString()
-                  var time = period.child("1").value.toString()
-                  val subject = period.child("2").child("Subject").value.toString()
-                  val teacher = period.child("2").child("Teacher").value.toString()
-
-
-                  val array = time.split("-")
-                  val st = convertTomili(array[0])
-                  val et = convertTomili(array[1])
-                  val currtime = convertTomili(getcurrenttime())
-
-                  if (nextclassflag==1){
-                      binding.MainNextPeriod.text = subject
-                      binding.NextProfName.text=teacher
-                      if(auth.currentUser?.email != "teacher@gmail.com")
-                        createNotification(subject, newtimeleft.toString())
-                      nextclassflag = 0
-                  }
-
-                  if(currtime in st..et) {
-                      var timeleft = (et - currtime).toString()
-
-                      val sharedPreferences1 = requireActivity().getSharedPreferences("currtime", AppCompatActivity.MODE_PRIVATE)
-                      val editor1 = sharedPreferences1.edit()
-                      editor1.apply {
-                          putString("time", time)
-                      }.apply()
+                for (period in periods){
+                    val periodno = period.child("0").value.toString()
+                    var time = period.child("1").value.toString()
+                    val subject = period.child("2").child("Subject").value.toString()
+                    val teacher = period.child("2").child("Teacher").value.toString()
 
 
-                      if (timeleft.toInt()>=60){
-                          timeleft = (timeleft.toInt() - 40).toString()
-                      }
+                    val array = time.split("-")
+                    val st = convertTomili(array[0])
+                    val et = convertTomili(array[1])
+                    val currtime = convertTomili(getcurrenttime())
 
-                      newtimeleft = timeleft.toInt()
-                      timeleft = "$timeleft mins"
-                      binding.CurrProfName.text=teacher
-                      binding.MainTime.text = timeleft
-                      binding.MainCurrentClass.text = subject
-                      nextclassflag = 1
-                  }
+                    if (nextclassflag==1){
+                        binding.MainNextPeriod.text = subject
+                        binding.NextProfName.text=teacher
+                        if(auth.currentUser?.email != "teacher@gmail.com")
+                            createNotification(subject, newtimeleft.toString())
+                        nextclassflag = 0
+                    }
 
-                  val mili = requireActivity().intent.getStringExtra("gomili").toString()
+                    if(currtime in st..et) {
+                        var timeleft = (et - currtime).toString()
+
+                        val sharedPreferences1 = requireActivity().getSharedPreferences("currtime", AppCompatActivity.MODE_PRIVATE)
+                        val editor1 = sharedPreferences1.edit()
+                        editor1.apply {
+                            putString("time", time)
+                        }.apply()
+
+
+                        if (timeleft.toInt()>=60){
+                            timeleft = (timeleft.toInt() - 40).toString()
+                        }
+
+                        newtimeleft = timeleft.toInt()
+                        timeleft = "$timeleft mins"
+                        binding.CurrProfName.text=teacher
+                        binding.MainTime.text = timeleft
+                        binding.MainCurrentClass.text = subject
+                        nextclassflag = 1
+                    }
+
+                    val mili = requireActivity().intent.getStringExtra("gomili").toString()
 //                Toast.makeText(this, time.toString(), Toast.LENGTH_SHORT).show()
-                  if (mili != "yes"){
-                      time = timetoampm(time)
-                  }
+                    if (mili != "yes"){
+                        time = timetoampm(time)
+                    }
 
-                  val periodobject = Periods(periodno, time, subject, teacher)
+                    val periodobject = Periods(periodno, time, subject, teacher)
 
-                  PeriodList.add(periodobject)
+                    PeriodList.add(periodobject)
 
-              }
+                }
 
-              recyclerview.adapter = MyAdapter(PeriodList)
-          }
+                recyclerview.adapter = MyAdapter(PeriodList)
+            }
             else
-              Toast.makeText(activity, "TimeTable is only availabe for Sem3 E/F and sem 5 A/B", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "TimeTable is only availabe for Sem3 E/F and sem 5 A/B", Toast.LENGTH_SHORT).show()
 
         }.addOnFailureListener{
             Toast.makeText(activity, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
