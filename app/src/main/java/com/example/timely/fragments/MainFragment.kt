@@ -13,6 +13,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -32,6 +33,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
+
+
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -51,24 +54,39 @@ class MainFragment : Fragment() {
     private lateinit var PeriodList: ArrayList<Periods>
     private lateinit var navController: NavController
     private lateinit var user: User
+    private lateinit var progressBar: ProgressBar
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
+
+
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
         PeriodList = arrayListOf()
 
         auth = FirebaseAuth.getInstance()
+
+        progressBar = binding.progressBar
+
         user = Utils().loaddata(requireActivity())
         displayPeriodData()
         return binding.root
+
+        //for progress bar
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         KEY.fragmentName = KEY().HOME
+
+
 
         if(auth.currentUser == null){
             val intent = Intent(activity, LoginActivity::class.java)
@@ -137,6 +155,7 @@ class MainFragment : Fragment() {
     private fun displayPeriodData() {
 
         var nextclassflag = 0
+
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("${user.branch}").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
@@ -172,6 +191,7 @@ class MainFragment : Fragment() {
 
                         val sharedPreferences1 = requireActivity().getSharedPreferences("currperiod", AppCompatActivity.MODE_PRIVATE)
                         val editor1 = sharedPreferences1.edit()
+
                         editor1.apply {
                             putString("time", time)
                             putString("subject", subject)
@@ -186,8 +206,21 @@ class MainFragment : Fragment() {
                         timeleft = "$timeleft mins"
                         binding.CurrProfName.text=teacher
                         binding.MainTime.text = timeleft
+
+                        //for progress bar
+
+                        Thread(Runnable {
+                            var count=0
+                            while (count <= 3000){
+                                count+=10
+                                progressBar.setProgress(count)
+                                Thread.sleep(1000)
+                            }
+                        }).start()
+
                         binding.MainCurrentClass.text = subject
                         nextclassflag = 1
+
                     }
 
                     val mili = requireActivity().intent.getStringExtra("gomili").toString()
