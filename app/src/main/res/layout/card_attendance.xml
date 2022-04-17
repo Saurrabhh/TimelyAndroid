@@ -43,6 +43,7 @@
 
 
         <RadioGroup
+            android:id="@+id/radiogrp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/Att_Student"
@@ -50,7 +51,7 @@
             android:fontFamily="@font/poppins_medium">
 
             <RadioButton
-                android:id="@+id/P"
+                android:id="@+id/Present"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -58,7 +59,7 @@
                 android:buttonTint="?colorPrimary"/>
 
             <RadioButton
-                android:id="@+id/A"
+                android:id="@+id/Absent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="A"

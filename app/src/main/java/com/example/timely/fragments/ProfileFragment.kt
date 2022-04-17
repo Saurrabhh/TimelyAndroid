@@ -1,25 +1,17 @@
 package com.example.timely.fragments
 
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.text.Editable
 import android.text.InputType
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.navigation.Navigation
-import com.example.timely.R
+import androidx.fragment.app.Fragment
 import com.example.timely.databinding.FragmentProfileBinding
 import com.example.timely.utils.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlin.properties.Delegates
 
 class ProfileFragment : Fragment() {

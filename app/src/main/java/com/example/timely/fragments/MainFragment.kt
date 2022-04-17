@@ -136,9 +136,6 @@ class MainFragment : Fragment() {
 
     private fun displayPeriodData() {
 
-
-
-
         var nextclassflag = 0
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("${user.branch}").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
@@ -173,10 +170,11 @@ class MainFragment : Fragment() {
                     if(currtime in st..et) {
                         var timeleft = (et - currtime).toString()
 
-                        val sharedPreferences1 = requireActivity().getSharedPreferences("currtime", AppCompatActivity.MODE_PRIVATE)
+                        val sharedPreferences1 = requireActivity().getSharedPreferences("currperiod", AppCompatActivity.MODE_PRIVATE)
                         val editor1 = sharedPreferences1.edit()
                         editor1.apply {
                             putString("time", time)
+                            putString("subject", subject)
                         }.apply()
 
 
