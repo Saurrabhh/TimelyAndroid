@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.timely.dataClasses.User
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 
 class Utils {
 
@@ -14,7 +15,7 @@ class Utils {
         val gson = Gson()
         val json: String? = sharedPreferences.getString("user", null)
         Log.d("gg", json.toString())
-        val g = gson.fromJson(json, User::class.java)
+        val g = GsonBuilder().create().fromJson(json, User::class.java)
 
         Log.d("ggg", g.toString())
         return g

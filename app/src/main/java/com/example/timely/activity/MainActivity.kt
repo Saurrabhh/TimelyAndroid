@@ -38,6 +38,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 
 open class MainActivity : AppCompatActivity() {
     companion object {
@@ -96,7 +97,7 @@ open class MainActivity : AppCompatActivity() {
                     val sharedPreferences = getSharedPreferences("curruserdata", MODE_PRIVATE)
                     val user = snapshot.getValue(User::class.java)
                     val gson = Gson()
-                    val json = gson.toJson(user)
+                    val json = GsonBuilder().create().toJson(user)
                     Log.d(TAG, json)
                     val editor = sharedPreferences.edit()
                     editor.apply {
