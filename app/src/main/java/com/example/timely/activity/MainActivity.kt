@@ -86,8 +86,6 @@ open class MainActivity : AppCompatActivity() {
 
         displayNavbar()
 
-        val a = Utils().loaddata(this)
-        Log.d("aa", a.toString())
     }
 
     private fun getcurrentuserdata() {

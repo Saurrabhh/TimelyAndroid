@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
 
 <!--    Default Theme and for Android Studio-->
-    <style name="Theme.Timely" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
@@ -26,7 +26,7 @@
 
 
 
-    <style name="Theme.Timely_Blue" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Blue" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
@@ -64,7 +64,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely_Green" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Green" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Green1</item>
         <item name="colorPrimaryVariant">@color/Green2</item>
@@ -83,7 +83,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely_Purple" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Purple" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Purple1</item>
         <item name="colorPrimaryVariant">@color/Purple2</item>
@@ -102,7 +102,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely_Pink" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Pink" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Pink1</item>
         <item name="colorPrimaryVariant">@color/Pink2</item>
@@ -121,7 +121,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely_Grey" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Grey" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Grey1</item>
         <item name="colorPrimaryVariant">@color/Grey2</item>
@@ -140,7 +140,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely_Orange" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Orange" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Orange1</item>
         <item name="colorPrimaryVariant">@color/Orange2</item>
@@ -159,7 +159,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
     </style>
 
-    <style name="Theme.Timely_Yellow" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Timely_Yellow" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/Yellow1</item>
         <item name="colorPrimaryVariant">@color/Yellow2</item>

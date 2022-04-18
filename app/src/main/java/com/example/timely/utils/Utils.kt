@@ -14,6 +14,9 @@ class Utils {
         val gson = Gson()
         val json: String? = sharedPreferences.getString("user", null)
         Log.d("gg", json.toString())
-        return gson.fromJson(json, User::class.java)
+        val g = gson.fromJson(json, User::class.java)
+
+        Log.d("ggg", g.toString())
+        return g
     }
 }
