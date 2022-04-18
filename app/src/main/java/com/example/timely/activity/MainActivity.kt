@@ -61,7 +61,6 @@ open class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         setCustomizedThemes(this, getThemeColor(this))
         setContentView(binding.root)
-        getcurrentuserdata()
         drawerLayout = binding.drawerLayout
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
@@ -89,30 +88,6 @@ open class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun getcurrentuserdata() {
-        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        auth.uid?.let {
-            database.child(it).addValueEventListener(object: ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val sharedPreferences = getSharedPreferences("curruserdata", MODE_PRIVATE)
-                    val user = snapshot.getValue(User::class.java)
-                    val gson = Gson()
-                    val json = GsonBuilder().create().toJson(user)
-                    Log.d(TAG, json)
-                    val editor = sharedPreferences.edit()
-                    editor.apply {
-                        putString("user", json)
-                    }.apply()
-
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-
-            })
-        }
-    }
 
 
     open fun displayNavbar() {
