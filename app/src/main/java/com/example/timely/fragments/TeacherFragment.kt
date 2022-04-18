@@ -13,6 +13,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -50,6 +51,7 @@ open class TeacherFragment : Fragment() {
     private lateinit var recyclerview: RecyclerView
     private lateinit var PeriodList: ArrayList<Periods>
     private lateinit var navController: NavController
+    private lateinit var progressbar_tc: ProgressBar
 
 
     override fun onCreateView(
@@ -62,6 +64,7 @@ open class TeacherFragment : Fragment() {
 //        Toast.makeText(activity, "teacher", Toast.LENGTH_SHORT).show()
 
         auth = FirebaseAuth.getInstance()
+        progressbar_tc = binding.progressBarTc
         getcurrentuserdata()
         displayPeriodData()
         return binding.root
@@ -201,6 +204,17 @@ open class TeacherFragment : Fragment() {
                         timeleft = "$timeleft mins"
 
                         binding.MainTime.text = timeleft
+                        //for progress bar
+
+                        Thread(Runnable {
+                            var count=3000
+                            while (count > 0){
+                                count-=10
+                                progressbar_tc.setProgress(count)
+                                Thread.sleep(1000)
+                            }
+                        }).start()
+
                         binding.MainCurrentClass.text = subject
                         binding.MainSection.text = section
                         binding.MainSemester.text = semester

@@ -210,9 +210,9 @@ class MainFragment : Fragment() {
                         //for progress bar
 
                         Thread(Runnable {
-                            var count=0
-                            while (count <= 3000){
-                                count+=10
+                            var count=3000
+                            while (count > 0){
+                                count-=10
                                 progressBar.setProgress(count)
                                 Thread.sleep(1000)
                             }

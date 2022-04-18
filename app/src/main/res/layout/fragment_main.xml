@@ -207,9 +207,9 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/Time_left"
-                        android:max="5000"
+                        android:layout_marginStart="15dp"
 
-                        android:layout_marginStart="15dp" />
+                        android:max="5000" />
 
 
 
