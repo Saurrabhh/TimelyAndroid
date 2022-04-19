@@ -24,7 +24,7 @@
         android:layout_below="@+id/image_Forgot"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10pt"
-        android:fontFamily="@font/arima_madurai_bold"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/forgot_password"
 
         android:textColor="@color/black"
@@ -75,7 +75,7 @@
         android:layout_below="@id/InputEmail"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
-        android:fontFamily="@font/arima_madurai_bold"
+        android:fontFamily="@font/poppins_medium"
         android:padding="10dp"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"

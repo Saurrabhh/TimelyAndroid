@@ -13,21 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/notif">
+        <LinearLayout
+            android:id="@+id/notif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/notificationSwitch"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="50dp"
-                android:text="@string/notification"
-                android:textSize="28sp"
-                android:fontFamily="@font/arima_madurai_bold"
-                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:text="@string/notification"
+                android:textColor="@color/black"
+                android:textSize="28sp"
 
                 />
 
@@ -46,7 +47,7 @@
                 android:layout_marginTop="50dp"
                 android:text="@string/convert_to_military_time"
                 android:textSize="28sp"
-                android:fontFamily="@font/arima_madurai_bold"
+                android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
@@ -54,13 +55,15 @@
                 />
 
         </LinearLayout>
+
         <Button
             android:id="@+id/themeSet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="THEME"
             android:layout_below="@+id/Time"
-            >
-        </Button>
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="THEME" />
     </RelativeLayout>
 </RelativeLayout>

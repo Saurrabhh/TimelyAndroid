@@ -72,7 +72,7 @@
                 android:layout_gravity="start"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/cambo"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Dashboard"
                 android:textColor="@color/Grey2"
                 android:textSize="15sp"
@@ -120,7 +120,7 @@
                         android:layout_gravity="start"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="1dp"
-                        android:fontFamily="@font/arima_madurai_bold"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/current_class"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -185,7 +185,7 @@
                         android:layout_gravity="start"
                         android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/arima_madurai_bold"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/time_left"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -249,7 +249,7 @@
                         android:layout_gravity="start"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="1dp"
-                        android:fontFamily="@font/arima_madurai_bold"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/next_period"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -327,14 +327,15 @@
             android:paddingBottom="8dp"
             android:text="Today's Schedule"
             android:textSize="30sp" />
+
         <TextView
             android:id="@+id/Line"
             android:layout_width="200dp"
             android:layout_height="4dp"
-            android:background="@color/Grey3"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/TodayTT"
-            android:layout_marginBottom="5dp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:background="@color/Grey3" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -343,8 +344,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Line"
             android:layout_centerHorizontal="true"
-            tools:itemCount="5"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
             tools:listitem="@layout/card_view_design" />
 
     </RelativeLayout>
