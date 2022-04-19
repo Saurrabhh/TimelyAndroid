@@ -11,19 +11,21 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
         android:layout_height="?attr/actionBarSize"
-        app:titleTextColor="@color/white"
-        >
+        app:titleTextColor="@color/black"
+        />
 
-    </com.google.android.material.appbar.MaterialToolbar>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/display_chat_recycler"
         android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
         android:layout_height="wrap_content"
         android:layout_above="@+id/chat_linearlayout"
-        android:layout_alignParentTop="true" />
+       />
 
     <LinearLayout
         android:id="@+id/chat_linearlayout"
