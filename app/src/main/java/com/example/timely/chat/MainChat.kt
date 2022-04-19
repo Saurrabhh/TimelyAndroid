@@ -24,6 +24,8 @@ class MainChat: AppCompatActivity() {
         binding= MainchatBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // variables needed to initialise recycler view
+
+        supportActionBar?.show()
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
 

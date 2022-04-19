@@ -31,6 +31,8 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.show()
+
 
         val name = intent.getStringExtra("name")
         val receiverUid = intent.getStringExtra("uid")// yaha change karna padega baad m
