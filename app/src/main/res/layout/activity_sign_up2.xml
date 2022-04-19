@@ -22,7 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/cambo"
+            android:fontFamily="@font/poppins_medium"
             android:padding="10dp"
             android:paddingStart="15dp"
 
@@ -41,7 +41,7 @@
             android:layout_height="150dp"
             android:layout_below="@+id/Personal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/character_try"
 
             />
