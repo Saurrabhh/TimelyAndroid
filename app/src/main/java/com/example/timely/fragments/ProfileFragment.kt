@@ -6,12 +6,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.fragment.app.Fragment
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.FragmentProfileBinding
 import com.example.timely.utils.Utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlin.properties.Delegates
 
 class ProfileFragment : Fragment() {
@@ -20,6 +23,18 @@ class ProfileFragment : Fragment() {
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
     private lateinit var motionLayout: MotionLayout
+    private lateinit var name: String
+    private lateinit var username: String
+    private lateinit var urn: String
+    private lateinit var rollno: String
+    private lateinit var section: String
+    private lateinit var semester: String
+    private lateinit var email: String
+    private lateinit var branch: String
+    private lateinit var gender: String
+    private lateinit var phoneno: String
+    private lateinit var enroll: String
+
     private var onEdit by Delegates.notNull<Boolean>()
 
     override fun onCreateView(
@@ -28,6 +43,7 @@ class ProfileFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
 
 
         binding =  FragmentProfileBinding.inflate(layoutInflater, container, false)
@@ -71,17 +87,17 @@ class ProfileFragment : Fragment() {
 
         val user = Utils().loaddata(requireActivity())
 
-        val name = user.name
-        val username = user.username
-        val urn = user.urn
-        val rollno = user.rollno
-        val section = user.section
-        val semester = user.semester
-        val email = user.email
-        val branch = user.branch
-        val gender = user.gender
-        val phoneno = user.phoneno
-        val enroll = user.enroll
+        name = user.name.toString()
+        username = user.username.toString()
+        urn = user.urn.toString()
+        rollno = user.rollno.toString()
+        section = user.section.toString()
+        semester = user.semester.toString()
+        email = user.email.toString()
+        branch = user.branch.toString()
+        gender = user.gender.toString()
+        phoneno = user.phoneno.toString()
+        enroll = user.enroll.toString()
 
 
         binding.MainName.setText(name)
@@ -120,6 +136,8 @@ class ProfileFragment : Fragment() {
 
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
                 //Toast.makeText(activity, currentId.toString(), Toast.LENGTH_SHORT).show()
+
+
                 if (motionLayout != null) {
                     if (!onEdit){
                         mainusername.inputType = InputType.TYPE_CLASS_TEXT
@@ -135,7 +153,7 @@ class ProfileFragment : Fragment() {
                         mainenroll.inputType = InputType.TYPE_CLASS_TEXT
 
                         //Toast.makeText(activity, currentId.toString(), Toast.LENGTH_SHORT).show()
-                        onEdit=true
+                        onEdit = true
 
                     } else{
                         mainusername.inputType = InputType.TYPE_NULL
@@ -149,8 +167,25 @@ class ProfileFragment : Fragment() {
                         maingender.inputType = InputType.TYPE_NULL
                         mainphone.inputType = InputType.TYPE_NULL
                         mainenroll.inputType = InputType.TYPE_NULL
+                        val name = binding.MainName.text.toString()
+                        val username = binding.MainUserName.text.toString()
+                        val urn = binding.MainURN.text.toString()
+                        val rollno = binding.MainClass.text.toString()
+                        val section = binding.MainSection.text.toString()
+                        val semester = binding.MainSemester.text.toString()
+                        val email = binding.MainEmail.text.toString()
+                        val branch = binding.MainBranch.text.toString()
+                        val gender = binding.MainGender.text.toString()
+                        val phoneno = binding.MainPhone.text.toString()
+                        val enroll = binding.MainEnroll.text.toString()
 
-                        onEdit=false
+                        val user = User(auth.uid, name, username, urn, semester, rollno, section, email, gender, branch, phoneno, enroll)
+
+                        database.child(auth.uid!!).setValue(user)
+                        Toast.makeText(requireContext(), user.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "saved", Toast.LENGTH_SHORT).show()
+
+                        onEdit = false
 
                     }
                 }
