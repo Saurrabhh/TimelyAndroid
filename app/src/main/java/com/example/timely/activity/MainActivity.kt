@@ -49,6 +49,7 @@ open class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var user: User
     private  lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var toggle : ActionBarDrawerToggle
     private lateinit var database: DatabaseReference
@@ -65,6 +66,7 @@ open class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
         navController = navHostFragment.navController
+
 
         if(auth.currentUser == null){
             val intent = Intent(this, LoginActivity::class.java)
@@ -95,10 +97,8 @@ open class MainActivity : AppCompatActivity() {
         val navView : NavigationView = binding.navView
         val toolBar = binding.toolbar
         val navname = navView.getHeaderView(0).findViewById<TextView>(R.id.nav_name)
-        val sharedPreferences = getSharedPreferences("sharedprefs",
-            MODE_PRIVATE
-        )
-        navname.text = sharedPreferences.getString("name", null)
+        user = Utils().loaddata(this)
+        navname.text = user.username
 
 
         toggle = ActionBarDrawerToggle(this, drawerLayout,toolBar, R.string.menu_drawer_open, R.string.menu_drawer_close)
