@@ -225,14 +225,16 @@
                             android:text="@string/notime"
                             android:textSize="25sp" />
 
-                        <TextView
+                        <ProgressBar
+                            android:id="@+id/progressBar_tc"
+                            style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="300dp"
-                            android:layout_height="12dp"
+                            android:layout_height="wrap_content"
                             android:layout_below="@+id/Time_left"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="5dp"
-                            android:background="@color/Grey1" />
+                            android:layout_marginStart="15dp"
+
+                            android:max="5000" />
+
 
 
                     </RelativeLayout>

@@ -18,6 +18,5 @@ class Utils {
         val g = GsonBuilder().create().fromJson(json, User::class.java)
 
         Log.d("ggg", g.toString())
-        return g
-    }
+        return g    }
 }
