@@ -49,6 +49,8 @@ class ProfileFragment : Fragment() {
         val mainemail = binding.MainEmail
         val mainbranch = binding.MainBranch
         val maingender = binding.MainGender
+        val mainphone = binding.MainPhone
+        val mainenroll = binding.MainEnroll
 
 
         onEdit = false //flag variable
@@ -61,6 +63,8 @@ class ProfileFragment : Fragment() {
         mainemail.inputType = InputType.TYPE_NULL
         mainbranch.inputType = InputType.TYPE_NULL
         maingender.inputType = InputType.TYPE_NULL
+        mainphone.inputType = InputType.TYPE_NULL
+        mainenroll.inputType = InputType.TYPE_NULL
 
 
         KEY.fragmentName = KEY().PROFILE
@@ -76,6 +80,8 @@ class ProfileFragment : Fragment() {
         val email = user.email
         val branch = user.branch
         val gender = user.gender
+        val phoneno = user.phoneno
+        val enroll = user.enroll
 
 
         binding.MainName.setText(name)
@@ -87,6 +93,8 @@ class ProfileFragment : Fragment() {
         binding.MainEmail.setText(email)
         binding.MainBranch.setText(branch)
         binding.MainGender.setText(gender)
+        binding.MainPhone.setText(phoneno)
+        binding.MainEnroll.setText(enroll)
 
 
 
@@ -123,6 +131,8 @@ class ProfileFragment : Fragment() {
                         mainemail.inputType = InputType.TYPE_CLASS_TEXT
                         mainbranch.inputType = InputType.TYPE_CLASS_TEXT
                         maingender.inputType = InputType.TYPE_CLASS_TEXT
+                        mainphone.inputType = InputType.TYPE_CLASS_TEXT
+                        mainenroll.inputType = InputType.TYPE_CLASS_TEXT
 
                         //Toast.makeText(activity, currentId.toString(), Toast.LENGTH_SHORT).show()
                         onEdit=true
@@ -137,6 +147,8 @@ class ProfileFragment : Fragment() {
                         mainemail.inputType = InputType.TYPE_NULL
                         mainbranch.inputType = InputType.TYPE_NULL
                         maingender.inputType = InputType.TYPE_NULL
+                        mainphone.inputType = InputType.TYPE_NULL
+                        mainenroll.inputType = InputType.TYPE_NULL
 
                         onEdit=false
 
