@@ -26,7 +26,7 @@ class MainChat: AppCompatActivity() {
         // variables needed to initialise recycler view
 
         supportActionBar?.hide()
-        binding.toolbar.title = "Timelly"
+        binding.toolbar.title = "Timely"
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
 
