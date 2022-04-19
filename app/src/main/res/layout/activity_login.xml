@@ -91,7 +91,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="50dp"
             android:backgroundTint="@color/Blue2"
-            android:fontFamily="@font/arima_madurai_bold"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:padding="10dp"
             android:paddingStart="40dp"
@@ -107,7 +107,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
             android:background="@android:color/transparent"
-            android:fontFamily="@font/arima_madurai_bold"
+            android:fontFamily="@font/poppins_medium"
             android:text="@string/new_here_sign_up_now"
             android:textColor="@color/black"
             android:textSize="13sp" />

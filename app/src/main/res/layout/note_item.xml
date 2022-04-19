@@ -34,7 +34,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_centerVertical="true"
-            android:fontFamily="@font/arima_madurai_bold"
+            android:fontFamily="@font/poppins_medium"
 
             />
 

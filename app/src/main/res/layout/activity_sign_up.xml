@@ -36,7 +36,7 @@
             android:layout_below="@+id/main_container"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/cambo"
+            android:fontFamily="@font/poppins_medium"
 
             android:padding="10dp"
             android:paddingStart="15dp"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Email"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:hint="@string/email"
         app:endIconMode="clear_text"
