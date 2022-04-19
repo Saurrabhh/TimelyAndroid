@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                     android:layout_below="@+id/name1"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/e_47"
+                    android:text="@string/a_47"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -88,7 +88,7 @@
                     android:fontFamily="@font/arima_madurai_bold"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="4th Sem"
+                    android:text="@string/_4th_sem"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -210,7 +210,7 @@
                     android:fontFamily="@font/arima_madurai_bold"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="4th Sem"
+                    android:text="@string/_4th_sem"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -221,7 +221,7 @@
                     android:layout_below="@+id/name2"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/e_54"
+                    android:text="@string/a_54"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -341,7 +341,7 @@
                     android:layout_below="@+id/name3"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/e_13"
+                    android:text="@string/a_13"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -355,7 +355,7 @@
                     android:fontFamily="@font/arima_madurai_bold"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="4th Sem"
+                    android:text="@string/_4th_sem"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -475,7 +475,7 @@
                     android:layout_below="@+id/name4"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/e_25"
+                    android:text="@string/a_25"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -489,7 +489,7 @@
                     android:fontFamily="@font/arima_madurai_bold"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="4th Sem"
+                    android:text="@string/_4th_sem"
                     android:textColor="@color/white"
                     android:textSize="11sp" />
 
@@ -563,4 +563,4 @@
     </RelativeLayout>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
