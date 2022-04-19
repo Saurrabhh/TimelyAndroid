@@ -30,6 +30,8 @@ class SplshActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
+        supportActionBar?.hide()
+
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
