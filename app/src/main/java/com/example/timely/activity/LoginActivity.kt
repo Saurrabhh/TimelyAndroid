@@ -4,20 +4,26 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.timely.R
+import com.example.timely.dataClasses.User
 import com.example.timely.databinding.ActivityLoginBinding
 import com.example.timely.themes.ThemeManager
 import com.example.timely.themes.ThemeStorage
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var database: DatabaseReference
 
 
     @RequiresApi(Build.VERSION_CODES.N_MR1)
@@ -35,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         auth = FirebaseAuth.getInstance()
+
 
         if(auth.currentUser != null){
             val intent = Intent(this, MainActivity::class.java)
@@ -55,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                 ) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG).show()
+                        getcurrentuserdata()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
@@ -74,6 +82,30 @@ class LoginActivity : AppCompatActivity() {
         binding.ForgotBtn.setOnClickListener{
             val intent = Intent(this, ForgotActivity::class.java )
             startActivity(intent)
+        }
+    }
+    private fun getcurrentuserdata() {
+        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
+        auth.uid?.let {
+            database.child(it).addValueEventListener(object: ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val sharedPreferences = getSharedPreferences("curruserdata", MODE_PRIVATE)
+                    val user = snapshot.getValue(User::class.java)
+                    val gson = Gson()
+                    val json = GsonBuilder().create().toJson(user)
+                    Log.d(MainActivity.TAG, json)
+                    val editor = sharedPreferences.edit()
+                    editor.apply {
+                        putString("user", json)
+                    }.apply()
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+            })
         }
     }
 }

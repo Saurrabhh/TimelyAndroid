@@ -73,7 +73,7 @@ class MainFragment : Fragment() {
 
         progressBar = binding.progressBar
 
-        user = Utils().loaddata(requireActivity())
+        user = Utils.loaddata(requireActivity())
         displayPeriodData()
         return binding.root
 
@@ -159,7 +159,7 @@ class MainFragment : Fragment() {
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child("${user.branch}").child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
 
-            if (it.exists()){
+
                 val data = getcurrentday()
 
 
@@ -223,11 +223,11 @@ class MainFragment : Fragment() {
 
                     }
 
-                    val mili = requireActivity().intent.getStringExtra("gomili").toString()
-//                Toast.makeText(this, time.toString(), Toast.LENGTH_SHORT).show()
-                    if (mili != "yes"){
-                        time = timetoampm(time)
-                    }
+//                    val mili = requireActivity().intent.getStringExtra("gomili").toString()
+////                Toast.makeText(this, time.toString(), Toast.LENGTH_SHORT).show()
+//                    if (mili != "yes"){
+//                        time = timetoampm(time)
+//                    }
 
                     val periodobject = Periods(periodno, time, subject, teacher)
 
@@ -237,11 +237,8 @@ class MainFragment : Fragment() {
 
                 recyclerview.adapter = MyAdapter(PeriodList)
             }
-            else
-                Toast.makeText(activity, "TimeTable is only availabe for Sem3 E/F and sem 5 A/B", Toast.LENGTH_SHORT).show()
-
-        }.addOnFailureListener{
-            Toast.makeText(activity, "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
+        .addOnFailureListener{
+            Toast.makeText(requireContext(), "Failed to fetch data. Check your connection", Toast.LENGTH_SHORT).show()
         }
 
     }

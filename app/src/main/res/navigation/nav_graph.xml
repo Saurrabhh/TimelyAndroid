@@ -23,42 +23,42 @@
             android:id="@+id/action_mainFragment_self"
             app:destination="@id/mainFragment"
             app:popUpTo="@id/nav_graph" />
-        <action
-            android:id="@+id/action_mainFragment_to_teacherFragment"
-            app:destination="@id/teacherFragment"
-            app:popUpTo="@id/teacherFragment"/>
+<!--        <action-->
+<!--            android:id="@+id/action_mainFragment_to_teacherFragment"-->
+<!--            app:destination="@id/teacherFragment"-->
+<!--            app:popUpTo="@id/teacherFragment"/>-->
         <action
             android:id="@+id/action_mainFragment_to_attendanceFragment"
             app:destination="@id/attendanceFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/teacherFragment"
-        android:name="com.example.timely.fragments.TeacherFragment"
-        android:label="fragment_teacher"
-        tools:layout="@layout/fragment_teacher">
+<!--    <fragment-->
+<!--        android:id="@+id/teacherFragment"-->
+<!--        android:name="com.example.timely.fragments.TeacherFragment"-->
+<!--        android:label="fragment_teacher"-->
+<!--        tools:layout="@layout/fragment_teacher">-->
 
-        <action
-            android:id="@+id/action_teacherFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/teacherFragment"
-            />
-        <action
-            android:id="@+id/action_teacherFragment_to_fulTTFragment"
-            app:destination="@id/fulTTFragment"
-            app:popUpTo="@id/teacherFragment"/>
-        <action
-            android:id="@+id/action_teacherFragment_to_notesFragment"
-            app:destination="@id/notesFragment"
-            app:popUpTo="@id/teacherFragment"/>
-        <action
-            android:id="@+id/action_teacherFragment_self"
-            app:destination="@id/teacherFragment"
-            app:popUpTo="@id/teacherFragment" />
-        <action
-            android:id="@+id/action_teacherFragment_to_attendanceFragment"
-            app:destination="@id/attendanceFragment"
-            app:popUpTo="@id/teacherFragment"/>
-    </fragment>
+<!--        <action-->
+<!--            android:id="@+id/action_teacherFragment_to_profileFragment"-->
+<!--            app:destination="@id/profileFragment"-->
+<!--            app:popUpTo="@id/teacherFragment"-->
+<!--            />-->
+<!--        <action-->
+<!--            android:id="@+id/action_teacherFragment_to_fulTTFragment"-->
+<!--            app:destination="@id/fulTTFragment"-->
+<!--            app:popUpTo="@id/teacherFragment"/>-->
+<!--        <action-->
+<!--            android:id="@+id/action_teacherFragment_to_notesFragment"-->
+<!--            app:destination="@id/notesFragment"-->
+<!--            app:popUpTo="@id/teacherFragment"/>-->
+<!--        <action-->
+<!--            android:id="@+id/action_teacherFragment_self"-->
+<!--            app:destination="@id/teacherFragment"-->
+<!--            app:popUpTo="@id/teacherFragment" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_teacherFragment_to_attendanceFragment"-->
+<!--            app:destination="@id/attendanceFragment"-->
+<!--            app:popUpTo="@id/teacherFragment"/>-->
+<!--    </fragment>-->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.timely.fragments.ProfileFragment"
@@ -154,4 +154,6 @@
             app:popUpTo="@id/mainFragment"/>
 
     </fragment>
+
+    <include app:graph="@navigation/nav_graph_teacher" />
 </navigation>

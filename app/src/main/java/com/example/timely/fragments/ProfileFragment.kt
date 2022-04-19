@@ -85,7 +85,7 @@ class ProfileFragment : Fragment() {
 
         KEY.fragmentName = KEY().PROFILE
 
-        val user = Utils().loaddata(requireActivity())
+        val user = Utils.loaddata(requireActivity())
 
         name = user.name.toString()
         username = user.username.toString()
@@ -167,6 +167,7 @@ class ProfileFragment : Fragment() {
                         maingender.inputType = InputType.TYPE_NULL
                         mainphone.inputType = InputType.TYPE_NULL
                         mainenroll.inputType = InputType.TYPE_NULL
+
                         val name = binding.MainName.text.toString()
                         val username = binding.MainUserName.text.toString()
                         val urn = binding.MainURN.text.toString()
@@ -182,7 +183,7 @@ class ProfileFragment : Fragment() {
                         val user = User(auth.uid, name, username, urn, semester, rollno, section, email, gender, branch, phoneno, enroll)
 
                         database.child(auth.uid!!).setValue(user)
-                        Toast.makeText(requireContext(), user.toString(), Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(requireContext(), user.toString(), Toast.LENGTH_SHORT).show()
                         Toast.makeText(requireContext(), "saved", Toast.LENGTH_SHORT).show()
 
                         onEdit = false
@@ -201,9 +202,6 @@ class ProfileFragment : Fragment() {
             }
 
         })
-
-
-
 
     }
 }

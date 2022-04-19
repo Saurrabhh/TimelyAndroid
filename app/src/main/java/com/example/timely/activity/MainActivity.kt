@@ -50,22 +50,37 @@ open class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var user: User
-    private  lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var toggle : ActionBarDrawerToggle
     private lateinit var database: DatabaseReference
 
     @RequiresApi(Build.VERSION_CODES.N_MR1)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        user = Utils.loaddata(this)
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         auth = FirebaseAuth.getInstance()
+
         setCustomizedThemes(this, getThemeColor(this))
         setContentView(binding.root)
-        drawerLayout = binding.drawerLayout
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-
         navController = navHostFragment.navController
+        val inflater = navController.navInflater
+        if(user.isteacher){
+
+            binding.navView.menu.findItem(R.id.nav_attendance).isVisible = true
+            val graph = inflater.inflate(R.navigation.nav_graph_teacher)
+
+            navController.graph = graph
+        }else{
+            val graph = inflater.inflate(R.navigation.nav_graph)
+
+            navController.graph = graph
+        }
+        drawerLayout = binding.drawerLayout
+
 
 
         if(auth.currentUser == null){
@@ -73,13 +88,7 @@ open class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        else if(auth.currentUser?.email.toString() == "teacher@gmail.com"){
 
-            binding.navView.menu.findItem(R.id.nav_attendance).isVisible = true
-
-            navController.navigate(R.id.action_mainFragment_to_teacherFragment)
-
-        }
         val window = window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         if (getThemeColor(this).equals("blue")) {
@@ -97,7 +106,7 @@ open class MainActivity : AppCompatActivity() {
         val navView : NavigationView = binding.navView
         val toolBar = binding.toolbar
         val navname = navView.getHeaderView(0).findViewById<TextView>(R.id.nav_name)
-        user = Utils().loaddata(this)
+
         navname.text = user.username
 
 
@@ -152,10 +161,13 @@ open class MainActivity : AppCompatActivity() {
                     ).show()
                     return
                 }
-                Log.d(TAG, chosenColor)
+                Log.d(TAG+"1", chosenColor)
                 setThemeColor(applicationContext, chosenColor)
+                Log.d(TAG+"2", chosenColor)
                 setCustomizedThemes(applicationContext, chosenColor)
-                recreate()
+                Log.d(TAG+"3", chosenColor)
+                opendashboard()
+
             }
         })
     }

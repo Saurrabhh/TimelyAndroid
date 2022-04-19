@@ -21,12 +21,14 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.timely.R
 import com.example.timely.activity.LoginActivity
 import com.example.timely.activity.MainActivity
 import com.example.timely.adapter.MyAdapter
 import com.example.timely.dataClasses.Periods
 import com.example.timely.dataClasses.User
+import com.example.timely.utils.Utils
 import com.example.timely.databinding.FragmentTeacherBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -39,6 +41,7 @@ open class TeacherFragment : Fragment() {
 
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var user: User
 
     private lateinit var binding: FragmentTeacherBinding
     private lateinit var day: String
@@ -64,8 +67,9 @@ open class TeacherFragment : Fragment() {
 //        Toast.makeText(activity, "teacher", Toast.LENGTH_SHORT).show()
 
         auth = FirebaseAuth.getInstance()
+        user = Utils.loaddata(requireActivity())
         progressbar_tc = binding.progressBarTc
-        getcurrentuserdata()
+        Toast.makeText(requireContext(), "teaher", Toast.LENGTH_SHORT).show()
         displayPeriodData()
         return binding.root
     }
@@ -86,6 +90,7 @@ open class TeacherFragment : Fragment() {
         refreshapp()
 
 
+
         recyclerview = binding.recyclerview
 
         // this creates a vertical layout Manager
@@ -99,22 +104,6 @@ open class TeacherFragment : Fragment() {
 
     }
 
-    open fun loaddata(): User {
-        val sharedPreferences = requireActivity().getSharedPreferences("sharedprefs", AppCompatActivity.MODE_PRIVATE)
-        val name = sharedPreferences.getString("name", null)
-        val username = sharedPreferences.getString("username", null)
-        val urn = sharedPreferences.getString("urn", null)
-        val rollno = sharedPreferences.getString("rollno", null)
-        val section = sharedPreferences.getString("section", null)
-        val semester = sharedPreferences.getString("semester", null)
-        val email = sharedPreferences.getString("email", null)
-        val gender = sharedPreferences.getString("gender", null)
-        val branch = sharedPreferences.getString("branch", null)
-
-        return User(name, username, urn, semester, rollno, section, email, gender, branch)
-
-//        Toast.makeText(this, "saved string $savedstring", Toast.LENGTH_SHORT).show()
-    }
 
     private fun getcurrentday(): Array<String> {
         val dayint = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
@@ -149,20 +138,18 @@ open class TeacherFragment : Fragment() {
 //
 //            ft.detach(this).attach(this).commit()
 
-            navController.navigate(R.id.action_mainFragment_self)
+            navController.navigate(R.id.action_teacherFragment_self)
         }
     }
 
     private fun displayPeriodData() {
 
-
-        val user = loaddata()
         binding.NameTop.text = user.name
         var nextclassflag = 0
 
 //        Toast.makeText(this, d.toString(), Toast.LENGTH_SHORT).show()
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("TeacherTT")
-        database.child("DineshBhawnani").get().addOnSuccessListener {
+        database.child(auth.uid!!).get().addOnSuccessListener {
 
             if (it.exists()){
                 val data = getcurrentday()

@@ -9,14 +9,17 @@ import com.google.gson.GsonBuilder
 
 class Utils {
 
-    fun loaddata(ctx: Context): User {
-        val sharedPreferences =
-            ctx.getSharedPreferences("curruserdata", AppCompatActivity.MODE_PRIVATE)
-        val gson = Gson()
-        val json: String? = sharedPreferences.getString("user", null)
-        Log.d("gg", json.toString())
-        val g = GsonBuilder().create().fromJson(json, User::class.java)
+    companion object{
 
-        Log.d("ggg", g.toString())
-        return g    }
+        fun loaddata(ctx: Context): User {
+            val sharedPreferences =
+                ctx.getSharedPreferences("curruserdata", AppCompatActivity.MODE_PRIVATE)
+            val gson = Gson()
+            val json: String? = sharedPreferences.getString("user", null)
+            Log.d("gg", json.toString())
+            val g = GsonBuilder().create().fromJson(json, User::class.java)
+
+            Log.d("ggg", g.toString())
+            return g    }
+    }
 }
