@@ -129,32 +129,33 @@
         android:text="10am-11am"
         android:textSize="15dp" />
 
-    <CheckBox
-        android:id="@+id/checkBox_PresentAll"
+    <RadioGroup
+        android:id="@+id/radiogrp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Attedance_Heading"
         android:layout_alignParentEnd="true"
+        android:fontFamily="@font/poppins_medium"
+        android:orientation="vertical"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:buttonTint="?colorPrimary"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Mark All Present"
-        android:textSize="15dp" />
-    <CheckBox
-        android:id="@+id/checkBox_AbsentAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox_PresentAll"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:text="Mark All Absent "
-        android:textSize="15dp"
-        android:buttonTint="?colorPrimary"
-        android:fontFamily="@font/poppins_regular"
-        />
+        >
 
+        <RadioButton
+            android:id="@+id/AllPresent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:buttonTint="?colorPrimary"
+            android:text="Mark all Present" />
+
+        <RadioButton
+            android:id="@+id/AllAbsent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="?colorPrimary"
+            android:text="Mark all Absent" />
+    </RadioGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Attedance_recyclerview"

@@ -89,9 +89,9 @@ class AttendanceFragment : Fragment() {
         val editorall = checkall.edit()
 
 
-        binding.checkBoxPresentAll.setOnClickListener{
+        binding.AllPresent.setOnClickListener{
             Toast.makeText(requireContext(),"all", Toast.LENGTH_SHORT).show()
-            if (binding.checkBoxPresentAll.isChecked){
+            if (binding.AllPresent.isChecked){
                 editorall.apply {
                     putBoolean("all", true)
                 }.apply()
@@ -102,9 +102,9 @@ class AttendanceFragment : Fragment() {
             }
         }
 
-        binding.checkBoxAbsentAll.setOnClickListener{
+        binding.AllAbsent.setOnClickListener{
             Toast.makeText(requireContext(),"all", Toast.LENGTH_SHORT).show()
-            if (binding.checkBoxAbsentAll.isChecked){
+            if (binding.AllAbsent.isChecked){
                 editorall.apply {
                     putBoolean("all", false)
                 }.apply()

@@ -24,6 +24,204 @@
             android:id="@+id/add_button"
             motion:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="44dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="200dp"
+            motion:layout_constraintTop_toBottomOf="@+id/Profile_Pic"
+            android:id="@+id/MainUserName"
+            android:layout_marginTop="216dp"
+            motion:layout_constraintTop_toTopOf="@+id/Profile_Pic" />
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/MainUserName"
+            android:id="@+id/P_head"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/MainName"
+            motion:layout_constraintTop_toBottomOf="@+id/P_head"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp" />
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/MainName"
+            motion:layout_constraintTop_toBottomOf="@+id/P_head"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp" />
+        <Constraint
+            android:id="@+id/MainSemester"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            motion:layout_constraintTop_toBottomOf="@+id/MainName"
+            android:id="@+id/Profile_PersonalDetails" />
+        <Constraint
+            android:id="@+id/textView2"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="636dp"
+            motion:layout_constraintHorizontal_bias="0.104"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/MainURN"
+            android:id="@+id/MainEnroll" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/P_contactinfo"
+            motion:layout_constraintTop_toBottomOf="@+id/textView6"
+            motion:layout_editor_absoluteY="506dp"
+            motion:layout_editor_absoluteX="60dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_editor_absoluteX="72dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView3"
+            motion:layout_constraintTop_toBottomOf="@+id/MainName"
+            android:layout_marginTop="16dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/MainEmail"
+            motion:layout_constraintTop_toBottomOf="@+id/P_contactinfo"
+            motion:layout_constraintStart_toEndOf="@+id/textView8"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/MainPhone"
+            motion:layout_constraintTop_toBottomOf="@+id/P_contactinfo"
+            android:layout_marginTop="40dp"
+            motion:layout_constraintStart_toEndOf="@+id/textView7"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/P_clginfo"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            motion:layout_constraintTop_toBottomOf="@+id/MainPhone"
+            android:layout_marginTop="92dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/MainClass"
+            motion:layout_constraintStart_toEndOf="@+id/textView6"
+            motion:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/MainSection"
+            motion:layout_constraintStart_toEndOf="@+id/textView4"
+            motion:layout_constraintTop_toBottomOf="@+id/MainName"
+            motion:layout_editor_absoluteX="151dp" />
+        <Constraint
+            android:layout_height="34dp"
+            android:layout_width="35dp"
+            android:id="@+id/MainGender"
+            motion:layout_constraintStart_toEndOf="@+id/Profile_Pic"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+        <Constraint
+            android:layout_height="31dp"
+            android:layout_width="36dp"
+            android:id="@+id/MainBranch"
+            motion:layout_constraintStart_toEndOf="@+id/textView5"
+            motion:layout_constraintTop_toBottomOf="@+id/MainName"
+            android:layout_marginTop="44dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView4"
+            motion:layout_constraintTop_toBottomOf="@+id/MainName"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintStart_toEndOf="@+id/textView3"
+            android:layout_marginLeft="148dp"
+            android:layout_marginStart="148dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView5"
+            motion:layout_constraintTop_toBottomOf="@+id/MainName"
+            android:layout_marginTop="48dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="56dp"
+            android:layout_marginStart="56dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView7"
+            motion:layout_constraintTop_toBottomOf="@+id/P_contactinfo"
+            android:layout_marginTop="52dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="56dp"
+            android:layout_marginStart="56dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView8"
+            motion:layout_constraintTop_toBottomOf="@+id/P_contactinfo"
+            android:layout_marginTop="8dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_editor_absoluteX="28dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView9"
+            motion:layout_constraintTop_toBottomOf="@+id/P_clginfo" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintHorizontal_bias="0.027"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/P_clginfo"
+            motion:layout_constraintStart_toEndOf="@+id/textView9"
+            android:id="@+id/MainURN" />
+        <Constraint
+            android:layout_height="26dp"
+            motion:layout_editor_absoluteX="206dp"
+            android:layout_width="106dp"
+            android:id="@+id/textView10"
+            motion:layout_constraintTop_toBottomOf="@+id/P_clginfo" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/MainName"
+            android:id="@+id/textView6"
+            android:layout_marginTop="48dp"
+            motion:layout_constraintStart_toEndOf="@+id/textView5"
+            android:layout_marginLeft="184dp"
+            android:layout_marginStart="184dp"
+            motion:layout_constraintEnd_toStartOf="@+id/MainClass" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
