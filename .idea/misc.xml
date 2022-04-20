@@ -29,6 +29,36 @@
         <entry key="..\:/Android/Android Studio Projects/Timely-Android/app/src/main/res/layout/fragment_main.xml" value="0.264" />
         <entry key="..\:/Android/Android Studio Projects/Timely-Android/app/src/main/res/layout/fragment_teacher.xml" value="0.264" />
         <entry key="..\:/Android/Android Studio Projects/Timely-Android/app/src/main/res/layout/teacher_card_view_design.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/drawable-v24/background.xml" value="0.1745" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/drawable/receive_background.xml" value="0.1745" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/drawable/send_background.xml" value="0.1745" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_chat.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_contact.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_forgot.xml" value="0.2" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_login.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_settings.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_sign_up.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_sign_up2.xml" value="0.2" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/activity_splash.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/card_attendance.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/card_chat_user_design.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/card_view_design.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/color_pallete.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/dropdowntext.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_attendance.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_ful_t_t.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_main.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_notes.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/fragment_teacher.xml" value="0.264" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/full_tt_view_design.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/main_drawer_header.xml" value="0.2" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/mainchat.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/note_item.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/receive_chat.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/layout/sent_chat.xml" value="0.17481884057971014" />
+        <entry key="..\:/Android/Android Studio Projects/Timely-Application/app/src/main/res/menu/main_drawer_menu.xml" value="0.221875" />
         <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/C/Android Projects/Final Timely App/Timely/app/src/main/res/layout/login_try.xml" value="0.2" />
         <entry key="..\:/Projects/Android Projects/Final Timely App/Timely/app/src/main/res/layout/activity_log.xml" value="0.2" />
@@ -54,7 +84,7 @@
         <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/fragment_ful_t_t.xml" value="0.2" />
         <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/fragment_main.xml" value="0.2" />
         <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/fragment_notes.xml" value="0.2" />
-        <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.16666666666666666" />
+        <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/fragment_teacher.xml" value="0.2" />
         <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/main_drawer_header.xml" value="0.2" />
         <entry key="..\:/Projects/TimelyAndroid/app/src/main/res/layout/note_item.xml" value="0.2" />
@@ -134,8 +164,10 @@
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/activity_sign_up2.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/card_attendance.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/card_view_design.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/dropdowntext.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/fragment_attendance.xml" value="0.1" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/fragment_ful_t_t.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Saurabh Yadav/TimelyAndroid/app/src/main/res/layout/fragment_notes.xml" value="0.20863616930312098" />
@@ -150,10 +182,9 @@
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/activity_contact.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_attendance.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_notes.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/fragment_teacher.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/receive_chat.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/cyrao/AndroidStudioProjects/TimelyAndroid/app/src/main/res/layout/sent_chat.xml" value="0.20599409033347404" />
         <entry key="..\:/Users/rahul/AndroidStudioProjects/Android-Study-Jams/app/src/main/res/drawable-v24/gradient.xml" value="0.1" />
