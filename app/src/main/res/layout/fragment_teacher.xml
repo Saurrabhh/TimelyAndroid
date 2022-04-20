@@ -31,7 +31,7 @@
             <RelativeLayout
                 android:id="@+id/RL_1"
                 android:layout_width="match_parent"
-                android:layout_height="500dp">
+                android:layout_height="wrap_content">
 
 
                 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -166,7 +166,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="false"
-                            android:layout_marginStart="30dp"
+                            android:layout_marginStart="25dp"
                             android:layout_marginTop="75dp"
                             android:layout_toEndOf="@id/currclass"
                             android:fontFamily="@font/cambo"
