@@ -19,7 +19,7 @@ class Utils {
             Log.d("gg", json.toString())
             val g = GsonBuilder().create().fromJson(json, User::class.java)
 
-            Log.d("ggg", g.toString())
+
             return g    }
     }
 }

@@ -189,13 +189,14 @@ class MainFragment : Fragment() {
                     if(currtime in st..et) {
                         var timeleft = (et - currtime).toString()
 
-                        val sharedPreferences1 = requireActivity().getSharedPreferences("currperiod", AppCompatActivity.MODE_PRIVATE)
-                        val editor1 = sharedPreferences1.edit()
+                        val sharedPreferences1 =
+                            activity?.getSharedPreferences("currperiod", AppCompatActivity.MODE_PRIVATE)
+                        val editor1 = sharedPreferences1?.edit()
 
-                        editor1.apply {
+                        editor1?.apply {
                             putString("time", time)
                             putString("subject", subject)
-                        }.apply()
+                        }?.apply()
 
 
                         if (timeleft.toInt()>=60){
@@ -313,7 +314,7 @@ class MainFragment : Fragment() {
 //        val timeLeft: String = getcurrenttime()
 
 
-        notificationManager =activity?.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE) as NotificationManager
+         notificationManager =activity?.getSystemService(AppCompatActivity.NOTIFICATION_SERVICE) as NotificationManager
 
         //After Clicking notification come to this activity
         val intent = Intent(activity, MainActivity::class.java)
