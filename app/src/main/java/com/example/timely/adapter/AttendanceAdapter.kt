@@ -25,32 +25,47 @@ class AttendanceAdapter(val context: Context, private val StudentList: ArrayList
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         val checkallp = context.getSharedPreferences("checkall", AppCompatActivity.MODE_PRIVATE)
-        val checkall = checkallp.getBoolean("all", false)
+        val editor = checkallp.edit()
+        val checkallpresent = checkallp.getBoolean("allpresent", false)
+        val checkallabsent = checkallp.getBoolean("allabsent", false)
         val currentItem = StudentList[position]
         holder.name.text = currentItem.name
         holder.roll.text = currentItem.rollno
 
 
-//        if (currentItem.present == true){
-//            holder.radioGroup.check(R.id.Present)
-//        }else if (currentItem.present == false){
-//            holder.radioGroup.check(R.id.Absent)
-//        }else{
-//            holder.radioGroup.clearCheck()
-//        }
+        if (currentItem.present == true){
+            holder.radioGroup.check(R.id.Present)
+        }else if (currentItem.present == false){
+            holder.radioGroup.check(R.id.Absent)
+        }else{
+            holder.radioGroup.clearCheck()
+        }
         holder.present.setOnClickListener{
             currentItem.present = true
 
+                editor.apply{
+                    putBoolean("allabsent", false)
+                    putBoolean("allpresent", false)
+                .apply()
+            }
         }
         holder.absent.setOnClickListener{
             currentItem.present = false
+
+                editor.apply{
+                    putBoolean("allpresent", false)
+                    putBoolean("allabsent", false)
+                }.apply()
+
         }
 
-        if (checkall){
+        if (checkallpresent){
             holder.radioGroup.check(R.id.Present)
             currentItem.present = true
 
-        }else{
+        }
+        if(checkallabsent){
+
             holder.radioGroup.check(R.id.Absent)
             currentItem.present = false
 

@@ -181,12 +181,14 @@ class MainFragment : Fragment() {
                     if (nextclassflag==1){
                         binding.MainNextPeriod.text = subject
                         binding.NextProfName.text=teacher
-                        if(auth.currentUser?.email != "teacher@gmail.com")
+                        if(!user.isteacher)
                             createNotification(subject, newtimeleft.toString())
                         nextclassflag = 0
                     }
 
                     if(currtime in st..et) {
+                        Log.d("et", et.toString())
+                        Log.d("ct", currtime.toString())
                         var timeleft = (et - currtime).toString()
 
                         val sharedPreferences1 =
@@ -199,9 +201,9 @@ class MainFragment : Fragment() {
                         }?.apply()
 
 
-                        if (timeleft.toInt()>=60){
-                            timeleft = (timeleft.toInt() - 40).toString()
-                        }
+
+                        timeleft = (timeleft.toInt() - 40).toString()
+
 
                         newtimeleft = timeleft.toInt()
                         timeleft = "$timeleft mins"
@@ -211,10 +213,10 @@ class MainFragment : Fragment() {
                         //for progress bar
 
                         Thread(Runnable {
-                            var count=3000
+                            var count = newtimeleft * 100
                             while (count > 0){
-                                count-=10
-                                progressBar.setProgress(count)
+                                count -= 1
+                                progressBar.progress = count
                                 Thread.sleep(1000)
                             }
                         }).start()

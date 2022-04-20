@@ -69,8 +69,19 @@ class FulTTFragment : Fragment() {
     private fun displayfulltt() {
 
         val user = Utils.loaddata(requireActivity())
-        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
-        database.child(user.branch!!).child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
+
+        database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
+        var root = database
+        var root2 = database
+        if (user.isteacher){
+            root = database.child("TeacherTT")
+            root2 = auth.uid?.let { root.child(it) }!!
+        }else{
+            root = database.child("Timetable")
+            root2 = root.child(user.branch!!).child("Sem ${user.semester}").child("${user.section}")
+
+        }
+        root2.get().addOnSuccessListener {
             if (it.exists()){
                 val days = it.children
                 val list = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
@@ -80,13 +91,15 @@ class FulTTFragment : Fragment() {
 
                 val temp = "Time"
 
-                val period1time = timetoampm(times.child("0").child("1").value.toString())
-                val period2time = timetoampm(times.child("1").child("1").value.toString())
-                val period3time = timetoampm(times.child("2").child("1").value.toString())
-                val period4time = timetoampm(times.child("3").child("1").value.toString())
-                val period5time = timetoampm(times.child("4").child("1").value.toString())
-                val period6time = timetoampm(times.child("5").child("1").value.toString())
-                val period7time = timetoampm(times.child("6").child("1").value.toString())
+
+
+                val period1time = times.child("0").child("1").value.toString()
+                val period2time = times.child("1").child("1").value.toString()
+                val period3time = times.child("2").child("1").value.toString()
+                val period4time = times.child("3").child("1").value.toString()
+                val period5time = times.child("4").child("1").value.toString()
+                val period6time = times.child("5").child("1").value.toString()
+                val period7time = times.child("6").child("1").value.toString()
 
 
                 val timeob = DayPeriod(temp, period1time, period2time, period3time, period4time, period5time, period6time, period7time)

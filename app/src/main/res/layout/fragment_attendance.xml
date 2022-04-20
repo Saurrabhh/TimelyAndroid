@@ -42,16 +42,16 @@
         />
 
     <TextView
+        android:id="@+id/MainAttSem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Attedance_Heading"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/Att_Sem"
-        android:text="3 "
-        android:textSize="15dp"
         android:fontFamily="@font/poppins_regular"
-        />
+        android:text="3 "
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/Att_Sec"
@@ -66,16 +66,16 @@
         />
 
     <TextView
+        android:id="@+id/MainAttSec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Att_Sem"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/Att_Sec"
-        android:text="A "
-        android:textSize="15dp"
         android:fontFamily="@font/poppins_regular"
-        />
+        android:text="A "
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/Att_date"
@@ -98,9 +98,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/Att_date"
+        android:fontFamily="@font/poppins_regular"
         android:text="10-Mar-2022"
         android:textSize="15dp"
-        android:fontFamily="@font/poppins_regular"
 
         />
 

@@ -69,7 +69,6 @@ open class TeacherFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         user = Utils.loaddata(requireActivity())
         progressbar_tc = binding.progressBarTc
-        Toast.makeText(requireContext(), "teaher", Toast.LENGTH_SHORT).show()
         displayPeriodData()
         return binding.root
     }
@@ -176,11 +175,18 @@ open class TeacherFragment : Fragment() {
                         binding.MainNextPeriod.text = subject
                         binding.NextMainSection.text = section
                         binding.NextMainSemester.text = semester
-                        createNotification(subject, newtimeleft.toString())
                         nextclassflag = 0
                     }
 
                     if(currtime in st..et) {
+                        val sharedPreferences = requireActivity().getSharedPreferences("currperiod", AppCompatActivity.MODE_PRIVATE)
+                        val editor = sharedPreferences.edit()
+                        editor.apply {
+                            putString("time", time)
+                            putString("subject", subject)
+                            putString("semester", semester)
+                            putString("section", section)
+                        }.apply()
                         var timeleft = (et - currtime).toString()
 
                         if (timeleft.toInt()>=60){
@@ -194,10 +200,10 @@ open class TeacherFragment : Fragment() {
                         //for progress bar
 
                         Thread(Runnable {
-                            var count=3000
+                            var count = newtimeleft * 100
                             while (count > 0){
-                                count-=10
-                                progressbar_tc.setProgress(count)
+                                count -= 1
+                                progressbar_tc.progress = count
                                 Thread.sleep(1000)
                             }
                         }).start()

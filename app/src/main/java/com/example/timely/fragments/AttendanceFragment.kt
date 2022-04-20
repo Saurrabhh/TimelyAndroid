@@ -36,6 +36,8 @@ class AttendanceFragment : Fragment() {
     private lateinit var adapter: AttendanceAdapter
     private lateinit var time: String
     private lateinit var date: String
+    private lateinit var semester: String
+    private lateinit var section: String
     private lateinit var subject: String
     private lateinit var checkall: SharedPreferences
     private lateinit var fileName: String
@@ -70,6 +72,9 @@ class AttendanceFragment : Fragment() {
         val sharedPreferences = requireActivity().getSharedPreferences("currperiod", AppCompatActivity.MODE_PRIVATE)
         time = sharedPreferences.getString("time", null).toString()
         subject = sharedPreferences.getString("subject", null).toString()
+        semester = sharedPreferences.getString("semester", null).toString()
+        section = sharedPreferences.getString("section", null).toString()
+
 
         studentList = arrayListOf()
         showStudent()
@@ -84,6 +89,8 @@ class AttendanceFragment : Fragment() {
 
         binding.MainAttTime.text = time
         binding.MainAttDate.text = date
+        binding.MainAttSec.text = section
+        binding.MainAttSem.text = semester
 
 
         checkall = requireActivity().getSharedPreferences("checkall", AppCompatActivity.MODE_PRIVATE)
@@ -91,29 +98,31 @@ class AttendanceFragment : Fragment() {
 
 
         binding.AllPresent.setOnClickListener{
-            Toast.makeText(requireContext(),"all", Toast.LENGTH_SHORT).show()
+
             if (binding.AllPresent.isChecked){
                 editorall.apply {
-                    putBoolean("all", true)
+                    putBoolean("allpresent", true)
                 }.apply()
             }else{
                 editorall.apply{
-                    putBoolean("all", false)
+                    putBoolean("allpresent", false)
                 }
             }
+            adapter.notifyDataSetChanged()
         }
 
         binding.AllAbsent.setOnClickListener{
-            Toast.makeText(requireContext(),"all", Toast.LENGTH_SHORT).show()
+
             if (binding.AllAbsent.isChecked){
                 editorall.apply {
-                    putBoolean("all", false)
+                    putBoolean("allabsent", true)
                 }.apply()
             }else{
                 editorall.apply{
-                    putBoolean("all", true)
+                    putBoolean("allabsent", false)
                 }
             }
+            adapter.notifyDataSetChanged()
         }
 
         fileName = "Demo.xls"
@@ -127,7 +136,7 @@ class AttendanceFragment : Fragment() {
 
 
 
-        Toast.makeText(requireContext(), origin.toString(), Toast.LENGTH_SHORT).show()
+
         Log.d("exx", origin.toString().slice(1..18))
         Log.d("excel", file.toString())
 
@@ -138,7 +147,7 @@ class AttendanceFragment : Fragment() {
 
             for (student in studentList){
                 if (student.present == null){
-                    Toast.makeText(requireContext(), "sab ka de attendance", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Fill attendance of every student.", Toast.LENGTH_SHORT).show()
                     done = false
                     break
                 }
@@ -149,11 +158,11 @@ class AttendanceFragment : Fragment() {
                 database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").reference
                 Log.d("hello", studentList.toString())
                 database.child("Attendance").child(subject+time+date).setValue(studentList).addOnSuccessListener {
-                    Toast.makeText(requireContext(), "Done attendance", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Attendance Saved", Toast.LENGTH_SHORT).show()
                 }
                 var i = 1
                 val hssfWorkbook = HSSFWorkbook()
-                val hssfSheet = hssfWorkbook.createSheet("Customm Sheet")
+                val hssfSheet = hssfWorkbook.createSheet("Attendance Sheet")
                 hssfSheet.setColumnWidth(0, (10))
                 hssfSheet.setColumnWidth(1, (15 * 500))
                 hssfSheet.setColumnWidth(2, (15 * 20))
