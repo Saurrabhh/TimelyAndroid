@@ -41,7 +41,7 @@ class SettingsActivity : AppCompatActivity() {
 
         notifSwitch = binding.notificationSwitch
         miliSwitch = binding.militaryswitch
-        theme = binding.themeSet
+       // theme = binding.themeSet
         notifSwitch.setOnClickListener {
             if (notifSwitch.isChecked) {
                 Toast.makeText(this@SettingsActivity, "Notification turned ON", Toast.LENGTH_SHORT).show()
@@ -66,23 +66,23 @@ class SettingsActivity : AppCompatActivity() {
         }
 
 
-        theme.setOnClickListener {
-            DialogManager.showCustomAlertDialog(this, object : ColorDialogCallback {
-                override fun onChosen(chosenColor: String) {
-                    if (chosenColor == ThemeStorage.getThemeColor(applicationContext)) {
-                        Toast.makeText(
-                            this@SettingsActivity, "Theme is already chosen",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        return
-                    }
-                    Log.d(MainActivity.TAG, chosenColor)
-                    ThemeStorage.setThemeColor(applicationContext, chosenColor)
-                    ThemeManager.setCustomizedThemes(applicationContext, chosenColor)
-                    recreate()
-                }
-            })
-        }
-    }
+//        theme.setOnClickListener {
+//            DialogManager.showCustomAlertDialog(this, object : ColorDialogCallback {
+//                override fun onChosen(chosenColor: String) {
+//                    if (chosenColor == ThemeStorage.getThemeColor(applicationContext)) {
+//                        Toast.makeText(
+//                            this@SettingsActivity, "Theme is already chosen",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                        return
+//                    }
+//                    Log.d(MainActivity.TAG, chosenColor)
+//                    ThemeStorage.setThemeColor(applicationContext, chosenColor)
+//                    ThemeManager.setCustomizedThemes(applicationContext, chosenColor)
+//                    recreate()
+//                }
+//            })
+//        }
+//    }
 
-}
+}}
