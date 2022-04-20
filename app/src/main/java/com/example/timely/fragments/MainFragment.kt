@@ -61,9 +61,6 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-
-
-
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
@@ -74,11 +71,11 @@ class MainFragment : Fragment() {
         progressBar = binding.progressBar
 
         user = Utils.loaddata(requireActivity())
+        binding.NameTop.text = user.name
         displayPeriodData()
         return binding.root
 
         //for progress bar
-
 
     }
 
@@ -95,6 +92,8 @@ class MainFragment : Fragment() {
         }
 
 
+
+
         navController = Navigation.findNavController(view)
         refreshapp()
 
@@ -103,10 +102,11 @@ class MainFragment : Fragment() {
 
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(activity)
+
 //        recyclerview.setHasFixedSize(true)
 
         // ArrayList of class ItemsViewModel
-        binding.NameTop.text = user.name
+
 
     }
 
@@ -322,39 +322,24 @@ class MainFragment : Fragment() {
         val pendingIntent = PendingIntent.getActivity(activity, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            notificationChannel = NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
-            notificationChannel.enableLights(true)
-            notificationChannel.lightColor = Color.GREEN
-            notificationChannel.enableVibration(false)
-            notificationManager.createNotificationChannel(notificationChannel)
+        notificationChannel = NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
+        notificationChannel.enableLights(true)
+        notificationChannel.lightColor = Color.GREEN
+        notificationChannel.enableVibration(false)
+        notificationManager.createNotificationChannel(notificationChannel)
 
-            builder = Notification.Builder(activity, channelId)
-                //.setContent(contentView)
-                .setContentTitle("Next Period: $nextPeriod")
-                .setContentText("Time Left: $timeLeft mins")
+        builder = Notification.Builder(activity, channelId)
+            //.setContent(contentView)
+            .setContentTitle("Next Period: $nextPeriod")
+            .setContentText("Time Left: $timeLeft mins")
 
-                .setSmallIcon(R.drawable.ic_logo)
-                .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.notification_logo))
-                .setStyle(Notification.InboxStyle()
-                    .addLine("Time left: $timeLeft mins")
-                    .addLine("Click to see Full Time Table")
-                )
-                .setContentIntent(pendingIntent)
-        }
-        else {
-            builder = Notification.Builder(activity)
-                //.setContent(contentView)
-                .setContentTitle("Next Period: $nextPeriod")
-                .setContentText("Time Left: $timeLeft mins")
-                .setSmallIcon(R.drawable.ic_logo)
-                .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.notification_logo))
-                .setStyle(Notification.InboxStyle()
-                    .addLine("Time left: $timeLeft mins")
-                    .addLine("Click to see Full Time Table")
-                )
-                .setContentIntent(pendingIntent)
-        }
+            .setSmallIcon(R.drawable.ic_logo)
+            .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.notification_logo))
+            .setStyle(Notification.InboxStyle()
+                .addLine("Time left: $timeLeft mins")
+                .addLine("Click to see Full Time Table")
+            )
+            .setContentIntent(pendingIntent)
         notificationManager.notify(1234, builder.build())
 
     }

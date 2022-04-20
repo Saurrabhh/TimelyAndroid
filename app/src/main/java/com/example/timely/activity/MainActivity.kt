@@ -1,7 +1,8 @@
 package com.example.timely.activity
 
-import android.content.Context
+//import com.example.timely.services.MyService
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -24,10 +26,8 @@ import com.example.timely.R
 import com.example.timely.chat.MainChat
 import com.example.timely.dataClasses.User
 import com.example.timely.databinding.ActivityMainBinding
-import com.example.timely.fragments.AttendanceFragment
 import com.example.timely.fragments.KEY
 import com.example.timely.fragments.KEY.Companion.fragmentName
-//import com.example.timely.services.MyService
 import com.example.timely.themes.ColorDialogCallback
 import com.example.timely.themes.DialogManager.Companion.showCustomAlertDialog
 import com.example.timely.themes.ThemeManager.Companion.setCustomizedThemes
@@ -37,8 +37,8 @@ import com.example.timely.utils.Utils
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import java.util.jar.Manifest
+
 
 open class MainActivity : AppCompatActivity() {
     companion object {
@@ -56,8 +56,8 @@ open class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.N_MR1)
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         user = Utils.loaddata(this)
+        super.onCreate(savedInstanceState)
 
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -65,6 +65,14 @@ open class MainActivity : AppCompatActivity() {
 
         setCustomizedThemes(this, getThemeColor(this))
         setContentView(binding.root)
+
+        ActivityCompat.requestPermissions(
+            this, arrayOf(
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE
+            ), PackageManager.PERMISSION_GRANTED
+        )
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
         val inflater = navController.navInflater
@@ -96,6 +104,10 @@ open class MainActivity : AppCompatActivity() {
         }
 
         displayNavbar()
+        
+        binding.profileImage.setOnClickListener {
+            displayprofile()
+        }
 
     }
 
@@ -205,6 +217,8 @@ open class MainActivity : AppCompatActivity() {
 
 
     open fun logoutfun() {
+        val sharedPreferences = getSharedPreferences("curruserdata", MODE_PRIVATE)
+        sharedPreferences.edit().clear().apply()
         auth.signOut()
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)

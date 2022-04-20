@@ -187,7 +187,6 @@ class SignUp2Activity : AppCompatActivity() {
                         auth.uid?.let {
                             database.child(it).setValue(user).addOnSuccessListener {
                                 Toast.makeText(this, "Successfully Registered", Toast.LENGTH_LONG).show()
-
                             }
                         }
                         val intent = Intent(this, MainActivity::class.java)

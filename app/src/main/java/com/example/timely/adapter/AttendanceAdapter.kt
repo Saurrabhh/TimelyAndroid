@@ -29,15 +29,18 @@ class AttendanceAdapter(val context: Context, private val StudentList: ArrayList
         val currentItem = StudentList[position]
         holder.name.text = currentItem.name
         holder.roll.text = currentItem.rollno
-        if (currentItem.present == true){
-            holder.radioGroup.check(R.id.Present)
-        }else if (currentItem.present == false){
-            holder.radioGroup.check(R.id.Absent)
-        }else{
-            holder.radioGroup.clearCheck()
-        }
+
+
+//        if (currentItem.present == true){
+//            holder.radioGroup.check(R.id.Present)
+//        }else if (currentItem.present == false){
+//            holder.radioGroup.check(R.id.Absent)
+//        }else{
+//            holder.radioGroup.clearCheck()
+//        }
         holder.present.setOnClickListener{
             currentItem.present = true
+
         }
         holder.absent.setOnClickListener{
             currentItem.present = false
@@ -45,9 +48,11 @@ class AttendanceAdapter(val context: Context, private val StudentList: ArrayList
 
         if (checkall){
             holder.radioGroup.check(R.id.Present)
+            currentItem.present = true
 
         }else{
             holder.radioGroup.check(R.id.Absent)
+            currentItem.present = false
 
         }
     }
