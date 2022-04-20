@@ -10,6 +10,7 @@ import android.content.Intent
 import android.os.Build
 import android.util.Log
 import android.view.WindowInsets
+import android.widget.Toast
 import android.widget.ImageView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.timely.R
@@ -92,26 +93,33 @@ class SplashActivity : AppCompatActivity() {
 
     private fun getcurrentuserdata() {
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Users")
-        auth.uid?.let {
-            database.child(it).addValueEventListener(object: ValueEventListener {
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    val sharedPreferences = getSharedPreferences("curruserdata", MODE_PRIVATE)
-                    val user = snapshot.getValue(User::class.java)
-                    val gson = Gson()
-                    val json = GsonBuilder().create().toJson(user)
-                    Log.d(MainActivity.TAG, json)
-                    val editor = sharedPreferences.edit()
-                    editor.apply {
-                        putString("user", json)
-                    }.apply()
 
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-
-            })
+        auth.uid?.let { uidd ->
+            database.child(uidd).get().addOnSuccessListener {
+                val sharedPreferences = getSharedPreferences("curruserdata", MODE_PRIVATE)
+                val user = it.getValue(User::class.java)
+                val json = GsonBuilder().create().toJson(user)
+                Log.d(MainActivity.TAG, json)
+                val editor = sharedPreferences.edit()
+                editor.apply {
+                    putString("uid", user!!.uid)
+                    putString("name", user.name)
+                    putString("username", user.username)
+                    putString("urn", user.urn)
+                    putString("semester", user.semester)
+                    putString("rollno", user.rollno)
+                    putString("section", user.section)
+                    putString("email", user.email)
+                    putString("gender", user.gender)
+                    putString("branch", user.branch)
+                    putString("phoneno", user.phoneno)
+                    putString("enroll", user.enroll)
+                    putBoolean("isteacher", user.isteacher)
+                }.apply()
+            }.addOnFailureListener{
+                Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
+        }
+
 }
