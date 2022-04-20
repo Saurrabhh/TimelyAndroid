@@ -47,23 +47,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/Att_Student"
+            android:fontFamily="@font/poppins_medium"
             android:orientation="horizontal"
-            android:fontFamily="@font/poppins_medium">
+            android:layout_alignParentEnd="true">
 
             <RadioButton
                 android:id="@+id/Present"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:text="P"
-                android:buttonTint="?colorPrimary"/>
+                android:buttonTint="?colorPrimary"
+                android:text="P" />
 
             <RadioButton
                 android:id="@+id/Absent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="A"
-                android:buttonTint="?colorPrimary"/>
+                android:buttonTint="?colorPrimary"
+                android:text="A" />
         </RadioGroup>
 
     </RelativeLayout>
