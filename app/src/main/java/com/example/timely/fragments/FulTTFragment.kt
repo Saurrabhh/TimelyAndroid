@@ -68,7 +68,7 @@ class FulTTFragment : Fragment() {
 
     private fun displayfulltt() {
 
-        val user = Utils().loaddata(requireActivity())
+        val user = Utils.loaddata(requireActivity())
         database = FirebaseDatabase.getInstance("https://timely-524da-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Timetable")
         database.child(user.branch!!).child("Sem ${user.semester}").child("${user.section}").get().addOnSuccessListener {
             if (it.exists()){

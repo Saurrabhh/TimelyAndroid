@@ -11,8 +11,9 @@ data class User(
     val email: String ?= null,
     val gender: String ?= null,
     val branch: String ?= null,
-    val phoneno: String?= null,
-    val enroll: String?= null
+    val phoneno: String ?= null,
+    val enroll: String ?= null,
+    val isteacher: Boolean = false
 )
 
 

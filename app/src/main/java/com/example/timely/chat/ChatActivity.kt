@@ -31,7 +31,7 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.show()
+        supportActionBar?.hide()
 
 
         val name = intent.getStringExtra("name")
@@ -43,6 +43,7 @@ class ChatActivity : AppCompatActivity() {
         senderRoom = receiverUid+senderUid
         receiverRoom = senderUid+receiverUid
         supportActionBar?.title = name
+        binding.toolbar.title = name
 
 
         chatRecyclerView = binding.displayChatRecycler

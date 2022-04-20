@@ -19,7 +19,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
 
-class SplshActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
 
 
     private lateinit var database: DatabaseReference
@@ -29,6 +29,8 @@ class SplshActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         auth = FirebaseAuth.getInstance()
+
+        supportActionBar?.hide()
 
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -75,7 +77,7 @@ class SplshActivity : AppCompatActivity() {
                 } catch (e: Exception) {
                     e.printStackTrace()
                 } finally {
-                    val intent = Intent(this@SplshActivity, LoginActivity::class.java)
+                    val intent = Intent(this@SplashActivity, LoginActivity::class.java)
                     startActivity(intent)
                     finish()
                 }

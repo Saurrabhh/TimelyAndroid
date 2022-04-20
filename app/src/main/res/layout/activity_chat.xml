@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     android:id="@+id/mainchat"
-    android:background="?colorSecondary"
+    android:background="?colorOnPrimary"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,12 +9,23 @@
     android:layout_height="match_parent"
     tools:context=".chat.ChatActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="?attr/actionBarSize"
+        app:titleTextColor="@color/black"
+        />
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/display_chat_recycler"
         android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
         android:layout_height="wrap_content"
         android:layout_above="@+id/chat_linearlayout"
-        android:layout_alignParentTop="true" />
+       />
 
     <LinearLayout
         android:id="@+id/chat_linearlayout"
