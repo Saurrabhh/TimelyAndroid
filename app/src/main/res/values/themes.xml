@@ -36,8 +36,8 @@
         <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Blue2</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimary</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -55,8 +55,8 @@
         <item name="colorSecondaryVariant">@color/Red3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Red2</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Red1</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -74,8 +74,8 @@
         <item name="colorSecondaryVariant">@color/Green3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Green4</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/BG</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Green1</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/BG</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -93,8 +93,8 @@
         <item name="colorSecondaryVariant">@color/Purple3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Purple2</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Purple1</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -112,8 +112,8 @@
         <item name="colorSecondaryVariant">@color/Pink3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Pink2</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Pink1</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -131,8 +131,8 @@
         <item name="colorSecondaryVariant">@color/Grey3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Grey2</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Grey1</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -150,8 +150,8 @@
         <item name="colorSecondaryVariant">@color/Orange3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Orange4</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Orange1</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -169,8 +169,8 @@
         <item name="colorSecondaryVariant">@color/Yellow3</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/Yellow2</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/Yellow1</item>
+<!--        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

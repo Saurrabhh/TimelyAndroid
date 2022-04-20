@@ -205,10 +205,9 @@
                         android:id="@+id/progressBar"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="300dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="20dp"
                         android:layout_below="@+id/Time_left"
-                        android:layout_marginStart="15dp"
-
+                        android:layout_centerHorizontal="true"
                         android:max="5000" />
 
 
