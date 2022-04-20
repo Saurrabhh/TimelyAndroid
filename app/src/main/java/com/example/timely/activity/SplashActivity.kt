@@ -11,6 +11,7 @@ import android.os.Build
 import android.util.Log
 import android.view.WindowInsets
 import android.widget.Toast
+import android.widget.ImageView
 import com.airbnb.lottie.LottieAnimationView
 import com.example.timely.R
 import com.example.timely.dataClasses.User
@@ -46,6 +47,7 @@ class SplashActivity : AppCompatActivity() {
 
 
         val textView = findViewById<TextView>(R.id.textSplash)
+//        val textView = findViewById<ImageView>(R.id.imgSplash)
         val ani = findViewById<LottieAnimationView>(R.id.lottieAnimationView)
 
         val info = findViewById<TextView>(R.id.info)

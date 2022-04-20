@@ -41,8 +41,17 @@
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView" />
-
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
+    />
+<!--<ImageView-->
+<!--    android:layout_width="300dp"-->
+<!--    android:layout_height="100dp"-->
+<!--    android:id="@+id/imgSplash"-->
+<!--    app:layout_constraintEnd_toEndOf="parent"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    android:src="@drawable/timely"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"-->
+<!--    />-->
     <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"

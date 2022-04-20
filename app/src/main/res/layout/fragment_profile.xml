@@ -1,316 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/motionlayout"
-    app:layoutDescription="@xml/fragment_profile_scene">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MainFragment"
+    android:background="?colorPrimaryVariant"
+    >
 
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Enrolment No. : "
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="429dp" />
-
-    <ImageView
-        android:id="@+id/Profile_Pic"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <EditText
-        android:id="@+id/MainUserName"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="serif-monospace"
-        android:hint="Username"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Profile_Pic" />
-
-    <TextView
-        android:id="@+id/P_head"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Personal Details"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MainUserName" />
+        tools:context=".fragments.ProfileFragment">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?colorPrimaryVariant"
+            >
 
-    <EditText
-        android:id="@+id/MainName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Name"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="300dp" />
+            <ImageView
+                android:id="@+id/Profile_Pic"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/profile" />
+            <TextView
+                android:id="@+id/MainUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Profile_Pic"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+    </FrameLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/Main_card"
+        style="@style/CustomCardViewStyle"
 
-    <EditText
-        android:id="@+id/MainSemester"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fontFamily="@font/cambo"
-        android:text="4"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
+
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="450dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCardView.Cut"
+        app:cardBackgroundColor="@color/BG_grey"
+        app:cardElevation="100dp"
+        app:cardMaxElevation="20dp"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_pen" />
+
+            <TextView
+                android:id="@+id/Personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Personal Details : " />
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Sem"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="467dp"
-        tools:layout_editor_absoluteY="336dp" />
+                <TextView
+                    android:id="@+id/MainName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/cambo"
+                    android:layout_below="@+id/Personal"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/P_Sem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/MainName"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:text="Semester: "
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/MainSemester"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/P_Sem"
+                    android:layout_below="@id/MainName"
+
+                    android:fontFamily="@font/cambo"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Section : "
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="429dp" />
+            <TextView
+                android:id="@+id/P_CLassRoll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/MainName"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/MainSemester"
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Roll No : "
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/MainName"
-        tools:layout_editor_absoluteX="35dp" />
+                android:fontFamily="@font/arima_madurai_bold"
+                android:text="Class Roll No.: "
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Branch : "
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/MainName"
-        tools:layout_editor_absoluteX="35dp" />
+            <TextView
+                android:id="@+id/MainClass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/MainName"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/P_CLassRoll"
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Phone Number : "
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="429dp" />
+                android:fontFamily="@font/cambo"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="URN : "
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="429dp" />
+            <TextView
+                android:id="@+id/P_Sec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/P_Sem"
 
-    <EditText
-        android:id="@+id/MainGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/P_Sem"
-        android:fontFamily="@font/cambo"
-        android:text="Male"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="429dp"
-        tools:layout_editor_absoluteY="76dp" />
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:text="Section: "
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/MainSection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/MainName"
-        android:layout_toEndOf="@+id/P_Sec"
+            <TextView
+                android:id="@+id/MainSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/P_Sec"
+                android:layout_below="@+id/P_Sem"
+                android:fontFamily="@font/cambo"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        android:fontFamily="@font/cambo"
-        android:text="A"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/MainClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/P_CLassRoll"
-        android:fontFamily="@font/cambo"
-        android:text="54"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="291dp" />
-
-    <TextView
-        android:id="@+id/P_contactinfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contact Details"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="400dp" />
-
-    <TextView
-        android:id="@+id/p_contactinfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Social Links"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="500dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Semester"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="429dp" />
-
-    <EditText
-        android:id="@+id/MainBranch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="CSE"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="34dp" />
-
-    <EditText
-        android:id="@+id/MainEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/P_contactinfo"
-        android:fontFamily="@font/cambo"
-        android:text="Email"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/P_contactinfo" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/cambo"
-        android:text="Email : "
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="429dp" />
-
-    <EditText
-        android:id="@+id/MainPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/MainEmail"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/cambo"
-        android:text="1234567890"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.031"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MainEmail" />
-
-    <TextView
-        android:id="@+id/P_clginfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/MainPhone"
-        android:text="College Details"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="475dp" />
-
-    <EditText
-        android:id="@+id/MainURN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/P_clginfo"
-        android:fontFamily="@font/cambo"
-        android:text="URN"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/P_clginfo" />
+            <TextView
+                android:id="@+id/Contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/P_Sec"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Contact Details" />
 
 
-    <EditText
-        android:id="@+id/MainEnroll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/MainURN"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/cambo"
-        android:text="Enroll"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MainURN" />
+            <TextView
+                android:id="@+id/P_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Contact"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/arima_madurai_bold"
+                android:text="Email: "
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
-        android:text="Swipe Up to Edit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MainEnroll" />
+            <TextView
+                android:id="@+id/MainEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/P_email"
+                android:layout_below="@+id/Contact"
+
+                android:fontFamily="@font/cambo"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ClgDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/P_email"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="College Details" />
+
+            <TextView
+                android:id="@+id/P_URN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ClgDetails"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+
+                android:fontFamily="@font/arima_madurai_bold"
+                android:text="University Roll No.: "
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MainURN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ClgDetails"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+
+                android:layout_toEndOf="@+id/P_URN"
+                android:fontFamily="@font/cambo"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
 
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

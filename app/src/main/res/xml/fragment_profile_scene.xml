@@ -89,8 +89,9 @@
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/P_contactinfo"
             motion:layout_constraintTop_toBottomOf="@+id/textView6"
-            motion:layout_editor_absoluteY="506dp"
-            motion:layout_editor_absoluteX="60dp" />
+            motion:layout_editor_absoluteY="530dp"
+            motion:layout_editor_absoluteX="51dp"
+            android:layout_marginStart="30dp" />
         <Constraint
             android:layout_height="wrap_content"
             motion:layout_editor_absoluteX="72dp"
@@ -114,7 +115,7 @@
             motion:layout_constraintTop_toBottomOf="@+id/P_contactinfo"
             android:layout_marginTop="40dp"
             motion:layout_constraintStart_toEndOf="@+id/textView7"
-            android:layout_marginLeft="28dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginStart="28dp" />
         <Constraint
             android:layout_height="wrap_content"
