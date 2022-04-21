@@ -84,7 +84,7 @@ class ContactActivity : AppCompatActivity() {
             openwebsite("mailto:cyrao378@gmail.com")
         }
         insta.setOnClickListener {
-            openwebsite("https://www.instagram.com/mr.rao2110/")
+            openwebsite("https://www.instagram.com/kenma.2110/")
 
         }
         linkedin.setOnClickListener {

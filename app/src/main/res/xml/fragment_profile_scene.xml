@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/textView3"
             motion:layout_constraintTop_toBottomOf="@+id/MainName"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="20dp" />
         <Constraint
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -265,5 +265,11 @@
             motion:layout_constraintStart_toEndOf="parent"
             android:layout_width="wrap_content"
             android:id="@+id/add_button" />
+        <Constraint
+            motion:layout_editor_absoluteY="177dp"
+            android:layout_height="wrap_content"
+            motion:layout_editor_absoluteX="-1dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/MainName" />
     </ConstraintSet>
 </MotionScene>
