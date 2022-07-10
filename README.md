@@ -20,8 +20,8 @@ Technology plays a vital role in day-to-day life activities which in turn made g
 <br/>
 <b> ScreenShots : </b>
 <p align="left"></p>
-<img src="https://user-images.githubusercontent.com/73347275/148654170-1f08be56-0dda-4f9b-b31d-a502af2fea08.jpg" height="300px" width="135px" align="left">
-<img src="https://user-images.githubusercontent.com/73347275/148654164-821e2590-fbb1-45f2-98a1-11c17787618b.jpg" height="300px" width="135px" align="left">
+<img src="https://user-images.githubusercontent.com/77012237/178143730-7cbee7d5-abb6-4660-87ba-6a13c7b084c8.png" height="300px" width="290px" align="left">
+<img src="https://user-images.githubusercontent.com/77012237/178143851-bc395f96-c153-4c1f-ad34-a59f0a944622.png" height="300px" width="290px" align="left">
 <img src="https://user-images.githubusercontent.com/73347275/148655279-0d48247f-d3d4-4cb8-9a4f-29d831853a6f.jpg" height="300px" width="135px" align="left">
 <img src="https://user-images.githubusercontent.com/73347275/148654166-20d3a20c-8dac-4a81-a50f-12f7370598b6.jpg" height="300px" width="135px" align="left">
 <img src="https://user-images.githubusercontent.com/73347275/148654165-cb57522d-c32b-452a-bc09-fdc57d9732fe.jpg" height="300px" width="135px">
@@ -38,6 +38,8 @@ This project proposes a “Live Time-Table” to remind the students about next-
 <b> Its features include :- </b> 
 - Full Time-Table, so no need to check anywhere else.
 - Notification Reminder, about next period and time left for the current period.
+- Teacher's Dashboard for marking attendance.
+- Chat section to interact.
 - Student's Profile, works on realtime database.
 - College website alongwith student's ERP.
 
