@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -29,6 +28,13 @@
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/Photo"
+                android:layout_marginTop="80dp"
+                android:layout_width="400dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/grp_pic" />
 
             <!--Card 1-->
             <androidx.cardview.widget.CardView
@@ -36,10 +42,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="30dp"
                 app:cardBackgroundColor="?colorPrimary"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:layout_below="@+id/Photo">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -170,11 +177,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="30dp"
                 android:layout_toEndOf="@+id/Card1"
                 app:cardBackgroundColor="?colorPrimary"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                android:layout_below="@+id/Photo">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
