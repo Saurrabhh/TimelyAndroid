@@ -67,7 +67,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/avatar1"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="@font/poppins_medium"
                         android:gravity="center"
                         android:paddingStart="10dp"
@@ -75,7 +75,7 @@
                         android:paddingBottom="3dp"
                         android:text="@string/saurabh_yadav"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
 
                     <TextView
                         android:id="@+id/roll1"
@@ -209,7 +209,7 @@
                         android:paddingBottom="3dp"
                         android:text="@string/shubhankar_tiwary"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
 
                     <TextView
                         android:id="@+id/sem2"
@@ -336,14 +336,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/avatar3"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="15dp"
                         android:fontFamily="@font/poppins_medium"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
                         android:paddingBottom="3dp"
                         android:text="@string/chaitanya_rao"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
 
                     <TextView
                         android:id="@+id/roll3"
@@ -470,14 +470,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/avatar4"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="20dp"
                         android:fontFamily="@font/poppins_medium"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
                         android:paddingBottom="3dp"
                         android:text="@string/krish_chopra"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="13sp" />
 
                     <TextView
                         android:id="@+id/roll4"
