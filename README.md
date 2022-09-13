@@ -29,7 +29,7 @@ Technology plays a vital role in day-to-day life activities which in turn made g
 <img src="https://user-images.githubusercontent.com/73347275/148654165-cb57522d-c32b-452a-bc09-fdc57d9732fe.jpg" height="300px" width="138px">
 
 <br/>
-
+<br>
 <b>Video Recording : </b><br/>
 
 
